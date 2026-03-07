@@ -1,0 +1,249 @@
+{
+    "carriers": [
+        {
+            "id": "docomo",
+            "name": "NTTドコモ",
+            "options": [
+                {
+                    "category": "エンタメ特典",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "lemino",
+                            "name": "Lemino",
+                            "price": 1540
+                        },
+                        {
+                            "id": "d_anime",
+                            "name": "dアニメストア",
+                            "price": 660
+                        },
+                        {
+                            "id": "dazn",
+                            "name": "DAZN",
+                            "price": 4200
+                        },
+                        {
+                            "id": "nba_docomo",
+                            "name": "NBA docomo",
+                            "price": 2728
+                        }
+                    ]
+                }
+            ],
+            "devices": [
+                {
+                    "id": "iphone16_128",
+                    "name": "iPhone 16 128GB",
+                    "lump_sum": 145000,
+                    "early_use_benefit": 500,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 501
+                        },
+                        {
+                            "start": 24,
+                            "end": 47,
+                            "price": 3400
+                        },
+                        {
+                            "start": 48,
+                            "end": 48,
+                            "price": 66800
+                        }
+                    ]
+                }
+            ],
+            "plans": [
+                {
+                    "id": "docomo_max",
+                    "name": "ドコモ MAX",
+                    "type": "tiered",
+                    "bundle_perks": {
+                        "limit": 1,
+                        "eligible_ids": [
+                            "disney_plus",
+                            "netflix_standard"
+                        ],
+                        "discount_type": "free"
+                    },
+                    "tiers": [
+                        {
+                            "label": "〜1GB",
+                            "price": 5180
+                        },
+                        {
+                            "label": "1GB〜3GB",
+                            "price": 6180
+                        },
+                        {
+                            "label": "3GB〜無制限",
+                            "price": 7680
+                        }
+                    ],
+                    "notes": "利用量に応じて料金が変動するプラン"
+                },
+                {
+                    "id": "poikatsu_max",
+                    "name": "ドコモ ポイ活 MAX",
+                    "type": "flat",
+                    "price": 10680,
+                    "point_benefit": 5000,
+                    "notes": "ポイント充当で実質価格が下がるプラン"
+                },
+                {
+                    "id": "poikatsu_20",
+                    "name": "ドコモ ポイ活 20",
+                    "type": "tiered",
+                    "point_benefit": 2500,
+                    "tiers": [
+                        {
+                            "label": "〜20GB",
+                            "price": 7180
+                        },
+                        {
+                            "label": "20GB〜無制限",
+                            "price": 8700
+                        }
+                    ],
+                    "notes": "20GBを超えると基本料金が上がるポイ活プラン"
+                },
+                {
+                    "id": "docomo_mini",
+                    "name": "ドコモ mini",
+                    "type": "tiered",
+                    "tiers": [
+                        {
+                            "label": "4GB",
+                            "price": 2500
+                        },
+                        {
+                            "label": "10GB",
+                            "price": 3500
+                        }
+                    ],
+                    "notes": "小容量向けの段階制プラン"
+                }
+            ],
+            "programs": [
+                {
+                    "id": "kaedoki",
+                    "name": "いつでもカエドキプログラム",
+                    "split_count": 23,
+                    "residual_month": 24,
+                    "notes": "23回支払い後、24回目に残価を設定"
+                }
+            ],
+            "discounts": [
+                {
+                    "id": "minna_3",
+                    "group": "みんなドコモ割",
+                    "name": "3回線以上",
+                    "value": 1100
+                },
+                {
+                    "id": "minna_2",
+                    "group": "みんなドコモ割",
+                    "name": "2回線",
+                    "value": 500
+                },
+                {
+                    "id": "hikari",
+                    "group": "セット割",
+                    "name": "ドコモ光/home 5Gセット割",
+                    "value": 1100
+                },
+                {
+                    "id": "dcard_gold",
+                    "group": "dカードお支払割",
+                    "name": "PLATINUM/GOLD/GOLD U",
+                    "value": 500
+                },
+                {
+                    "id": "dcard_normal",
+                    "group": "dカードお支払割",
+                    "name": "一般",
+                    "value": 200
+                },
+                {
+                    "id": "chouki_20",
+                    "group": "長期利用割",
+                    "name": "20年以上",
+                    "value": 200
+                },
+                {
+                    "id": "chouki_10",
+                    "group": "長期利用割",
+                    "name": "10年以上",
+                    "value": 100
+                },
+                {
+                    "id": "denki",
+                    "group": "セット割",
+                    "name": "ドコモでんきセット割",
+                    "value": 100
+                }
+            ]
+        },
+        {
+            "id": "au",
+            "name": "au",
+            "plans": [
+                {
+                    "id": "unlimited_5g",
+                    "name": "使い放題MAX 5G",
+                    "type": "flat",
+                    "price": 7238
+                }
+            ],
+            "programs": [
+                {
+                    "id": "tokusuru",
+                    "name": "スマホトクするプログラム",
+                    "split_count": 24,
+                    "residual_month": 25,
+                    "notes": "24回目まで支払い、25回目が残価"
+                }
+            ],
+            "discounts": [
+                {
+                    "id": "kazoku_3",
+                    "group": "家族割プラス",
+                    "name": "3人以上",
+                    "value": 1100
+                }
+            ]
+        },
+        {
+            "id": "softbank",
+            "name": "ソフトバンク",
+            "plans": [
+                {
+                    "id": "merihari",
+                    "name": "メリハリ無制限+",
+                    "type": "flat",
+                    "price": 7425
+                }
+            ],
+            "programs": [
+                {
+                    "id": "shintoku_std",
+                    "name": "新トクするサポート",
+                    "split_count": 24,
+                    "residual_month": 25,
+                    "notes": "48回払いのうち最大24回分を免除"
+                }
+            ],
+            "discounts": [
+                {
+                    "id": "shinkansen",
+                    "group": "新みんな家族割",
+                    "name": "3人以上",
+                    "value": 1210
+                }
+            ]
+        }
+    ]
+}
