@@ -20,7 +20,7 @@
                         },
                         {
                             "id": "dazn",
-                            "name": "DAZN",
+                            "name": "DAZN for docomo",
                             "price": 4200
                         },
                         {
@@ -29,7 +29,597 @@
                             "price": 2728
                         }
                     ]
+                },
+                {
+                    "category": "通話オプション",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "answer_phone",
+                            "name": "留守番電話サービス",
+                            "price": 330,
+                            "billing_type": "paid"
+                        },
+                        {
+                            "id": "option_pack",
+                            "name": "オプションパック割引",
+                            "price": 440,
+                            "billing_type": "paid"
+                        },
+                        {
+                            "id": "catch_phone",
+                            "name": "キャッチホン",
+                            "price": 220,
+                            "billing_type": "paid"
+                        },
+                        {
+                            "id": "call_forwarding",
+                            "name": "転送でんわサービス",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "missed_call_notice",
+                            "name": "着信通知サービス",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "caller_id_notification",
+                            "name": "発信者番号通知サービス",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "caller_id_request",
+                            "name": "番号通知お願いサービス",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "melody_call",
+                            "name": "メロディコール",
+                            "price": 110,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "one_number",
+                            "name": "ワンナンバーサービス",
+                            "price": 550,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "multi_number",
+                            "name": "マルチナンバー",
+                            "price": 550,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "ohanashi_memo",
+                            "name": "おはなしメモ",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "nuisance_call_block",
+                            "name": "迷惑電話ストップサービス",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "english_guidance",
+                            "name": "英語ガイダンス",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "world_call",
+                            "name": "海外へかける（WORLD CALL／ワールドコール）",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "world_wing",
+                            "name": "海外でつかう（WORLD WING／ワールドウィング）",
+                            "price": 0,
+                            "billing_type": null
+                        }
+                    ]
+                },
+                {
+                    "category": "補償・サポート",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "smart_anshin_pack",
+                            "name": "smartあんしんパック",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 792,
+                            "price_max": 2182
+                        },
+                        {
+                            "id": "smart_anshin_hosho",
+                            "name": "smartあんしん補償",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 330,
+                            "price_max": 1720
+                        },
+                        {
+                            "id": "anshin_remote_support",
+                            "name": "あんしん遠隔サポート",
+                            "price": 440,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "anshin_pack",
+                            "name": "あんしんパック",
+                            "price": null,
+                            "billing_type": "paid"
+                        },
+                        {
+                            "id": "anshin_pack_home",
+                            "name": "あんしんパック ホーム",
+                            "price": null,
+                            "billing_type": "paid"
+                        },
+                        {
+                            "id": "anshin_pack_mobile",
+                            "name": "あんしんパック モバイル",
+                            "price": null,
+                            "billing_type": "paid"
+                        },
+                        {
+                            "id": "anshin_pack_plus",
+                            "name": "あんしんパックプラス",
+                            "price": null,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "home_anshin_pack",
+                            "name": "homeあんしんパック",
+                            "price": null,
+                            "billing_type": "paid"
+                        },
+                        {
+                            "id": "keitai_hosho",
+                            "name": "ケータイ補償サービス",
+                            "price": null,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "digital_device_hosho",
+                            "name": "デジタル機器補償サービス",
+                            "price": 550,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "battery_pack_support",
+                            "name": "電池パック安心サポート",
+                            "price": null,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "net_total_support",
+                            "name": "ネットトータルサポート",
+                            "price": 550,
+                            "billing_type": null
+                        }
+                    ]
+                },
+                {
+                    "category": "セキュリティ・見守り",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "anshin_security",
+                            "name": "あんしんセキュリティ",
+                            "price": 220,
+                            "billing_type": "paid"
+                        },
+                        {
+                            "id": "anshin_security_standard",
+                            "name": "あんしんセキュリティ スタンダードプラン",
+                            "price": 220,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "anshin_security_total",
+                            "name": "あんしんセキュリティ トータルプラン",
+                            "price": 550,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "anshin_filter",
+                            "name": "あんしんフィルター for docomo",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "access_restriction",
+                            "name": "アクセス制限サービス",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "imadoko_search",
+                            "name": "イマドコサーチ",
+                            "price": 220,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "remote_lock",
+                            "name": "おまかせロック",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "remote_initialize",
+                            "name": "遠隔初期化",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "mobile_finder",
+                            "name": "ケータイお探しサービス",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "network_security",
+                            "name": "ネットワークセキュリティ",
+                            "price": 385,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "filtering_service",
+                            "name": "フィルタリングサービス",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "spam_mail_block",
+                            "name": "迷惑メールおまかせブロック",
+                            "price": 220,
+                            "billing_type": null
+                        }
+                    ]
+                },
+                {
+                    "category": "通信・クラウド・メール",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "sp_mode",
+                            "name": "spモード",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "tethering",
+                            "name": "テザリング",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "cloud_capacity_option",
+                            "name": "クラウド容量オプション",
+                            "price": 110,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "data_hokan_box",
+                            "name": "データ保管BOX",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "d_wifi",
+                            "name": "d Wi-Fi",
+                            "price": 0,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "docomo_mail_option",
+                            "name": "ドコモメールオプション",
+                            "price": 330,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "docomo_mail_carry",
+                            "name": "ドコモメール持ち運び",
+                            "price": 330,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "secondary_line",
+                            "name": "副回線サービス",
+                            "price": 429,
+                            "billing_type": null
+                        }
+                    ]
+                },
+                {
+                    "category": "エンタメ・サブスク",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "disney_plus",
+                            "name": "ディズニープラス",
+                            "price": 1140,
+                            "billing_type": "paid",
+                            "price_min": 1140
+                        },
+                        {
+                            "id": "netflix",
+                            "name": "Netflix",
+                            "price": 890,
+                            "billing_type": "paid",
+                            "price_min": 890
+                        },
+                        {
+                            "id": "apple_one",
+                            "name": "Apple One",
+                            "price": 1200,
+                            "billing_type": "paid",
+                            "price_min": 1200
+                        },
+                        {
+                            "id": "amazon_prime",
+                            "name": "Amazonプライム",
+                            "price": 600,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "spotify_premium",
+                            "name": "Spotify Premium",
+                            "price": 1080,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "youtube_premium",
+                            "name": "YouTube Premium",
+                            "price": 1280,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "d_value_pass",
+                            "name": "dバリューパス",
+                            "price": null,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "d_value_pass_pack",
+                            "name": "dバリューパス パック",
+                            "price": null,
+                            "billing_type": "paid"
+                        },
+                        {
+                            "id": "d_hits",
+                            "name": "dヒッツ powered by レコチョク",
+                            "price": 550,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "d_photo",
+                            "name": "dフォト",
+                            "price": 308,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "d_magazine",
+                            "name": "dマガジン",
+                            "price": 580,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "d_music",
+                            "name": "dミュージック powered by レコチョク",
+                            "price": null,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "smartnews_docomo",
+                            "name": "SmartNews for docomo",
+                            "price": null,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "fany_channel",
+                            "name": "FANYチャンネル・大阪チャンネル",
+                            "price": 480,
+                            "billing_type": null
+                        },
+                        {
+                            "id": "wonderbox_docomo",
+                            "name": "ワンダーボックス for docomo",
+                            "price": 3700,
+                            "billing_type": null
+                        }
+                    ]
                 }
+            ],
+            "services": [
+                {
+                    "category": "標準機能・無料機能",
+                    "items": [
+                        {
+                            "id": "sms",
+                            "name": "ショートメッセージサービス（SMS）"
+                        },
+                        {
+                            "id": "plus_message",
+                            "name": "＋メッセージ（プラスメッセージ）"
+                        },
+                        {
+                            "id": "volte",
+                            "name": "VoLTE／VoLTE（HD+）"
+                        },
+                        {
+                            "id": "video_call",
+                            "name": "ビデオコール"
+                        },
+                        {
+                            "id": "tv_call",
+                            "name": "テレビ電話"
+                        },
+                        {
+                            "id": "fiveg_sa",
+                            "name": "5G SA（Standalone）"
+                        },
+                        {
+                            "id": "docomo_mail",
+                            "name": "ドコモメール"
+                        },
+                        {
+                            "id": "docomo_phonebook",
+                            "name": "ドコモ電話帳"
+                        },
+                        {
+                            "id": "docomo_data_copy",
+                            "name": "ドコモデータコピー"
+                        },
+                        {
+                            "id": "docomo_app_backup",
+                            "name": "ドコモアプリデータバックアップ"
+                        },
+                        {
+                            "id": "my_daiz",
+                            "name": "my daiz（マイデイズ）"
+                        },
+                        {
+                            "id": "id_payment",
+                            "name": "iD（かざしてお支払い「iD」）"
+                        },
+                        {
+                            "id": "wifi",
+                            "name": "Wi-Fi"
+                        },
+                        {
+                            "id": "bio_auth",
+                            "name": "生体認証"
+                        },
+                        {
+                            "id": "wallet",
+                            "name": "おサイフケータイ"
+                        },
+                        {
+                            "id": "area_mail",
+                            "name": "緊急速報「エリアメール」"
+                        },
+                        {
+                            "id": "emergency_location",
+                            "name": "緊急通報位置通知"
+                        },
+                        {
+                            "id": "public_mode",
+                            "name": "公共モード"
+                        },
+                        {
+                            "id": "disaster_board",
+                            "name": "災害用伝言板"
+                        },
+                        {
+                            "id": "message_service",
+                            "name": "メッセージサービス"
+                        },
+                        {
+                            "id": "docomo_cloud",
+                            "name": "ドコモクラウド"
+                        },
+                        {
+                            "id": "docomo_application_manager",
+                            "name": "docomo Application Manager（ドコモアプリ管理）"
+                        },
+                        {
+                            "id": "docomo_live_ux",
+                            "name": "docomo LIVE UX"
+                        },
+                        {
+                            "id": "ir_communication",
+                            "name": "赤外線通信機能"
+                        }
+                    ]
+                }
+            ],
+            "plan_services": [
+                {
+                    "id": "kids_keitai_plan_xi",
+                    "name": "キッズケータイプラン",
+                    "contract_type": "Xi",
+                    "verified": true,
+                    "monthly_price": 550,
+                    "eligible_devices": [
+                        "キッズケータイ KY-41C",
+                        "キッズケータイ コンパクト SK-41D",
+                        "キッズケータイ SH-03M"
+                    ],
+                    "current_services": [
+                        "同一ファミリー割引グループ間の通話無料",
+                        "SMS送受信無料",
+                        "＋メッセージ対応",
+                        "写真・動画送受信対応",
+                        "契約対象はXi",
+                        "12歳以下向け",
+                        "ファミリー割引の副回線として申込みが必要"
+                    ],
+                    "call_rate_outside_family": 22
+                },
+                {
+                    "id": "xi_keitai_plan",
+                    "name": "Xiのケータイプラン",
+                    "verified": false,
+                    "current_services": []
+                }
+            ],
+            "benefits": [
+                {
+                    "id": "bakuage_selection",
+                    "name": "爆アゲセレクション"
+                }
+            ],
+            "excluded_from_pricing_catalog": [
+                "iアプリ",
+                "iチャネル",
+                "iMenu",
+                "iモード",
+                "iモードメール",
+                "2in1",
+                "買取プログラム",
+                "ケータイ補償 お届けサービス（2019年5月31日までのお申込み）",
+                "ケータイ補償サービス（2019年5月31日までのお申込み）",
+                "ケータイ補償サービス for iPhone & iPad（2019年5月31日までのお申込み）",
+                "ひかりＴＶ（2022年6月30日以前にご加入の方）",
+                "dカード",
+                "d払い",
+                "dショッピング",
+                "dショッピングダイレクト",
+                "dスマホローン",
+                "dポイント運用",
+                "dポイントクラブ",
+                "dポイントマーケット",
+                "ドコモ光",
+                "ahamo光",
+                "OCN インターネット",
+                "ぷらら（インターネット接続サービス）",
+                "ドコモでんき／ドコモ ガス",
+                "AIほけん",
+                "ドコモ サイクル保険",
+                "ドコモの自動車保険",
+                "ドコモの賃貸火災保険",
+                "ドコモのペット保険",
+                "ドコモのワンタイム保険",
+                "ドコモのNISA by マネックス証券",
+                "日興iDeCo for docomo",
+                "日興フロッギー＋ docomo",
+                "THEO+[テオプラス]docomo",
+                "kikito",
+                "GOLF me！",
+                "dカーシェア",
+                "dブック",
+                "dメニュー",
+                "dアカウント"
             ],
             "devices": [
                 {
@@ -54,6 +644,805 @@
                             "price": 66800
                         }
                     ]
+                },
+                {
+                    "id": "iphone16e_128",
+                    "name": "iPhone 16e 128GB",
+                    "lump_sum": 109780,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 1903
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 66000
+                        }
+                    ]
+                },
+                {
+                    "id": "iphone16e_256",
+                    "name": "iPhone 16e 256GB",
+                    "lump_sum": 139920,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 2812
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 75240
+                        }
+                    ]
+                },
+                {
+                    "id": "iphone16e_512",
+                    "name": "iPhone 16e 512GB",
+                    "lump_sum": 179960,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 3692
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 95040
+                        }
+                    ]
+                },
+                {
+                    "id": "iphone17e_256",
+                    "name": "iPhone 17e 256GB",
+                    "lump_sum": 119900,
+                    "esim_only": true,
+                    "release_date": "2026-03-11"
+                },
+                {
+                    "id": "iphone17e_512",
+                    "name": "iPhone 17e 512GB",
+                    "lump_sum": 161920,
+                    "esim_only": true,
+                    "release_date": "2026-03-11"
+                },
+                {
+                    "id": "iphone16_plus_family",
+                    "name": "iPhone 16 Plus"
+                },
+                {
+                    "id": "iphone16_pro_family",
+                    "name": "iPhone 16 Pro"
+                },
+                {
+                    "id": "iphone16_pro_max_family",
+                    "name": "iPhone 16 Pro Max"
+                },
+                {
+                    "id": "galaxy_s26_sc51g",
+                    "name": "Samsung Galaxy S26 SC-51G",
+                    "lump_sum": 152790,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 1,
+                            "price": 3322
+                        },
+                        {
+                            "start": 2,
+                            "end": 23,
+                            "price": 3314
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 76560
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "galaxy_s26_plus_sc52g",
+                    "name": "Samsung Galaxy S26+ SC-52G",
+                    "lump_sum": 202730,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 1,
+                            "price": 4576
+                        },
+                        {
+                            "start": 2,
+                            "end": 23,
+                            "price": 4567
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 97680
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "galaxy_s26_ultra_sc53g",
+                    "name": "Samsung Galaxy S26 Ultra SC-53G",
+                    "lump_sum": 240790,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 1,
+                            "price": 5720
+                        },
+                        {
+                            "start": 2,
+                            "end": 23,
+                            "price": 5705
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 109560
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "galaxy_z_flip7_sc55f",
+                    "name": "Samsung Galaxy Z Flip7 SC-55F",
+                    "lump_sum": 174790,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 3869
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 85800
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "galaxy_z_fold7_sc56f",
+                    "name": "Samsung Galaxy Z Fold7 SC-56F",
+                    "lump_sum": 289850,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 6805
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 133320
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "galaxy_a36_5g_sc54f",
+                    "name": "Samsung Galaxy A36 5G SC-54F",
+                    "lump_sum": 62590,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 1389
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 30624
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "galaxy_a25_5g_sc53f",
+                    "name": "Galaxy A25 5G SC-53F",
+                    "lump_sum": 22000
+                },
+                {
+                    "id": "galaxy_s25_sc51f",
+                    "name": "Galaxy S25 SC-51F",
+                    "lump_sum": 135740,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 2974
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 67320
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "galaxy_s25_ultra_sc52f",
+                    "name": "Galaxy S25 Ultra SC-52F",
+                    "lump_sum": 225500,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 4811
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 114840
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "galaxy_z_fold6_sc55e",
+                    "name": "Galaxy Z Fold6 SC-55E",
+                    "lump_sum": 275990,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 6375
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 129360
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "galaxy_s24_ultra_sc52e",
+                    "name": "Galaxy S24 Ultra SC-52E",
+                    "lump_sum": 218460,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 3873
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 129360
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "aquos_sense10_sh53f",
+                    "name": "AQUOS sense10 SH-53F",
+                    "lump_sum": 73370,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 2386
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 18480
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "aquos_r10_sh51f",
+                    "name": "AQUOS R10 SH-51F",
+                    "lump_sum": 121220,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 2974
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 52800
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "aquos_wish5_sh52f",
+                    "name": "AQUOS wish5 SH-52F",
+                    "lump_sum": 22000
+                },
+                {
+                    "id": "aquos_sense9_sh53e",
+                    "name": "AQUOS sense9 SH-53E",
+                    "lump_sum": 67100,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 1999
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 21120
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "aquos_r9_pro_sh54e",
+                    "name": "AQUOS R9 pro SH-54E",
+                    "lump_sum": 165880,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 3321
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 89496
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "xperia_10_vii_so52f",
+                    "name": "Xperia 10 VII SO-52F",
+                    "lump_sum": 82720,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 2678
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 21120
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "xperia_1_vii_so51f",
+                    "name": "Xperia 1 VII SO-51F",
+                    "lump_sum": 236830,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 6910
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 77880
+                        }
+                    ],
+                    "program": "kaedoki_plus"
+                },
+                {
+                    "id": "razr_60d_m51f",
+                    "name": "motorola razr 60d M-51F",
+                    "lump_sum": 126060,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 3816
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 38280
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "razr_50d_m51e",
+                    "name": "motorola razr 50d M-51E",
+                    "lump_sum": 114950,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 3276
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 39600
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "pixel_10",
+                    "name": "Google Pixel 10",
+                    "lump_sum_min": 138930,
+                    "default_phases_min": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 3630
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 55440
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "pixel_10_pro",
+                    "name": "Google Pixel 10 Pro",
+                    "lump_sum_min": 194920,
+                    "default_phases_min": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 5490
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 68640
+                        }
+                    ],
+                    "program": "kaedoki_plus"
+                },
+                {
+                    "id": "pixel_10_pro_xl",
+                    "name": "Google Pixel 10 Pro XL",
+                    "lump_sum_min": 223960,
+                    "default_phases_min": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 6293
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 79200
+                        }
+                    ],
+                    "program": "kaedoki_plus"
+                },
+                {
+                    "id": "pixel_10_pro_fold",
+                    "name": "Google Pixel 10 Pro Fold",
+                    "lump_sum_min": 302170,
+                    "default_phases_min": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 8489
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 106920
+                        }
+                    ],
+                    "program": "kaedoki_plus"
+                },
+                {
+                    "id": "pixel_9a",
+                    "name": "Google Pixel 9a",
+                    "lump_sum": 95513,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 2333
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 41833
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "pixel_8_pro",
+                    "name": "Google Pixel 8 Pro",
+                    "lump_sum": 218680
+                },
+                {
+                    "id": "arrows_alpha_f51f",
+                    "name": "arrows Alpha F-51F",
+                    "lump_sum": 89540,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 2573
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 30360
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "arrows_we2_f52e",
+                    "name": "arrows We2 F-52E",
+                    "lump_sum": 22000
+                },
+                {
+                    "id": "rakuraku_phone_f41f",
+                    "name": "らくらくホン F-41F",
+                    "lump_sum": 41470,
+                    "release_date": "2025-08-07"
+                },
+                {
+                    "id": "rakuraku_smartphone_f53e",
+                    "name": "らくらくスマートフォン F-53E",
+                    "lump_sum": 51480,
+                    "customer_burden": 42240,
+                    "release_date": "2025-01-30",
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "rakuraku_smartphone_lite_mr01",
+                    "name": "らくらくスマートフォン Lite MR01",
+                    "lump_sum": 50600,
+                    "release_date": "2024-12-02",
+                    "sim_free": true
+                },
+                {
+                    "id": "digno_keitai_ky42c",
+                    "name": "DIGNO ケータイ KY-42C",
+                    "lump_sum": 19470,
+                    "release_date": "2023-03-10"
+                },
+                {
+                    "id": "digno_keitai_camera_less_ky43c",
+                    "name": "DIGNO ケータイ カメラレス KY-43C",
+                    "lump_sum": 18920,
+                    "release_date": "2023-04-17"
+                },
+                {
+                    "id": "kids_keitai_compact_sk41d",
+                    "name": "キッズケータイ コンパクト SK-41D",
+                    "lump_sum": 28930,
+                    "release_date": "2024-07-12"
+                },
+                {
+                    "id": "kids_keitai_ky41c",
+                    "name": "キッズケータイ KY-41C",
+                    "lump_sum": 22000,
+                    "release_date": "2023-01-16"
+                },
+                {
+                    "id": "dtab_d51f",
+                    "name": "dtab d-51F",
+                    "lump_sum": 65230,
+                    "customer_burden": 49390,
+                    "release_date": "2026-02-26",
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "digno_tab2_5g_kct306",
+                    "name": "DIGNO Tab2 5G KC-T306",
+                    "lump_sum": 62150,
+                    "release_date": "2025-03-24"
+                },
+                {
+                    "id": "ipad_air_13_m4_family",
+                    "name": "13インチiPad Air（M4）",
+                    "release_date": "2026-03-11",
+                    "customer_burden_min": 89320,
+                    "customer_burden_max": 150480,
+                    "storage_options": [
+                        "128GB",
+                        "256GB",
+                        "512GB",
+                        "1TB"
+                    ],
+                    "lump_sum_confirmed_variants": [
+                        {
+                            "storage": "128GB",
+                            "price": 185680
+                        },
+                        {
+                            "storage": "256GB",
+                            "price": 203830
+                        },
+                        {
+                            "storage": "512GB",
+                            "price": 246400
+                        },
+                        {
+                            "storage": "1TB",
+                            "price": 289080
+                        }
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "ipad_air_11_m4_family",
+                    "name": "11インチiPad Air（M4）",
+                    "release_date": "2026-03-11",
+                    "customer_burden_min": 68640,
+                    "customer_burden_max": 128590,
+                    "storage_options": [
+                        "128GB",
+                        "256GB",
+                        "512GB",
+                        "1TB"
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "ipad_pro_13_m5_family",
+                    "name": "13インチiPad Pro（M5）",
+                    "release_date": "2025-10-22",
+                    "customer_burden_min": 154990,
+                    "customer_burden_max": 273240,
+                    "storage_options": [
+                        "256GB",
+                        "512GB",
+                        "1TB",
+                        "2TB"
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "ipad_pro_11_m5_family",
+                    "name": "11インチiPad Pro（M5）",
+                    "release_date": "2025-10-22",
+                    "customer_burden_min": 119790,
+                    "customer_burden_max": 253110,
+                    "storage_options": [
+                        "256GB",
+                        "512GB",
+                        "1TB",
+                        "2TB"
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "ipad_a16_family",
+                    "name": "iPad（A16）",
+                    "release_date": "2025-03-12",
+                    "customer_burden_min": 49830,
+                    "customer_burden_max": 88220,
+                    "storage_options": [
+                        "128GB",
+                        "256GB",
+                        "512GB"
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "ipad_air_13_m3_family",
+                    "name": "13インチiPad Air（M3）",
+                    "release_date": "2025-03-12",
+                    "customer_burden_min": 89320,
+                    "customer_burden_max": 148280,
+                    "storage_options": [
+                        "128GB",
+                        "256GB",
+                        "512GB",
+                        "1TB"
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "ipad_air_11_m3_family",
+                    "name": "11インチiPad Air（M3）",
+                    "release_date": "2025-03-12",
+                    "customer_burden_min": 59290,
+                    "customer_burden_max": 126940,
+                    "storage_options": [
+                        "128GB",
+                        "256GB",
+                        "512GB",
+                        "1TB"
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "ipad_pro_13_m4_family",
+                    "name": "13インチiPad Pro（M4）",
+                    "release_date": "2024-05-15",
+                    "customer_burden_min": 154990,
+                    "customer_burden_max": 273240,
+                    "storage_options": [
+                        "256GB",
+                        "512GB",
+                        "1TB",
+                        "2TB"
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "ipad_pro_11_m4_family",
+                    "name": "11インチiPad Pro（M4）",
+                    "release_date": "2024-05-15",
+                    "customer_burden_min": 119790,
+                    "customer_burden_max": 253110,
+                    "storage_options": [
+                        "256GB",
+                        "512GB",
+                        "1TB",
+                        "2TB"
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "ipad_air_13_m2_family",
+                    "name": "13インチiPad Air（M2）",
+                    "storage_options": [
+                        "128GB",
+                        "256GB",
+                        "512GB",
+                        "1TB"
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "ipad_air_11_m2_family",
+                    "name": "11インチiPad Air（M2）",
+                    "release_date": "2024-05-15",
+                    "customer_burden_min": 59290,
+                    "customer_burden_max": 126940,
+                    "storage_options": [
+                        "128GB",
+                        "256GB",
+                        "512GB",
+                        "1TB"
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "ipad_mini_a17pro_family",
+                    "name": "iPad mini（A17 Pro）",
+                    "release_date": "2024-10-23",
+                    "customer_burden_min": 53130,
+                    "customer_burden_max": 96580,
+                    "storage_options": [
+                        "128GB",
+                        "256GB",
+                        "512GB"
+                    ],
+                    "program": "kaedoki"
+                },
+                {
+                    "id": "apple_watch_series_11_family",
+                    "name": "Apple Watch Series 11",
+                    "cellular_model": true
+                },
+                {
+                    "id": "apple_watch_se_3_family",
+                    "name": "Apple Watch SE 3",
+                    "cellular_model": true
+                },
+                {
+                    "id": "apple_watch_ultra_3_family",
+                    "name": "Apple Watch Ultra 3",
+                    "cellular_model": true
                 }
             ],
             "plans": [
@@ -62,36 +1451,46 @@
                     "name": "ドコモ MAX",
                     "type": "tiered",
                     "bundle_perks": {
-                        "limit": 1,
+                        "limit": 2,
                         "eligible_ids": [
-                            "disney_plus",
-                            "netflix_standard"
+                            "lemino",
+                            "d_anime",
+                            "dazn",
+                            "nba_docomo"
                         ],
                         "discount_type": "free"
                     },
                     "tiers": [
                         {
                             "label": "〜1GB",
-                            "price": 5180
+                            "price": 5698
                         },
                         {
                             "label": "1GB〜3GB",
-                            "price": 6180
+                            "price": 6798
                         },
                         {
                             "label": "3GB〜無制限",
-                            "price": 7680
+                            "price": 8448
                         }
-                    ],
-                    "notes": "利用量に応じて料金が変動するプラン"
+                    ]
                 },
                 {
                     "id": "poikatsu_max",
                     "name": "ドコモ ポイ活 MAX",
                     "type": "flat",
-                    "price": 10680,
+                    "price": 11748,
                     "point_benefit": 5000,
-                    "notes": "ポイント充当で実質価格が下がるプラン"
+                    "bundle_perks": {
+                        "limit": 2,
+                        "eligible_ids": [
+                            "lemino",
+                            "d_anime",
+                            "dazn",
+                            "nba_docomo"
+                        ],
+                        "discount_type": "free"
+                    }
                 },
                 {
                     "id": "poikatsu_20",
@@ -101,14 +1500,13 @@
                     "tiers": [
                         {
                             "label": "〜20GB",
-                            "price": 7180
+                            "price": 7898
                         },
                         {
                             "label": "20GB〜無制限",
-                            "price": 8700
+                            "price": 9570
                         }
-                    ],
-                    "notes": "20GBを超えると基本料金が上がるポイ活プラン"
+                    ]
                 },
                 {
                     "id": "docomo_mini",
@@ -117,14 +1515,34 @@
                     "tiers": [
                         {
                             "label": "4GB",
-                            "price": 2500
+                            "price": 2750
                         },
                         {
                             "label": "10GB",
-                            "price": 3500
+                            "price": 3850
                         }
-                    ],
-                    "notes": "小容量向けの段階制プラン"
+                    ]
+                },
+                {
+                    "id": "ahamo",
+                    "name": "ahamo",
+                    "type": "flat",
+                    "price": 2970,
+                    "data_amount": "30GB",
+                    "online_only": true,
+                    "call_benefit": "5分以内通話無料"
+                },
+                {
+                    "id": "kids_keitai_plan",
+                    "name": "キッズケータイプラン",
+                    "type": "flat",
+                    "price": 550,
+                    "contract_type": "Xi",
+                    "eligible_devices": [
+                        "キッズケータイ KY-41C",
+                        "キッズケータイ コンパクト SK-41D",
+                        "キッズケータイ SH-03M"
+                    ]
                 }
             ],
             "programs": [
@@ -132,8 +1550,11 @@
                     "id": "kaedoki",
                     "name": "いつでもカエドキプログラム",
                     "split_count": 23,
-                    "residual_month": 24,
-                    "notes": "23回支払い後、24回目に残価を設定"
+                    "residual_month": 24
+                },
+                {
+                    "id": "kaedoki_plus",
+                    "name": "いつでもカエドキプログラム＋"
                 }
             ],
             "discounts": [
@@ -203,8 +1624,7 @@
                     "id": "tokusuru",
                     "name": "スマホトクするプログラム",
                     "split_count": 24,
-                    "residual_month": 25,
-                    "notes": "24回目まで支払い、25回目が残価"
+                    "residual_month": 25
                 }
             ],
             "discounts": [
@@ -232,8 +1652,7 @@
                     "id": "shintoku_std",
                     "name": "新トクするサポート",
                     "split_count": 24,
-                    "residual_month": 25,
-                    "notes": "48回払いのうち最大24回分を免除"
+                    "residual_month": 25
                 }
             ],
             "discounts": [

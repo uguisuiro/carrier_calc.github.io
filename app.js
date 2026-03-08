@@ -257,6 +257,10 @@ function updateCalc() {
         });
     });
     const planData = carrier.plans.find(p => p.id === selectedPlanId);
+    let pointBenefit = 0;
+    if (planData && planData.point_benefit) {
+        pointBenefit = planData.point_benefit;
+    }
     let bundlediscount = 0;
     let bundleAppliedNames = [];
     if (planData?.bundle_perks) {
@@ -315,7 +319,7 @@ function updateCalc() {
         cumulativeDevice = Number(document.getElementById("devicePrice")?.value || 0);
     }
 
-    const planNetPrice = Math.max(0, planPrice - totalDiscounts);
+    const planNetPrice = Math.max(0, planPrice - totalDiscounts - pointBenefit);
     const optionNetPrice = baseOptionTotal + customOptionTotal - bundlediscount;
     const totalMonthly = currentDeviceMonthly + planNetPrice + optionNetPrice;
 
@@ -328,7 +332,7 @@ function updateCalc() {
 端末分割金: ${fmt(currentDeviceMonthly)} 円
 プラン料金: ${fmt(planPrice)} 円
 各種割引: -${fmt(totalDiscounts)} 円
-オプション: ${fmt(optionNetPrice)} 円
+${pointBenefit > 0 ? `プラン特典(ポイ活等): -${fmt(pointBenefit)} 円\n` : ''}オプション: ${fmt(optionNetPrice)} 円
 ---------------------------
 月々支払合計: ${fmt(totalMonthly)} 円/月
 
