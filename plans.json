@@ -625,8 +625,39 @@
                 {
                     "id": "iphone16_128",
                     "name": "iPhone 16 128GB",
-                    "lump_sum": 145000,
+                    "lump_sum": 133265,
                     "early_use_benefit": 500,
+                    "pricing": {
+                        "mnp": {
+                            "lump_sum": 89265,
+                            "default_phases": [
+                                {
+                                    "start": 1,
+                                    "end": 23,
+                                    "price": 1
+                                },
+                                {
+                                    "start": 24,
+                                    "end": 47,
+                                    "price": 3718
+                                }
+                            ]
+                        },
+                        "new": {
+                            "default_phases": [
+                                {
+                                    "start": 1,
+                                    "end": 23,
+                                    "price": 1914
+                                },
+                                {
+                                    "start": 24,
+                                    "end": 47,
+                                    "price": 3718
+                                }
+                            ]
+                        }
+                    },
                     "default_phases": [
                         {
                             "start": 1,
@@ -700,6 +731,18 @@
                     "id": "iphone17e_256",
                     "name": "iPhone 17e 256GB",
                     "lump_sum": 119900,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 2573
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 60720
+                        }
+                    ],
                     "esim_only": true,
                     "release_date": "2026-03-11"
                 },
@@ -707,12 +750,54 @@
                     "id": "iphone17e_512",
                     "name": "iPhone 17e 512GB",
                     "lump_sum": 161920,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 3826
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 73920
+                        }
+                    ],
                     "esim_only": true,
                     "release_date": "2026-03-11"
                 },
                 {
-                    "id": "iphone16_plus_family",
-                    "name": "iPhone 16 Plus"
+                    "id": "iphone16_plus_128",
+                    "name": "iPhone 16 Plus 128GB",
+                    "lump_sum": 133265,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 2890
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 66792
+                        }
+                    ]
+                },
+                {
+                    "id": "iphone16_plus_512",
+                    "name": "iPhone 16 Plus 512GB",
+                    "lump_sum": 211640,
+                    "default_phases": [
+                        {
+                            "start": 1,
+                            "end": 23,
+                            "price": 4610
+                        },
+                        {
+                            "start": 24,
+                            "end": 24,
+                            "price": 105600
+                        }
+                    ]
                 },
                 {
                     "id": "iphone16_pro_family",
@@ -1524,13 +1609,12 @@
                     ]
                 },
                 {
-                    "id": "ahamo",
-                    "name": "ahamo",
+                    "id": "keitai_plan",
+                    "name": "ケータイプラン",
                     "type": "flat",
-                    "price": 2970,
-                    "data_amount": "30GB",
-                    "online_only": true,
-                    "call_benefit": "5分以内通話無料"
+                    "price": 1507,
+                    "contract_type": "Xi",
+                    "data_amount": "0.1GB"
                 },
                 {
                     "id": "kids_keitai_plan",
@@ -1560,7 +1644,13 @@
             "discounts": [
                 {
                     "id": "minna_3",
-                    "group": "みんなドコモ割",
+                    "group": "みんなドコモ割(!注意ドコモMAX,ポイ活MAX,ポイ活20限定)",
+                    "name": "3回線以上",
+                    "value": 1210
+                },
+                {
+                    "id": "minna_3_except",
+                    "group": "みんなドコモ割(そのほかのプラン)",
                     "name": "3回線以上",
                     "value": 1100
                 },
@@ -1573,38 +1663,44 @@
                 {
                     "id": "hikari",
                     "group": "セット割",
-                    "name": "ドコモ光/home 5Gセット割",
-                    "value": 1100
+                    "name": "ドコモ光/home 5Gセット割(!注意ケータイプランは除く)",
+                    "value": 1210
                 },
                 {
                     "id": "dcard_gold",
                     "group": "dカードお支払割",
                     "name": "PLATINUM/GOLD/GOLD U",
-                    "value": 500
+                    "value": 550
                 },
                 {
                     "id": "dcard_normal",
                     "group": "dカードお支払割",
-                    "name": "一般",
-                    "value": 200
+                    "name": "ノーマルカード",
+                    "value": 220
+                },
+                {
+                    "id": "dcard_except",
+                    "group": "dカードお支払割",
+                    "name": "dカード割(ケータイプラン)",
+                    "value": 187
                 },
                 {
                     "id": "chouki_20",
                     "group": "長期利用割",
-                    "name": "20年以上",
-                    "value": 200
+                    "name": "20年以上(!注意ドコモMAX,ポイ活MAX限定)",
+                    "value": 220
                 },
                 {
                     "id": "chouki_10",
                     "group": "長期利用割",
-                    "name": "10年以上",
-                    "value": 100
+                    "name": "10年以上(!注意ドコモMAX,ポイ活MAX限定)",
+                    "value": 110
                 },
                 {
                     "id": "denki",
                     "group": "セット割",
                     "name": "ドコモでんきセット割",
-                    "value": 100
+                    "value": 110
                 }
             ]
         },

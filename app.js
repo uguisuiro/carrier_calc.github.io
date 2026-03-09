@@ -32,7 +32,10 @@ function switchCarrier(carrierId) {
     const carrier = globalData.carriers.find(c => c.id === carrierId);
     const deviceSelect = document.getElementById("deviceSelect");
 
-    deviceSelect.innerHTML = '<option value="" disabled selected>機種を選択してください</option>';
+    deviceSelect.innerHTML = `
+        <option value="" disabled selected>機種を選択してください</option>
+        <option value="none">端末購入なし（SIM・eSIMのみ契約）</option>
+    `;
     carrier.devices?.forEach(d => {
         const option = document.createElement("option");
         option.value = d.id;
@@ -88,12 +91,17 @@ function onDeviceChange() {
     const device = carrier.devices?.find(d => d.id === deviceId);
 
     if (device) {
-        document.getElementById("devicePrice").value = device.lump_sum;
-        document.getElementById("manualPhase1").value = device.default_phases[0].price;
-        document.getElementById("manualPhase2").value = device.default_phases[1].price;
-        document.getElementById("manualPhase3").value = device.default_phases[2].price;
-        applyManualSettings();
+        document.getElementById("devicePrice").value = device.lump_sum || 0;
+        document.getElementById("manualPhase1").value = device.default_phases?.[0]?.price || 0;
+        document.getElementById("manualPhase2").value = device.default_phases?.[1]?.price || 0;
+        document.getElementById("manualPhase3").value = device.default_phases?.[2]?.price || 0;
+    } else {
+        document.getElementById("devicePrice").value = 0;
+        document.getElementById("manualPhase1").value = 0;
+        document.getElementById("manualPhase2").value = 0;
+        document.getElementById("manualPhase3").value = 0;
     }
+    applyManualSettings();
 }
 
 function applyManualSettings() {
