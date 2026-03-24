@@ -98,17 +98,17 @@ function switchCarrier(carrierId) {
         <option value="" disabled selected>機種を選択してください</option>
         <option value="none">端末購入なし（SIM・eSIMのみ契約）</option>
     `;
-    if(globalData.devices){
-        const avaliableDevices=globalData.device.filter(d=>
-            d.storage_by_carrier
-        )
+    if (globalData.devices) {
+        const availableDevices = globalData.devices.filter(d =>
+            d.storage_by_carrier && d.storage_by_carrier[carrierId]
+        );
+        availableDevices.forEach(d => {
+            const option = document.createElement("option");
+            option.value = d.id;
+            option.textContent = d.name;
+            deviceSelect.appendChild(option);
+        });
     }
-    carrier.devices?.forEach(d => {
-        const option = document.createElement("option");
-        option.value = d.id;
-        option.textContent = d.name;
-        deviceSelect.appendChild(option);
-    });
 
     renderPlanOptions(carrier.plans);
     renderDiscounts(carrier.discounts);
@@ -223,21 +223,31 @@ function addCustomOptionRow() {
     container.insertAdjacentHTML("beforeend", html);
 }
 function onDeviceChange() {
-    const carrier = globalData.carriers.find(c => c.id === currentCarrierId);
     const deviceId = document.getElementById("deviceSelect").value;
-    const device = carrier.devices?.find(d => d.id === deviceId);
+    const device = globalData.devices?.find(d => d.id === deviceId);
 
-    if (device) {
-        document.getElementById("devicePrice").value = device.lump_sum || 0;
-        document.getElementById("manualPhase1").value = device.default_phases?.[0]?.price || 0;
-        document.getElementById("manualPhase2").value = device.default_phases?.[1]?.price || 0;
-        document.getElementById("manualPhase3").value = device.default_phases?.[2]?.price || 0;
+    const storageSelectArea = document.getElementById("storageSelectArea");
+    const storageSelect = document.getElementById("storageSelect");
+
+    if (device && deviceId !== "none" && device.storage_by_carrier && device.storage_by_carrier[currentCarrierId]) {
+        storageSelectArea.style.display = "block";
+        storageSelect.innerHTML = "";
+
+        const storages = device.storage_by_carrier[currentCarrierId];
+        storages.forEach(storage => {
+            const option = document.createElement("option");
+            option.value = storage;
+            option.textContent = storage;
+            storageSelect.appendChild(option);
+        });
     } else {
-        document.getElementById("devicePrice").value = 0;
-        document.getElementById("manualPhase1").value = 0;
-        document.getElementById("manualPhase2").value = 0;
-        document.getElementById("manualPhase3").value = 0;
+        storageSelectArea.style.display = "none";
+        storageSelect.innerHTML = "";
     }
+    const selects = document.querySelectorAll('select');
+    M.FormSelect.init(selects);
+    document.getElementById("devicePrice").value = 0;
+    autoCalculatePhases();
     applyManualSettings();
 }
 
@@ -290,7 +300,7 @@ function generateGrid() {
     container.innerHTML = "";
     const carrier = globalData.carriers.find(c => c.id === currentCarrierId);
     const deviceId = document.getElementById("deviceSelect").value;
-    const device = carrier.devices?.find(d => d.id === deviceId);
+    const device = globalData.devices?.find(d => d.id === deviceId);
     const applyBenefit = document.getElementById("applyEarlyBenefit").checked;
     const isUpfront = document.getElementById("isPgUpfront").checked;
 
@@ -411,7 +421,7 @@ function updateCalc() {
     if (!globalData) return;
     const carrier = globalData.carriers.find(c => c.id === currentCarrierId);
     const deviceId = document.getElementById("deviceSelect")?.value || "";
-    const device = carrier.devices?.find(d => d.id === deviceId);
+    const device = globalData.devices?.find(d => d.id === deviceId);
 
     const downPaymentEl = document.getElementById("downPayment");
     const downPayment = downPaymentEl ? Number(downPaymentEl.value) : 11000;
