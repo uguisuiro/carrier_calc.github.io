@@ -1114,13 +1114,13 @@
                             "id": "dazn",
                             "name": "DAZN for docomo",
                             "price": 4200,
-                            "frequency": "notfreq"
+                            "frequency": "freq"
                         },
                         {
                             "id": "nba_docomo",
                             "name": "NBA docomo",
                             "price": 2728,
-                            "frequency": "notfreq"
+                            "frequency": "freq"
                         }
                     ]
                 },
@@ -1147,7 +1147,7 @@
                             "name": "キャッチホン",
                             "price": 220,
                             "billing_type": "paid",
-                            "frequency": "freq"
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "call_forwarding",
@@ -1246,7 +1246,7 @@
                             "billing_type": "paid",
                             "price_min": 792,
                             "price_max": 2182,
-                            "frequency": "freq"
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "smart_anshin_hosho",
@@ -1269,7 +1269,7 @@
                             "name": "あんしんパック",
                             "price": null,
                             "billing_type": "paid",
-                            "frequency": "freq"
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "anshin_pack_home",
@@ -1304,7 +1304,7 @@
                             "name": "ケータイ補償サービス",
                             "price": null,
                             "billing_type": null,
-                            "frequency": "freq"
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "digital_device_hosho",
@@ -1338,14 +1338,14 @@
                             "name": "あんしんセキュリティ",
                             "price": 220,
                             "billing_type": "paid",
-                            "frequency": "freq"
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "anshin_security_standard",
                             "name": "あんしんセキュリティ スタンダード",
                             "price": 220,
                             "billing_type": null,
-                            "frequency": "freq"
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "anshin_security_total",
@@ -1415,7 +1415,7 @@
                             "name": "迷惑メールおまかせブロック",
                             "price": 220,
                             "billing_type": null,
-                            "frequency": "freq"
+                            "frequency": "notfreq"
                         }
                     ]
                 },
@@ -1428,7 +1428,7 @@
                             "name": "spモード",
                             "price": 0,
                             "billing_type": null,
-                            "frequency": "freq"
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "tethering",
@@ -1518,7 +1518,7 @@
                             "name": "Spotify Premium",
                             "price": 1080,
                             "billing_type": null,
-                            "frequency": "freq"
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "youtube_premium",
@@ -1546,7 +1546,7 @@
                             "name": "dヒッツ",
                             "price": 550,
                             "billing_type": null,
-                            "frequency": "freq"
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "d_photo",
@@ -1560,7 +1560,7 @@
                             "name": "dマガジン",
                             "price": 580,
                             "billing_type": null,
-                            "frequency": "freq"
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "d_music",
@@ -1628,48 +1628,6 @@
                     "id": "bakuage_selection",
                     "name": "爆アゲセレクション"
                 }
-            ],
-            "excluded_from_pricing_catalog": [
-                "iアプリ",
-                "iチャネル",
-                "iMenu",
-                "iモード",
-                "iモードメール",
-                "2in1",
-                "買取プログラム",
-                "ケータイ補償 お届けサービス（2019年5月31日までのお申込み）",
-                "ケータイ補償サービス（2019年5月31日までのお申込み）",
-                "ケータイ補償サービス for iPhone & iPad（2019年5月31日までのお申込み）",
-                "ひかりＴＶ（2022年6月30日以前にご加入の方）",
-                "dカード",
-                "d払い",
-                "dショッピング",
-                "dショッピングダイレクト",
-                "dスマホローン",
-                "dポイント運用",
-                "dポイントクラブ",
-                "dポイントマーケット",
-                "ドコモ光",
-                "ahamo光",
-                "OCN インターネット",
-                "ぷらら（インターネット接続サービス）",
-                "ドコモでんき／ドコモ ガス",
-                "AIほけん",
-                "ドコモ サイクル保険",
-                "ドコモの自動車保険",
-                "ドコモの賃貸火災保険",
-                "ドコモのペット保険",
-                "ドコモのワンタイム保険",
-                "ドコモのNISA by マネックス証券",
-                "日興iDeCo for docomo",
-                "日興フロッギー＋ docomo",
-                "THEO+[テオプラス]docomo",
-                "kikito",
-                "GOLF me！",
-                "dカーシェア",
-                "dブック",
-                "dメニュー",
-                "dアカウント"
             ],
             "plans": [
                 {
