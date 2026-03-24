@@ -3,6 +3,9 @@ let currentCarrierId = "docomo";
 let currentPhases = [];
 let selectedReturnMonth = 23;
 let currentManualFee = 0;
+let currentSplitCount = 23;
+let currentTotalCount = 48;
+
 const fmt = (num) => Number(num).toLocaleString();
 
 async function loadPlans() {
@@ -15,16 +18,32 @@ async function loadPlans() {
     }
 }
 function toggleInstallmentInput() {
-    const type = document.getElementById("paymentType").value;
+    const paymentSelect = document.getElementById("paymentType");
+    const selectedOption = paymentSelect.options[paymentSelect.selectedIndex];
+    if (!selectedOption) return;
+
+    const paymentTypeFlag = selectedOption.dataset.type;
     const customArea = document.getElementById("customInstallmentArea");
 
-    if (type === "normal") {
+    if (paymentTypeFlag === "normal") {
         customArea.classList.remove("hide");
     } else {
         customArea.classList.add("hide");
     }
-    generateGrid();
-    updateCalc();
+    if (paymentTypeFlag === "program") {
+        currentSplitCount = Number(selectedOption.dataset.splitCount) || 23;
+        currentTotalCount = Number(selectedOption.dataset.totalCount) || 48;
+        selectedReturnMonth = currentSplitCount;
+
+        const p1Label = document.getElementById("phase1Label");
+        const p2Label = document.getElementById("phase2Label");
+        const p3Label = document.getElementById("phase3Label");
+
+        if (p1Label) p1Label.textContent = `1〜${currentSplitCount}回目`;
+        if (p2Label) p2Label.textContent = `${currentSplitCount + 1}〜${currentTotalCount}回目`;
+        if (p3Label) p3Label.textContent = `${currentTotalCount + 1}回目〜`;
+    }
+    applyManualSettings();
 }
 function switchCarrier(carrierId) {
     if (!globalData) return;
@@ -46,6 +65,16 @@ function switchCarrier(carrierId) {
     renderPlanOptions(carrier.plans);
     renderDiscounts(carrier.discounts);
     renderCarrierOptions(carrier.options);
+    let availablePrograms = [];
+    if (globalData.programs) {
+        availablePrograms = globalData.programs.filter(
+            p => p.carrier === carrierId || p.carrier === "all"
+        );
+    }
+    if (carrier.programs) {
+        availablePrograms = availablePrograms.concat(carrier.programs);
+    }
+    renderPaymentOptions(availablePrograms);
     onDeviceChange();
 
     const selects = document.querySelectorAll('select');
@@ -56,25 +85,85 @@ function renderCarrierOptions(options) {
     const container = document.getElementById("carrierOptionsContainer");
     if (!container || !options) return;
     container.innerHTML = "";
-    options.forEach(group => {
+    options.forEach((group, groupIndex) => {
         let html = `<label class="small d-block mb-1">${group.category}</label>`;
+
+        const freqItems = group.items.filter(item => item.frequency !== "notfreq");
+        const notFreqItems = group.items.filter(item => item.frequency == "notfreq");
+
         if (group.type === "radio") {
             html += `<div class="radio-horizontal-group mb-3">`;
-            group.items.forEach((item, idx) => {
-                html += `<label><input class="with-gap carrier-opt-input" name="${group.category}" type="radio" value="${item.price}" data-id="${item.id}" data-name="${item.name}" ${idx === 0 ? 'checked' : ''} onchange="updateCalc()"><span>${item.name}</span></label>`;
+            freqItems.forEach((item, idx) => {
+                html += `<div style="display: inline-flex; align-items: center; margin-right: 15px;">
+                    <label style="margin-right: 4px;">
+                        <input class="with-gap carrier-opt-input" name="${group.category}" type="radio" value="${item.price || 0}" data-id="${item.id}" data-name="${item.name}" ${idx === 0 ? 'checked' : ''} onchange="updateCalc()">
+                        <span>${item.name}</span>
+                    </label>
+                    <span class="small" style="color: var(--text-muted);">(<input type="number" value="${item.price || 0}" style="width: 50px; height: 1.5rem; margin: 0 4px; padding: 0; text-align: right; border-bottom: 1px dashed var(--nord4) !important;" oninput="this.closest('div').querySelector('.carrier-opt-input').value = this.value; updateCalc();">円)</span>
+                </div>`;
             });
             html += `</div>`;
+            if (notFreqItems.length > 0) {
+                html += `<div class="toggle-notfreq-btn" style="cursor: pointer; color: var(--primary-color); font-size: 0.85rem; margin-bottom: 8px; user-select: none;" onclick="toggleNotFreq('notfreq-radio-${groupIndex}', this)">+ その他のオプションを表示</div>`;
+
+                html += `<div id="notfreq-radio-${groupIndex}" class="radio-horizontal-group mb-3" style="display: none;">`;
+                notFreqItems.forEach(item => {
+                    html += `<div style="display: inline-flex; align-items: center; margin-right: 15px;">
+                        <label style="margin-right: 4px;">
+                            <input class="with-gap carrier-opt-input" name="${group.category}" type="radio" value="${item.price || 0}" data-id="${item.id}" data-name="${item.name}" onchange="updateCalc()">
+                            <span>${item.name}</span>
+                        </label>
+                        <span class="small" style="color: var(--text-muted);">(<input type="number" value="${item.price || 0}" style="width: 50px; height: 1.5rem; margin: 0 4px; padding: 0; text-align: right; border-bottom: 1px dashed var(--nord4) !important;" oninput="this.closest('div').querySelector('.carrier-opt-input').value = this.value; updateCalc();">円)</span>
+                    </div>`;
+                });
+                html += `</div>`;
+            }
         } else {
             html += `<div class="row m-0 mb-3">`;
-            group.items.forEach(item => {
-                html += `<div class="col s6"><label><input type="checkbox" class="filled-in carrier-opt-input" value="${item.price}" data-id="${item.id}" data-name="${item.name}" onchange="updateCalc()"><span>${item.name}</span></label></div>`;
+            freqItems.forEach(item => {
+                html += `<div class="col s6 mb-1">
+                    <div style="display: flex; align-items: center; flex-wrap: wrap;">
+                        <label style="margin-right: 4px;">
+                            <input type="checkbox" class="filled-in carrier-opt-input" value="${item.price || 0}" data-id="${item.id}" data-name="${item.name}" onchange="updateCalc()">
+                            <span>${item.name}</span>
+                        </label>
+                        <span class="small" style="color: var(--text-muted);">(<input type="number" value="${item.price || 0}" style="width: 50px; height: 1.5rem; margin: 0 2px; padding: 0; text-align: right; border-bottom: 1px dashed var(--nord4) !important;" oninput="this.closest('div').querySelector('.carrier-opt-input').value = this.value; updateCalc();">円)</span>
+                    </div>
+                </div>`;
             });
             html += `</div>`;
+
+            if (notFreqItems.length > 0) {
+                html += `<div class="toggle-notfreq-btn" style="cursor: pointer; color: var(--primary-color); font-size: 0.85rem; margin-bottom: 8px; user-select: none;" onclick="toggleNotFreq('notfreq-chk-${groupIndex}', this)">+ その他のオプションを表示</div>`;
+                html += `<div id="notfreq-chk-${groupIndex}" class="row m-0 mb-3" style="display: none;">`;
+                notFreqItems.forEach(item => {
+                    html += `<div class="col s6 mb-1">
+                        <div style="display: flex; align-items: center; flex-wrap: wrap;">
+                            <label style="margin-right: 4px;">
+                                <input type="checkbox" class="filled-in carrier-opt-input" value="${item.price || 0}" data-id="${item.id}" data-name="${item.name}" onchange="updateCalc()">
+                                <span>${item.name}</span>
+                            </label>
+                            <span class="small" style="color: var(--text-muted);">(<input type="number" value="${item.price || 0}" style="width: 50px; height: 1.5rem; margin: 0 2px; padding: 0; text-align: right; border-bottom: 1px dashed var(--nord4) !important;" oninput="this.closest('div').querySelector('.carrier-opt-input').value = this.value; updateCalc();">円)</span>
+                        </div>
+                    </div>`;
+                });
+                html += `</div>`;
+            }
         }
         container.insertAdjacentHTML("beforeend", html);
     });
 }
 
+function toggleNotFreq(targetId, btn) {
+    const target = document.getElementById(targetId);
+    if (target.style.display == "none") {
+        target.style.display = "";
+        btn.innerHTML = "閉じる"
+    } else {
+        target.style.display = "none";
+        btn.innerHTML = "その他のオプションの表示"
+    }
+}
 function addCustomOptionRow() {
     const container = document.getElementById("customOptionsContainer");
     const rowId = Date.now();
@@ -111,14 +200,42 @@ function applyManualSettings() {
     currentManualFee = Number(document.getElementById("manualFee").value) || 0;
 
     currentPhases = [
-        { start: 1, end: 23, price: p1 },
-        { start: 24, end: 48, price: p2 },
-        { start: 49, end: 99, price: p3 }
+        { start: 1, end: currentSplitCount, price: p1 },
+        { start: currentSplitCount + 1, end: currentTotalCount, price: p2 },
+        { start: currentTotalCount + 1, end: 99, price: p3 }
     ];
     generateGrid();
     updateCalc();
 }
+function renderPaymentOptions(programs) {
+    const paymentSelect = document.getElementById("paymentType");
+    if (!paymentSelect) return;
 
+    paymentSelect.innerHTML = "";
+    if (programs) {
+        programs.forEach((prog) => {
+            const option = document.createElement("option");
+            option.value = prog.id;
+            option.dataset.splitCount = prog.split_count || 23;
+            option.dataset.totalCount = prog.total_count || 48;
+            option.textContent = prog.name;
+            paymentSelect.appendChild(option);
+        });
+    }
+    const normalOption = document.createElement("option");
+    normalOption.value = "normal";
+    normalOption.dataset.type = "normal";
+    normalOption.textContent = "標準的な分割";
+    paymentSelect.appendChild(normalOption);
+
+    const lumpOption = document.createElement("option");
+    lumpOption.value = "lump";
+    lumpOption.dataset.type = "lump";
+    lumpOption.textContent = "一括払い";
+    paymentSelect.appendChild(lumpOption);
+    paymentSelect.selectedIndex = 0;
+    toggleInstallmentInput();
+}
 function generateGrid() {
     const container = document.getElementById("paymentGrid");
     if (!container) return;
@@ -129,13 +246,13 @@ function generateGrid() {
     const applyBenefit = document.getElementById("applyEarlyBenefit").checked;
     const isUpfront = document.getElementById("isPgUpfront").checked;
 
-    const paymentType = document.getElementById("paymentType")?.value || "program";
+    const paymentSelect = document.getElementById("paymentType");
+    const paymentType = paymentSelect?.options[paymentSelect.selectedIndex]?.dataset.type || "program";
     const customCount = Number(document.getElementById("customInstallmentCount")?.value) || 24;
-    const installmentLimit = (paymentType === "program") ? 48 : customCount;
-
+    const installmentLimit = (paymentType === "program") ? currentTotalCount : customCount;
     const principal = Math.max(0, Number(document.getElementById("devicePrice")?.value || 0) - (Number(document.getElementById("downPayment").value) || 11000));
     const normalMonthly = Math.floor(principal / customCount);
-    for (let m = 1; m <= 48; m++) {
+    for (let m = 1; m <= installmentLimit; m++) {
         const price = (paymentType === "normal") ? normalMonthly : getMonthlyDevicePrice(m, device, applyBenefit, isUpfront);;
         const block = document.createElement("div");
         const isInPeriod = (m <= installmentLimit);
@@ -162,7 +279,7 @@ function generateGrid() {
 function getMonthlyDevicePrice(m, device, applyBenefit, isUpfront) {
     const phase = currentPhases.find(p => m >= p.start && m <= p.end);
     let p = phase ? phase.price : 0;
-    if (applyBenefit && m >= 1 && m <= 23 && device?.early_use_benefit) {
+    if (applyBenefit && m >= 1 && m <= currentSplitCount && device?.early_use_benefit) {
         p = Math.max(0, p - device.early_use_benefit);
         if (isUpfront) return 0;
     }
@@ -225,11 +342,14 @@ function renderDiscounts(discounts) {
 
     discounts.forEach(d => {
         const html = `
-            <div class="mb-2">
-                <label>
+            <div class="mb-2" style="display: flex; align-items: center; flex-wrap: wrap;">
+                <label style="margin-right: 8px;">
                     <input class="discount-check" type="checkbox" value="${d.value}" id="${d.id}" data-name="${d.name}">
-                    <span>${d.name} (-${fmt(d.value)}円)</span>
+                    <span>${d.name}</span>
                 </label>
+                <span class="small" style="color: var(--text-muted); display: inline-flex; align-items: center;">
+                    (-<input type="number" value="${d.value}" style="width: 60px; height: 1.5rem; margin: 0 4px; text-align: right; color: var(--nord11);" oninput="document.getElementById('${d.id}').value = this.value; updateCalc();">円)
+                </span>
             </div>
         `;
         container.insertAdjacentHTML("beforeend", html);
@@ -290,7 +410,8 @@ function updateCalc() {
     document.querySelectorAll(".custom-opt-price").forEach(input => {
         customOptionTotal += Number(input.value || 0);
     });
-    const paymentType = document.getElementById("paymentType")?.value || "program";
+    const paymentSelect = document.getElementById("paymentType");
+    const paymentType = paymentSelect?.options[paymentSelect.selectedIndex]?.dataset.type || "program";
     const customCount = Number(document.getElementById("customInstallmentCount")?.value) || 24;
 
     const applyBenefit = document.getElementById("applyEarlyBenefit")?.checked || false;
@@ -303,9 +424,8 @@ function updateCalc() {
     let pointUsed = (document.getElementById("isPointApplied")?.checked) ? Math.min(downPayment, totalStorePoints) : 0;
     let finalDown = downPayment - pointUsed;
     let pgFee = 0;
-
     if (applyBenefit && isUpfront && device?.early_use_benefit) {
-        for (let m = 1; m <= 23; m++) {
+        for (let m = 1; m <= currentSplitCount; m++) {
             const phase = currentPhases.find(p => m >= p.start && m <= p.end);
             pgFee += Math.max(0, (phase?.price || 0) - device.early_use_benefit);
         }

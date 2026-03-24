@@ -1,4 +1,30 @@
 {
+    "programs": [
+        {
+            "id": "kaedoki",
+            "carrier": "docomo",
+            "name": "いつでもカエドキプログラム",
+            "split_count": 23,
+            "residual_month": 24,
+            "total_count": 48
+        },
+        {
+            "id": "kaedoki_plus",
+            "carrier": "docomo",
+            "name": "いつでもカエドキプログラム＋",
+            "split_count": 23,
+            "residual_month": 24,
+            "total_count": 48
+        },
+        {
+            "id": "kaden",
+            "carrier": "all",
+            "name": "家電量販店独自の分割プログラム",
+            "split_count": 23,
+            "residual_month": 24,
+            "total_count": 48
+        }
+    ],
     "carriers": [
         {
             "id": "docomo",
@@ -11,22 +37,26 @@
                         {
                             "id": "lemino",
                             "name": "Lemino",
-                            "price": 1540
+                            "price": 1540,
+                            "frequency": "freq"
                         },
                         {
                             "id": "d_anime",
                             "name": "dアニメストア",
-                            "price": 660
+                            "price": 660,
+                            "frequency": "freq"
                         },
                         {
                             "id": "dazn",
                             "name": "DAZN for docomo",
-                            "price": 4200
+                            "price": 4200,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "nba_docomo",
                             "name": "NBA docomo",
-                            "price": 2728
+                            "price": 2728,
+                            "frequency": "notfreq"
                         }
                     ]
                 },
@@ -38,91 +68,106 @@
                             "id": "answer_phone",
                             "name": "留守番電話サービス",
                             "price": 330,
-                            "billing_type": "paid"
+                            "billing_type": "paid",
+                            "frequency": "freq"
                         },
                         {
                             "id": "option_pack",
                             "name": "オプションパック割引",
                             "price": 440,
-                            "billing_type": "paid"
+                            "billing_type": "paid",
+                            "frequency": "freq"
                         },
                         {
                             "id": "catch_phone",
                             "name": "キャッチホン",
                             "price": 220,
-                            "billing_type": "paid"
+                            "billing_type": "paid",
+                            "frequency": "freq"
                         },
                         {
                             "id": "call_forwarding",
                             "name": "転送でんわサービス",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "missed_call_notice",
                             "name": "着信通知サービス",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "caller_id_notification",
                             "name": "発信者番号通知サービス",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "caller_id_request",
                             "name": "番号通知お願いサービス",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "melody_call",
                             "name": "メロディコール",
                             "price": 110,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "one_number",
                             "name": "ワンナンバーサービス",
                             "price": 550,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "multi_number",
                             "name": "マルチナンバー",
                             "price": 550,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "ohanashi_memo",
                             "name": "おはなしメモ",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "nuisance_call_block",
                             "name": "迷惑電話ストップサービス",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "freq"
                         },
                         {
                             "id": "english_guidance",
                             "name": "英語ガイダンス",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "world_call",
-                            "name": "海外へかける（WORLD CALL／ワールドコール）",
+                            "name": "海外へかける（WORLD CALL）",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "world_wing",
-                            "name": "海外でつかう（WORLD WING／ワールドウィング）",
+                            "name": "海外でつかう（WORLD WING）",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         }
                     ]
                 },
@@ -136,7 +181,8 @@
                             "price": null,
                             "billing_type": "paid",
                             "price_min": 792,
-                            "price_max": 2182
+                            "price_max": 2182,
+                            "frequency": "freq"
                         },
                         {
                             "id": "smart_anshin_hosho",
@@ -144,67 +190,78 @@
                             "price": null,
                             "billing_type": "paid",
                             "price_min": 330,
-                            "price_max": 1720
+                            "price_max": 1720,
+                            "frequency": "freq"
                         },
                         {
                             "id": "anshin_remote_support",
                             "name": "あんしん遠隔サポート",
                             "price": 440,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "anshin_pack",
                             "name": "あんしんパック",
                             "price": null,
-                            "billing_type": "paid"
+                            "billing_type": "paid",
+                            "frequency": "freq"
                         },
                         {
                             "id": "anshin_pack_home",
                             "name": "あんしんパック ホーム",
                             "price": null,
-                            "billing_type": "paid"
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "anshin_pack_mobile",
                             "name": "あんしんパック モバイル",
                             "price": null,
-                            "billing_type": "paid"
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "anshin_pack_plus",
                             "name": "あんしんパックプラス",
                             "price": null,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "home_anshin_pack",
                             "name": "homeあんしんパック",
                             "price": null,
-                            "billing_type": "paid"
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "keitai_hosho",
                             "name": "ケータイ補償サービス",
                             "price": null,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "freq"
                         },
                         {
                             "id": "digital_device_hosho",
                             "name": "デジタル機器補償サービス",
                             "price": 550,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "battery_pack_support",
                             "name": "電池パック安心サポート",
                             "price": null,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "net_total_support",
                             "name": "ネットトータルサポート",
                             "price": 550,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         }
                     ]
                 },
@@ -216,73 +273,85 @@
                             "id": "anshin_security",
                             "name": "あんしんセキュリティ",
                             "price": 220,
-                            "billing_type": "paid"
+                            "billing_type": "paid",
+                            "frequency": "freq"
                         },
                         {
                             "id": "anshin_security_standard",
-                            "name": "あんしんセキュリティ スタンダードプラン",
+                            "name": "あんしんセキュリティ スタンダード",
                             "price": 220,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "freq"
                         },
                         {
                             "id": "anshin_security_total",
-                            "name": "あんしんセキュリティ トータルプラン",
+                            "name": "あんしんセキュリティ トータル",
                             "price": 550,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "anshin_filter",
                             "name": "あんしんフィルター for docomo",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "freq"
                         },
                         {
                             "id": "access_restriction",
                             "name": "アクセス制限サービス",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "imadoko_search",
                             "name": "イマドコサーチ",
                             "price": 220,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "remote_lock",
                             "name": "おまかせロック",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "remote_initialize",
                             "name": "遠隔初期化",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "mobile_finder",
                             "name": "ケータイお探しサービス",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "network_security",
                             "name": "ネットワークセキュリティ",
                             "price": 385,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "filtering_service",
                             "name": "フィルタリングサービス",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "spam_mail_block",
                             "name": "迷惑メールおまかせブロック",
                             "price": 220,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "freq"
                         }
                     ]
                 },
@@ -294,49 +363,57 @@
                             "id": "sp_mode",
                             "name": "spモード",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "freq"
                         },
                         {
                             "id": "tethering",
                             "name": "テザリング",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "freq"
                         },
                         {
                             "id": "cloud_capacity_option",
                             "name": "クラウド容量オプション",
                             "price": 110,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "data_hokan_box",
                             "name": "データ保管BOX",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "d_wifi",
                             "name": "d Wi-Fi",
                             "price": 0,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "docomo_mail_option",
                             "name": "ドコモメールオプション",
                             "price": 330,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "docomo_mail_carry",
                             "name": "ドコモメール持ち運び",
                             "price": 330,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "freq"
                         },
                         {
                             "id": "secondary_line",
                             "name": "副回線サービス",
                             "price": 429,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         }
                     ]
                 },
@@ -349,196 +426,105 @@
                             "name": "ディズニープラス",
                             "price": 1140,
                             "billing_type": "paid",
-                            "price_min": 1140
+                            "frequency": "freq"
                         },
                         {
                             "id": "netflix",
                             "name": "Netflix",
                             "price": 890,
                             "billing_type": "paid",
-                            "price_min": 890
+                            "frequency": "freq"
                         },
                         {
                             "id": "apple_one",
                             "name": "Apple One",
                             "price": 1200,
                             "billing_type": "paid",
-                            "price_min": 1200
+                            "frequency": "freq"
                         },
                         {
                             "id": "amazon_prime",
                             "name": "Amazonプライム",
                             "price": 600,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "freq"
                         },
                         {
                             "id": "spotify_premium",
                             "name": "Spotify Premium",
                             "price": 1080,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "freq"
                         },
                         {
                             "id": "youtube_premium",
                             "name": "YouTube Premium",
                             "price": 1280,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "freq"
                         },
                         {
                             "id": "d_value_pass",
                             "name": "dバリューパス",
                             "price": null,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "d_value_pass_pack",
                             "name": "dバリューパス パック",
                             "price": null,
-                            "billing_type": "paid"
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "d_hits",
-                            "name": "dヒッツ powered by レコチョク",
+                            "name": "dヒッツ",
                             "price": 550,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "freq"
                         },
                         {
                             "id": "d_photo",
                             "name": "dフォト",
                             "price": 308,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "d_magazine",
                             "name": "dマガジン",
                             "price": 580,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "freq"
                         },
                         {
                             "id": "d_music",
-                            "name": "dミュージック powered by レコチョク",
+                            "name": "dミュージック",
                             "price": null,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "smartnews_docomo",
                             "name": "SmartNews for docomo",
                             "price": null,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "fany_channel",
-                            "name": "FANYチャンネル・大阪チャンネル",
+                            "name": "FANYチャンネル",
                             "price": 480,
-                            "billing_type": null
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         },
                         {
                             "id": "wonderbox_docomo",
                             "name": "ワンダーボックス for docomo",
                             "price": 3700,
-                            "billing_type": null
-                        }
-                    ]
-                }
-            ],
-            "services": [
-                {
-                    "category": "標準機能・無料機能",
-                    "items": [
-                        {
-                            "id": "sms",
-                            "name": "ショートメッセージサービス（SMS）"
-                        },
-                        {
-                            "id": "plus_message",
-                            "name": "＋メッセージ（プラスメッセージ）"
-                        },
-                        {
-                            "id": "volte",
-                            "name": "VoLTE／VoLTE（HD+）"
-                        },
-                        {
-                            "id": "video_call",
-                            "name": "ビデオコール"
-                        },
-                        {
-                            "id": "tv_call",
-                            "name": "テレビ電話"
-                        },
-                        {
-                            "id": "fiveg_sa",
-                            "name": "5G SA（Standalone）"
-                        },
-                        {
-                            "id": "docomo_mail",
-                            "name": "ドコモメール"
-                        },
-                        {
-                            "id": "docomo_phonebook",
-                            "name": "ドコモ電話帳"
-                        },
-                        {
-                            "id": "docomo_data_copy",
-                            "name": "ドコモデータコピー"
-                        },
-                        {
-                            "id": "docomo_app_backup",
-                            "name": "ドコモアプリデータバックアップ"
-                        },
-                        {
-                            "id": "my_daiz",
-                            "name": "my daiz（マイデイズ）"
-                        },
-                        {
-                            "id": "id_payment",
-                            "name": "iD（かざしてお支払い「iD」）"
-                        },
-                        {
-                            "id": "wifi",
-                            "name": "Wi-Fi"
-                        },
-                        {
-                            "id": "bio_auth",
-                            "name": "生体認証"
-                        },
-                        {
-                            "id": "wallet",
-                            "name": "おサイフケータイ"
-                        },
-                        {
-                            "id": "area_mail",
-                            "name": "緊急速報「エリアメール」"
-                        },
-                        {
-                            "id": "emergency_location",
-                            "name": "緊急通報位置通知"
-                        },
-                        {
-                            "id": "public_mode",
-                            "name": "公共モード"
-                        },
-                        {
-                            "id": "disaster_board",
-                            "name": "災害用伝言板"
-                        },
-                        {
-                            "id": "message_service",
-                            "name": "メッセージサービス"
-                        },
-                        {
-                            "id": "docomo_cloud",
-                            "name": "ドコモクラウド"
-                        },
-                        {
-                            "id": "docomo_application_manager",
-                            "name": "docomo Application Manager（ドコモアプリ管理）"
-                        },
-                        {
-                            "id": "docomo_live_ux",
-                            "name": "docomo LIVE UX"
-                        },
-                        {
-                            "id": "ir_communication",
-                            "name": "赤外線通信機能"
+                            "billing_type": null,
+                            "frequency": "notfreq"
                         }
                     ]
                 }
@@ -1627,18 +1613,6 @@
                         "キッズケータイ コンパクト SK-41D",
                         "キッズケータイ SH-03M"
                     ]
-                }
-            ],
-            "programs": [
-                {
-                    "id": "kaedoki",
-                    "name": "いつでもカエドキプログラム",
-                    "split_count": 23,
-                    "residual_month": 24
-                },
-                {
-                    "id": "kaedoki_plus",
-                    "name": "いつでもカエドキプログラム＋"
                 }
             ],
             "discounts": [

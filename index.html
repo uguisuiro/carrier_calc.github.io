@@ -281,6 +281,30 @@
         .nord-red-text {
             color: var(--nord11) !important;
         }
+
+        .notfreq-container {
+            display: none;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--nord4);
+        }
+
+        .toggle-notfreq-btn {
+            cursor: pointer;
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 8px;
+            padding: 4px 0;
+            user-select: none;
+        }
+
+        .toggle-notfreq-btn:hover {
+            color: var(--nord3);
+        }
     </style>
 </head>
 
@@ -374,11 +398,9 @@
                             <div class="col s12 mb-1">
                                 <label class="input-label">支払い方法の形式</label>
                                 <select id="paymentType" class="browser-default" onchange="toggleInstallmentInput()">
-                                    <option value="program">残価設定プログラム</option>
-                                    <option value="normal">標準的な分割</option>
-                                    <option value="lump">一括払い</option>
                                 </select>
                             </div>
+
                             <div id="customInstallmentArea" class="col s12 hide">
                                 <div class="input-field m-0">
                                     <input type="number" id="customInstallmentCount" value="24" min="1" max="1000"
@@ -452,7 +474,7 @@
                             <div class="card" style="border: 1px solid var(--nord10); box-shadow: none;">
                                 <div class="card-header-result small"
                                     style="background-color: var(--nord4) !important;">
-                                    量販店独自・三段階分割エディタ
+                                    返却プログラムの設定
                                 </div>
                                 <div class="card-content p-3">
                                     <div class="row mb-2 align-items-center m-0">
