@@ -1731,57 +1731,137 @@
             "discounts": [
                 {
                     "id": "minna_3",
-                    "group": "みんなドコモ割(!注意ドコモMAX,ポイ活MAX,ポイ活20限定)",
+                    "group": "みんなドコモ割",
                     "name": "3回線以上",
-                    "value": 1210
-                },
-                {
-                    "id": "minna_3_except",
-                    "group": "みんなドコモ割(そのほかのプラン)",
-                    "name": "3回線以上",
-                    "value": 1100
+                    "rules": [
+                        {
+                            "plans": [
+                                "docomo_max",
+                                "poikatsu_max",
+                                "poikatsu_20"
+                            ],
+                            "value": 1210
+                        },
+                        {
+                            "plans": [
+                                "docomo_mini"
+                            ],
+                            "value": 1100
+                        }
+                    ],
+                    "default_value": 0
                 },
                 {
                     "id": "minna_2",
                     "group": "みんなドコモ割",
                     "name": "2回線",
-                    "value": 500
+                    "rules": [
+                        {
+                            "plans": [
+                                "docomo_max",
+                                "poikatsu_max",
+                                "poikatsu_20",
+                                "docomo_mini"
+                            ],
+                            "value": 550
+                        }
+                    ],
+                    "default_value": 0
                 },
                 {
                     "id": "hikari",
                     "group": "セット割",
-                    "name": "ドコモ光/home 5Gセット割(!注意ケータイプランは除く)",
-                    "value": 1210
+                    "name": "ドコモ光/home 5Gセット割",
+                    "rules": [
+                        {
+                            "plans": [
+                                "docomo_max",
+                                "poikatsu_max",
+                                "poikatsu_20",
+                                "docomo_mini"
+                            ],
+                            "value": 1210
+                        }
+                    ],
+                    "default_value": 0
                 },
                 {
                     "id": "dcard_gold",
                     "group": "dカードお支払割",
-                    "name": "PLATINUM/GOLD/GOLD U",
-                    "value": 550
+                    "name": "PLATINUM / GOLD",
+                    "rules": [
+                        {
+                            "plans": [
+                                "docomo_max",
+                                "poikatsu_max",
+                                "poikatsu_20",
+                                "docomo_mini"
+                            ],
+                            "value": 550
+                        },
+                        {
+                            "plans": [
+                                "keitai_plan",
+                                "kids_keitai_plan"
+                            ],
+                            "value": 187
+                        }
+                    ],
+                    "default_value": 0
                 },
                 {
                     "id": "dcard_normal",
                     "group": "dカードお支払割",
                     "name": "ノーマルカード",
-                    "value": 220
-                },
-                {
-                    "id": "dcard_except",
-                    "group": "dカードお支払割",
-                    "name": "dカード割(ケータイプラン)",
-                    "value": 187
+                    "rules": [
+                        {
+                            "plans": [
+                                "docomo_max",
+                                "poikatsu_max",
+                                "poikatsu_20",
+                                "docomo_mini"
+                            ],
+                            "value": 220
+                        },
+                        {
+                            "plans": [
+                                "keitai_plan",
+                                "kids_keitai_plan"
+                            ],
+                            "value": 187
+                        }
+                    ],
+                    "default_value": 0
                 },
                 {
                     "id": "chouki_20",
                     "group": "長期利用割",
-                    "name": "20年以上(!注意ドコモMAX,ポイ活MAX限定)",
-                    "value": 220
+                    "name": "20年以上",
+                    "rules": [
+                        {
+                            "plans": [
+                                "docomo_max",
+                                "poikatsu_max"
+                            ],
+                            "value": 220
+                        }
+                    ],
+                    "default_value": 0
                 },
                 {
                     "id": "chouki_10",
                     "group": "長期利用割",
-                    "name": "10年以上(!注意ドコモMAX,ポイ活MAX限定)",
-                    "value": 110
+                    "name": "10年以上",
+                    "rules": [
+                        {
+                            "plans": [
+                                "docomo_max",
+                                "poikatsu_max"
+                            ],
+                            "value": 110
+                        }
+                    ],
+                    "default_value": 0
                 },
                 {
                     "id": "denki",

@@ -5,6 +5,7 @@ let selectedReturnMonth = 23;
 let currentManualFee = 0;
 let currentSplitCount = 23;
 let currentTotalCount = 48;
+let previousPlanId = null;
 
 const fmt = (num) => Number(num).toLocaleString();
 
@@ -399,6 +400,7 @@ function renderDiscounts(discounts) {
     container.innerHTML = "";
 
     discounts.forEach(d => {
+        const initialValue = d.value !== undefined ? d.value : (d.default_value || 0);
         const html = `
             <div class="mb-2" style="display: flex; align-items: center; flex-wrap: wrap;">
                 <label style="margin-right: 8px;">
@@ -428,6 +430,25 @@ function updateCalc() {
     const planSelect = document.getElementById("planSelect");
     const planPrice = Number(planSelect?.value || 0);
     const selectedPlanId = planSelect.options[planSelect.selectedIndex]?.dataset.planId;
+    if (selectedPlanId !== previousPlanId) {
+        previousPlanId = selectedPlanId;
+        document.querySelectorAll(".discount-check").forEach(check => {
+            const discountId = check.id;
+            const discountData = carrier.discounts?.find(d => d.id === discountId);
+            if (discountData) {
+                let newValue = discountData.value !== undefined ? discountData.value : (discountData.default_value || 0);
+                if (discountData.rules) {
+                    const matchedRule = discountData.rules.find(r => r.plans.includes(selectedPlanId));
+                    if (matchedRule) {
+                        newValue = matchedRule.value;
+                    }
+                }
+                check.value = newValue;
+                const numberInput = check.closest('div').querySelector('input[type="number"]');
+                if (numberInput) numberInput.value = newValue;
+            }
+        });
+    }
     let planNameStr = "未選択";
     if (planSelect.selectedIndex >= 0) {
         planNameStr = planSelect.options[planSelect.selectedIndex].textContent;
