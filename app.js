@@ -427,12 +427,27 @@ function updateCalc() {
     const downPayment = downPaymentEl ? Number(downPaymentEl.value) : 11000;
     const planSelect = document.getElementById("planSelect");
     const planPrice = Number(planSelect?.value || 0);
-
     const selectedPlanId = planSelect.options[planSelect.selectedIndex]?.dataset.planId;
+    let planNameStr = "未選択";
+    if (planSelect.selectedIndex >= 0) {
+        planNameStr = planSelect.options[planSelect.selectedIndex].textContent;
+    }
+    let fullDeviceName = "端末購入なし";
+    if (device) {
+        const storageSelect = document.getElementById("storageSelect");
+        const storageSelectArea = document.getElementById("storageSelectArea");
+        const storageStr = (storageSelect && storageSelectArea.style.display !== "none" && storageSelect.value) ? ` (${storageSelect.value})` : "";
+        fullDeviceName = device.name + storageStr;
+    }
     let totalDiscounts = 0;
+    const appliedDiscounts = [];
     document.querySelectorAll(".discount-check:checked").forEach(check => {
-        totalDiscounts += Number(check.value || 0);
+        const val = Number(check.value || 0);
+        totalDiscounts += val;
+        appliedDiscounts.push(`${check.dataset.name}: -${fmt(val)}円`);
     });
+    const discountText = appliedDiscounts.length > 0 ? appliedDiscounts.join("\n  ") : "なし";
+
     const selectedOptions = [];
     let baseOptionTotal = 0;
     document.querySelectorAll(".carrier-opt-input:checked").forEach(el => {
@@ -465,9 +480,26 @@ function updateCalc() {
         statusArea.classList.add("d-none");
     }
     let customOptionTotal = 0;
+    const customOptionsList = [];
+
     document.querySelectorAll(".custom-opt-price").forEach(input => {
-        customOptionTotal += Number(input.value || 0);
+        const val = Number(input.value || 0);
+        customOptionTotal += val;
+        const nameInput = input.closest('.row').querySelector('.custom-opt-name');
+        const optName = (nameInput && nameInput.value) ? nameInput.value : "自由入力オプション";
+        if (val > 0) customOptionsList.push(`${optName}: +${fmt(val)}円`);
     });
+    const optionDisplayList = [];
+    selectedOptions.forEach(opt => {
+        if (bundleAppliedNames.includes(opt.name)) {
+            optionDisplayList.push(`${opt.name}: 無料特典`);
+        } else if (opt.price > 0) {
+            optionDisplayList.push(`${opt.name}: +${fmt(opt.price)}円`);
+        }
+    });
+
+    customOptionsList.forEach(opt => optionDisplayList.push(opt));
+    const optionText = optionDisplayList.length > 0 ? optionDisplayList.join("\n ") : "なし";
     const paymentSelect = document.getElementById("paymentType");
     const paymentType = paymentSelect?.options[paymentSelect.selectedIndex]?.dataset.type || "program";
     const customCount = Number(document.getElementById("customInstallmentCount")?.value) || 24;
@@ -514,11 +546,22 @@ function updateCalc() {
         gridEl.style.opacity = (paymentType === "program") ? "1" : "0.5";
     }
     const evidenceTemplate = `
+【ご契約内容】
+機種: ${fullDeviceName}
+プラン: ${planNameStr}
+
 【月々の支払額（${paymentType === "program" ? selectedReturnMonth + 'ヶ月目' : '任意分割'}）】
 端末分割金: ${fmt(currentDeviceMonthly)} 円
-プラン料金: ${fmt(planPrice)} 円
-各種割引: -${fmt(totalDiscounts)} 円
-${pointBenefit > 0 ? `プラン特典(ポイ活等): -${fmt(pointBenefit)} 円\n` : ''}オプション: ${fmt(optionNetPrice)} 円
+プラン基本料: ${fmt(planPrice)} 円
+
+[適用中の割引]
+  ${discountText}
+  (割引小計: -${fmt(totalDiscounts)} 円)
+
+[加入オプション]
+  ${optionText}
+  (オプション小計: +${fmt(optionNetPrice)} 円)
+${pointBenefit > 0 ? `\n[プラン特典(ポイ活等)]\n  -${fmt(pointBenefit)} 円\n` : ''}
 ---------------------------
 月々支払合計: ${fmt(totalMonthly)} 円/月
 
@@ -530,12 +573,12 @@ ${isUpfront ? `PG早期利用料金(一括): ${fmt(pgFee)} 円\n` : ''}---------
 店頭支払合計: ${fmt(finalDown + 3850 + (pgFee))} 円
 
 【端末代金計算】
-端末総額: ${fmt(Number(document.getElementById("devicePrice")?.value || 0))} 円
-頭金引後: ${fmt(Math.max(0, Number(document.getElementById("devicePrice")?.value || 0) - downPayment))} 円
+端末一括価格: ${fmt(Number(document.getElementById("devicePrice")?.value || 0))} 円
+頭金充当後残額: ${fmt(Math.max(0, Number(document.getElementById("devicePrice")?.value || 0) - downPayment))} 円
 
-【ポイント還元】
-独自ポイント合計: ${fmt(totalStorePoints)} pt
-頭金へ充当: ${fmt(pointUsed)} pt
+【店舗ポイント還元】
+独自特典合計: ${fmt(totalStorePoints)} pt
+頭金へ充当済: -${fmt(pointUsed)} pt
 残ポイント: ${fmt(totalStorePoints - pointUsed)} pt 
 
 【シミュレーション根拠】
