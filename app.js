@@ -25,12 +25,22 @@ function toggleInstallmentInput() {
     const paymentTypeFlag = selectedOption.dataset.type;
     const customArea = document.getElementById("customInstallmentArea");
 
+    const residualArea = document.getElementById("residualValueArea");
+    const programPhasesArea = document.getElementById("programPhasesArea");
+
     if (paymentTypeFlag === "normal") {
         customArea.classList.remove("hide");
-    } else {
+        residualArea.classList.add("d-none");
+        programPhasesArea.classList.add("d-none");
+    } else if (paymentTypeFlag === "lump") {
         customArea.classList.add("hide");
-    }
-    if (paymentTypeFlag === "program") {
+        residualArea.classList.add("d-none");
+        programPhasesArea.classList.add("d-none");
+    } else if (paymentTypeFlag === "program") {
+        customArea.classList.add("hide");
+        residualArea.classList.remove("d-none");
+        programPhasesArea.classList.remove("d-none");
+
         currentSplitCount = Number(selectedOption.dataset.splitCount) || 23;
         currentTotalCount = Number(selectedOption.dataset.totalCount) || 48;
         selectedReturnMonth = currentSplitCount;
@@ -43,7 +53,40 @@ function toggleInstallmentInput() {
         if (p2Label) p2Label.textContent = `${currentSplitCount + 1}〜${currentTotalCount}回目`;
         if (p3Label) p3Label.textContent = `${currentTotalCount + 1}回目〜`;
     }
-    applyManualSettings();
+    const headerEl = document.getElementById("paymentSettingHeader");
+    if (headerEl) {
+        if (paymentTypeFlag === "program") {
+            headerEl.textContent = "端末価格とプログラムの設定";
+        } else if (paymentTypeFlag === "normal") {
+            headerEl.textContent = "端末価格と分割払いの設定";
+        } else if (paymentTypeFlag === "lump") {
+            headerEl.textContent = "端末価格（一括払い）の設定";
+        }
+    }
+    if (paymentTypeFlag === "program") {
+        autoCalculatePhases();
+    } else {
+        applyManualSettings();
+    }
+
+}
+
+function autoCalculatePhases() {
+    const paymentSelect = document.getElementById("paymentType");
+    const paymentTypeFlag = paymentSelect?.options[paymentSelect.selectedIndex]?.dataset.type || "program";
+    const devicePrice = Number(document.getElementById("devicePrice").value) || 0;
+    const residualValue = Number(document.getElementById("residualValue").value) || 0;
+    if (paymentTypeFlag === "program") {
+        let phase1Price = Math.floor(Math.max(0, devicePrice - residualValue) / currentSplitCount);
+        let remainingMonths = currentTotalCount - currentSplitCount;
+        let phase2Price = remainingMonths > 0 ? Math.floor(residualValue / remainingMonths) : 0;
+
+        document.getElementById("manualPhase1").value = phase1Price;
+        document.getElementById("manualPhase2").value = phase2Price;
+        document.getElementById("manualPhase3").value = 0;
+
+        applyManualSettings();
+    }
 }
 function switchCarrier(carrierId) {
     if (!globalData) return;
@@ -55,6 +98,11 @@ function switchCarrier(carrierId) {
         <option value="" disabled selected>機種を選択してください</option>
         <option value="none">端末購入なし（SIM・eSIMのみ契約）</option>
     `;
+    if(globalData.devices){
+        const avaliableDevices=globalData.device.filter(d=>
+            d.storage_by_carrier
+        )
+    }
     carrier.devices?.forEach(d => {
         const option = document.createElement("option");
         option.value = d.id;

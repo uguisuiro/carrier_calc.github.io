@@ -25,6 +25,1070 @@
             "total_count": 48
         }
     ],
+    "devices": [
+        {
+            "id": "iphone16_128",
+            "name": "iPhone 16",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "ahamo": [
+                    "128GB",
+                    "256GB"
+                ],
+                "uq": [
+                    "128GB",
+                    "256GB"
+                ],
+                "ymobile": [
+                    "128GB",
+                    "256GB"
+                ]
+            }
+        },
+        {
+            "id": "iphone16_plus",
+            "name": "iPhone 16 Plus",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ]
+            }
+        },
+        {
+            "id": "iphone16_pro",
+            "name": "iPhone 16 Pro",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ]
+            }
+        },
+        {
+            "id": "iphone16_pro_max",
+            "name": "iPhone 16 Pro Max",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "softbank": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ]
+            }
+        },
+        {
+            "id": "iphone16e",
+            "name": "iPhone 16e",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "ahamo": [
+                    "128GB",
+                    "256GB"
+                ],
+                "uq": [
+                    "128GB",
+                    "256GB"
+                ],
+                "ymobile": [
+                    "128GB",
+                    "256GB"
+                ]
+            }
+        },
+        {
+            "id": "iphone17e",
+            "name": "iPhone 17e",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "ahamo": [
+                    "128GB",
+                    "256GB"
+                ],
+                "uq": [
+                    "128GB",
+                    "256GB"
+                ],
+                "ymobile": [
+                    "128GB",
+                    "256GB"
+                ]
+            }
+        },
+        {
+            "id": "galaxy_s26_sc51g",
+            "name": "Samsung Galaxy S26",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB"
+                ],
+                "softbank": [
+                    "256GB"
+                ]
+            }
+        },
+        {
+            "id": "galaxy_s26_plus_sc52g",
+            "name": "Samsung Galaxy S26+",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "256GB"
+                ]
+            }
+        },
+        {
+            "id": "galaxy_s26_ultra_sc53g",
+            "name": "Samsung Galaxy S26 Ultra",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ]
+            }
+        },
+        {
+            "id": "galaxy_z_flip7_sc55f",
+            "name": "Samsung Galaxy Z Flip7",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB"
+                ]
+            }
+        },
+        {
+            "id": "galaxy_z_fold7_sc56f",
+            "name": "Samsung Galaxy Z Fold7",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB"
+                ]
+            }
+        },
+        {
+            "id": "galaxy_a36_5g_sc54f",
+            "name": "Samsung Galaxy A36 5G",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB"
+                ],
+                "au": [
+                    "128GB"
+                ],
+                "uq": [
+                    "128GB"
+                ],
+                "ahamo": [
+                    "128GB"
+                ]
+            }
+        },
+        {
+            "id": "galaxy_a25_5g_sc53f",
+            "name": "Galaxy A25 5G",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB"
+                ],
+                "au": [
+                    "128GB"
+                ],
+                "uq": [
+                    "128GB"
+                ]
+            }
+        },
+        {
+            "id": "galaxy_s25_sc51f",
+            "name": "Galaxy S25",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB"
+                ]
+            }
+        },
+        {
+            "id": "galaxy_s25_ultra_sc52f",
+            "name": "Galaxy S25 Ultra",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ]
+            }
+        },
+        {
+            "id": "galaxy_z_fold6_sc55e",
+            "name": "Galaxy Z Fold6",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB"
+                ]
+            }
+        },
+        {
+            "id": "galaxy_s24_ultra_sc52e",
+            "name": "Galaxy S24 Ultra",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ]
+            }
+        },
+        {
+            "id": "aquos_sense10_sh53f",
+            "name": "AQUOS sense10",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB"
+                ],
+                "au": [
+                    "128GB"
+                ],
+                "softbank": [
+                    "128GB"
+                ],
+                "uq": [
+                    "128GB"
+                ],
+                "ymobile": [
+                    "128GB"
+                ]
+            }
+        },
+        {
+            "id": "aquos_r10_sh51f",
+            "name": "AQUOS R10",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB"
+                ],
+                "softbank": [
+                    "256GB"
+                ]
+            }
+        },
+        {
+            "id": "aquos_wish5_sh52f",
+            "name": "AQUOS wish5",
+            "storage_by_carrier": {
+                "docomo": [
+                    "64GB"
+                ],
+                "au": [
+                    "64GB"
+                ],
+                "softbank": [
+                    "64GB"
+                ],
+                "uq": [
+                    "64GB"
+                ],
+                "ymobile": [
+                    "64GB"
+                ]
+            }
+        },
+        {
+            "id": "aquos_sense9_sh53e",
+            "name": "AQUOS sense9",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB"
+                ],
+                "au": [
+                    "128GB"
+                ],
+                "softbank": [
+                    "128GB"
+                ],
+                "uq": [
+                    "128GB"
+                ],
+                "ymobile": [
+                    "128GB"
+                ]
+            }
+        },
+        {
+            "id": "aquos_r9_pro_sh54e",
+            "name": "AQUOS R9 pro",
+            "storage_by_carrier": {
+                "docomo": [
+                    "512GB"
+                ]
+            }
+        },
+        {
+            "id": "xperia_10_vii_so52f",
+            "name": "Xperia 10 VII",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB"
+                ],
+                "au": [
+                    "128GB"
+                ],
+                "softbank": [
+                    "128GB"
+                ],
+                "uq": [
+                    "128GB"
+                ],
+                "ymobile": [
+                    "128GB"
+                ]
+            }
+        },
+        {
+            "id": "xperia_1_vii_so51f",
+            "name": "Xperia 1 VII",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB"
+                ],
+                "softbank": [
+                    "256GB"
+                ]
+            }
+        },
+        {
+            "id": "razr_60d_m51f",
+            "name": "motorola razr 60d",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB"
+                ],
+                "softbank": [
+                    "256GB"
+                ]
+            }
+        },
+        {
+            "id": "razr_50d_m51e",
+            "name": "motorola razr 50d",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB"
+                ],
+                "softbank": [
+                    "256GB"
+                ],
+                "ymobile": [
+                    "256GB"
+                ]
+            }
+        },
+        {
+            "id": "pixel_10",
+            "name": "Google Pixel 10",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB"
+                ]
+            }
+        },
+        {
+            "id": "pixel_10_pro",
+            "name": "Google Pixel 10 Pro",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ]
+            }
+        },
+        {
+            "id": "pixel_10_pro_xl",
+            "name": "Google Pixel 10 Pro XL",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ]
+            }
+        },
+        {
+            "id": "pixel_10_pro_fold",
+            "name": "Google Pixel 10 Pro Fold",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB"
+                ],
+                "softbank": [
+                    "256GB",
+                    "512GB"
+                ]
+            }
+        },
+        {
+            "id": "pixel_9a",
+            "name": "Google Pixel 9a",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB"
+                ],
+                "au": [
+                    "128GB"
+                ],
+                "softbank": [
+                    "128GB"
+                ],
+                "uq": [
+                    "128GB"
+                ],
+                "ymobile": [
+                    "128GB"
+                ]
+            }
+        },
+        {
+            "id": "pixel_8_pro",
+            "name": "Google Pixel 8 Pro",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ]
+            }
+        },
+        {
+            "id": "arrows_alpha_f51f",
+            "name": "arrows Alpha",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB"
+                ]
+            }
+        },
+        {
+            "id": "arrows_we2_f52e",
+            "name": "arrows We2",
+            "storage_by_carrier": {
+                "docomo": [
+                    "64GB"
+                ],
+                "au": [
+                    "64GB"
+                ],
+                "uq": [
+                    "64GB"
+                ]
+            }
+        },
+        {
+            "id": "rakuraku_phone_f41f",
+            "name": "らくらくホン F-41F",
+            "storage_by_carrier": {
+                "docomo": [
+                    "8GB"
+                ]
+            }
+        },
+        {
+            "id": "rakuraku_smartphone_f53e",
+            "name": "らくらくスマートフォン F-53E",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB"
+                ]
+            }
+        },
+        {
+            "id": "rakuraku_smartphone_lite_mr01",
+            "name": "らくらくスマートフォン Lite MR01",
+            "storage_by_carrier": {
+                "docomo": [
+                    "64GB"
+                ],
+                "au": [
+                    "64GB"
+                ],
+                "softbank": [
+                    "64GB"
+                ],
+                "uq": [
+                    "64GB"
+                ],
+                "ymobile": [
+                    "64GB"
+                ]
+            }
+        },
+        {
+            "id": "digno_keitai_ky42c",
+            "name": "DIGNO ケータイ KY-42C",
+            "storage_by_carrier": {
+                "docomo": [
+                    "8GB"
+                ],
+                "au": [
+                    "8GB"
+                ],
+                "softbank": [
+                    "8GB"
+                ]
+            }
+        },
+        {
+            "id": "digno_keitai_camera_less_ky43c",
+            "name": "DIGNO ケータイ カメラレス KY-43C",
+            "storage_by_carrier": {
+                "docomo": [
+                    "8GB"
+                ],
+                "au": [
+                    "8GB"
+                ],
+                "softbank": [
+                    "8GB"
+                ]
+            }
+        },
+        {
+            "id": "kids_keitai_compact_sk41d",
+            "name": "キッズケータイ コンパクト SK-41D",
+            "storage_by_carrier": {
+                "docomo": [
+                    "8GB"
+                ]
+            }
+        },
+        {
+            "id": "kids_keitai_ky41c",
+            "name": "キッズケータイ KY-41C",
+            "storage_by_carrier": {
+                "docomo": [
+                    "8GB"
+                ]
+            }
+        },
+        {
+            "id": "dtab_d51f",
+            "name": "dtab d-51F",
+            "storage_by_carrier": {
+                "docomo": [
+                    "64GB"
+                ]
+            }
+        },
+        {
+            "id": "digno_tab2_5g_kct306",
+            "name": "DIGNO Tab2 5G KC-T306",
+            "storage_by_carrier": {
+                "au": [
+                    "64GB"
+                ],
+                "softbank": [
+                    "64GB"
+                ]
+            }
+        },
+        {
+            "id": "ipad_air_13_m4",
+            "name": "13インチiPad Air（M4）",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ]
+            }
+        },
+        {
+            "id": "ipad_air_11_m4",
+            "name": "11インチiPad Air（M4）",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ]
+            }
+        },
+        {
+            "id": "ipad_pro_13_m5",
+            "name": "13インチiPad Pro（M5）",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ],
+                "softbank": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ]
+            }
+        },
+        {
+            "id": "ipad_pro_11_m5",
+            "name": "11インチiPad Pro（M5）",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ],
+                "softbank": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ]
+            }
+        },
+        {
+            "id": "ipad_a16",
+            "name": "iPad（A16）",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ]
+            }
+        },
+        {
+            "id": "ipad_air_13_m3",
+            "name": "13インチiPad Air（M3）",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ]
+            }
+        },
+        {
+            "id": "ipad_air_11_m3",
+            "name": "11インチiPad Air（M3）",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ]
+            }
+        },
+        {
+            "id": "ipad_pro_13_m4",
+            "name": "13インチiPad Pro（M4）",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ],
+                "softbank": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ]
+            }
+        },
+        {
+            "id": "ipad_pro_11_m4",
+            "name": "11インチiPad Pro（M4）",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ],
+                "softbank": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ]
+            }
+        },
+        {
+            "id": "ipad_air_13_m2",
+            "name": "13インチiPad Air（M2）",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ]
+            }
+        },
+        {
+            "id": "ipad_air_11_m2",
+            "name": "11インチiPad Air（M2）",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ]
+            }
+        },
+        {
+            "id": "ipad_mini_a17pro",
+            "name": "iPad mini（A17 Pro）",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB"
+                ]
+            }
+        },
+        {
+            "id": "apple_watch_series_11",
+            "name": "Apple Watch Series 11",
+            "storage_by_carrier": {
+                "docomo": [
+                    "64GB"
+                ],
+                "au": [
+                    "64GB"
+                ],
+                "softbank": [
+                    "64GB"
+                ]
+            }
+        },
+        {
+            "id": "apple_watch_se_3",
+            "name": "Apple Watch SE 3",
+            "storage_by_carrier": {
+                "docomo": [
+                    "64GB"
+                ],
+                "au": [
+                    "64GB"
+                ],
+                "softbank": [
+                    "64GB"
+                ]
+            }
+        },
+        {
+            "id": "apple_watch_ultra_3",
+            "name": "Apple Watch Ultra 3",
+            "storage_by_carrier": {
+                "docomo": [
+                    "64GB"
+                ],
+                "au": [
+                    "64GB"
+                ],
+                "softbank": [
+                    "64GB"
+                ]
+            }
+        }
+    ],
     "carriers": [
         {
             "id": "docomo",
@@ -550,7 +1614,7 @@
                         "12歳以下向け",
                         "ファミリー割引の副回線として申込みが必要"
                     ],
-                    "call_rate_outside_family": 22
+                    "call_rate_outside": 22
                 },
                 {
                     "id": "xi_keitai_plan",
@@ -606,915 +1670,6 @@
                 "dブック",
                 "dメニュー",
                 "dアカウント"
-            ],
-            "devices": [
-                {
-                    "id": "iphone16_128",
-                    "name": "iPhone 16 128GB",
-                    "lump_sum": 133265,
-                    "early_use_benefit": 500,
-                    "pricing": {
-                        "mnp": {
-                            "lump_sum": 89265,
-                            "default_phases": [
-                                {
-                                    "start": 1,
-                                    "end": 23,
-                                    "price": 1
-                                },
-                                {
-                                    "start": 24,
-                                    "end": 47,
-                                    "price": 3718
-                                }
-                            ]
-                        },
-                        "new": {
-                            "default_phases": [
-                                {
-                                    "start": 1,
-                                    "end": 23,
-                                    "price": 1914
-                                },
-                                {
-                                    "start": 24,
-                                    "end": 47,
-                                    "price": 3718
-                                }
-                            ]
-                        }
-                    },
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 501
-                        },
-                        {
-                            "start": 24,
-                            "end": 47,
-                            "price": 3400
-                        },
-                        {
-                            "start": 48,
-                            "end": 48,
-                            "price": 66800
-                        }
-                    ]
-                },
-                {
-                    "id": "iphone16e_128",
-                    "name": "iPhone 16e 128GB",
-                    "lump_sum": 109780,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 1903
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 66000
-                        }
-                    ]
-                },
-                {
-                    "id": "iphone16e_256",
-                    "name": "iPhone 16e 256GB",
-                    "lump_sum": 139920,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 2812
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 75240
-                        }
-                    ]
-                },
-                {
-                    "id": "iphone16e_512",
-                    "name": "iPhone 16e 512GB",
-                    "lump_sum": 179960,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 3692
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 95040
-                        }
-                    ]
-                },
-                {
-                    "id": "iphone17e_256",
-                    "name": "iPhone 17e 256GB",
-                    "lump_sum": 119900,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 2573
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 60720
-                        }
-                    ],
-                    "esim_only": true,
-                    "release_date": "2026-03-11"
-                },
-                {
-                    "id": "iphone17e_512",
-                    "name": "iPhone 17e 512GB",
-                    "lump_sum": 161920,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 3826
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 73920
-                        }
-                    ],
-                    "esim_only": true,
-                    "release_date": "2026-03-11"
-                },
-                {
-                    "id": "iphone16_plus_128",
-                    "name": "iPhone 16 Plus 128GB",
-                    "lump_sum": 133265,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 2890
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 66792
-                        }
-                    ]
-                },
-                {
-                    "id": "iphone16_plus_512",
-                    "name": "iPhone 16 Plus 512GB",
-                    "lump_sum": 211640,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 4610
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 105600
-                        }
-                    ]
-                },
-                {
-                    "id": "iphone16_pro_family",
-                    "name": "iPhone 16 Pro"
-                },
-                {
-                    "id": "iphone16_pro_max_family",
-                    "name": "iPhone 16 Pro Max"
-                },
-                {
-                    "id": "galaxy_s26_sc51g",
-                    "name": "Samsung Galaxy S26 SC-51G",
-                    "lump_sum": 152790,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 1,
-                            "price": 3322
-                        },
-                        {
-                            "start": 2,
-                            "end": 23,
-                            "price": 3314
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 76560
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "galaxy_s26_plus_sc52g",
-                    "name": "Samsung Galaxy S26+ SC-52G",
-                    "lump_sum": 202730,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 1,
-                            "price": 4576
-                        },
-                        {
-                            "start": 2,
-                            "end": 23,
-                            "price": 4567
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 97680
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "galaxy_s26_ultra_sc53g",
-                    "name": "Samsung Galaxy S26 Ultra SC-53G",
-                    "lump_sum": 240790,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 1,
-                            "price": 5720
-                        },
-                        {
-                            "start": 2,
-                            "end": 23,
-                            "price": 5705
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 109560
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "galaxy_z_flip7_sc55f",
-                    "name": "Samsung Galaxy Z Flip7 SC-55F",
-                    "lump_sum": 174790,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 3869
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 85800
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "galaxy_z_fold7_sc56f",
-                    "name": "Samsung Galaxy Z Fold7 SC-56F",
-                    "lump_sum": 289850,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 6805
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 133320
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "galaxy_a36_5g_sc54f",
-                    "name": "Samsung Galaxy A36 5G SC-54F",
-                    "lump_sum": 62590,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 1389
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 30624
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "galaxy_a25_5g_sc53f",
-                    "name": "Galaxy A25 5G SC-53F",
-                    "lump_sum": 22000
-                },
-                {
-                    "id": "galaxy_s25_sc51f",
-                    "name": "Galaxy S25 SC-51F",
-                    "lump_sum": 135740,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 2974
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 67320
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "galaxy_s25_ultra_sc52f",
-                    "name": "Galaxy S25 Ultra SC-52F",
-                    "lump_sum": 225500,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 4811
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 114840
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "galaxy_z_fold6_sc55e",
-                    "name": "Galaxy Z Fold6 SC-55E",
-                    "lump_sum": 275990,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 6375
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 129360
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "galaxy_s24_ultra_sc52e",
-                    "name": "Galaxy S24 Ultra SC-52E",
-                    "lump_sum": 218460,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 3873
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 129360
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "aquos_sense10_sh53f",
-                    "name": "AQUOS sense10 SH-53F",
-                    "lump_sum": 73370,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 2386
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 18480
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "aquos_r10_sh51f",
-                    "name": "AQUOS R10 SH-51F",
-                    "lump_sum": 121220,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 2974
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 52800
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "aquos_wish5_sh52f",
-                    "name": "AQUOS wish5 SH-52F",
-                    "lump_sum": 22000
-                },
-                {
-                    "id": "aquos_sense9_sh53e",
-                    "name": "AQUOS sense9 SH-53E",
-                    "lump_sum": 67100,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 1999
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 21120
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "aquos_r9_pro_sh54e",
-                    "name": "AQUOS R9 pro SH-54E",
-                    "lump_sum": 165880,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 3321
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 89496
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "xperia_10_vii_so52f",
-                    "name": "Xperia 10 VII SO-52F",
-                    "lump_sum": 82720,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 2678
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 21120
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "xperia_1_vii_so51f",
-                    "name": "Xperia 1 VII SO-51F",
-                    "lump_sum": 236830,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 6910
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 77880
-                        }
-                    ],
-                    "program": "kaedoki_plus"
-                },
-                {
-                    "id": "razr_60d_m51f",
-                    "name": "motorola razr 60d M-51F",
-                    "lump_sum": 126060,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 3816
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 38280
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "razr_50d_m51e",
-                    "name": "motorola razr 50d M-51E",
-                    "lump_sum": 114950,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 3276
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 39600
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "pixel_10",
-                    "name": "Google Pixel 10",
-                    "lump_sum_min": 138930,
-                    "default_phases_min": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 3630
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 55440
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "pixel_10_pro",
-                    "name": "Google Pixel 10 Pro",
-                    "lump_sum_min": 194920,
-                    "default_phases_min": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 5490
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 68640
-                        }
-                    ],
-                    "program": "kaedoki_plus"
-                },
-                {
-                    "id": "pixel_10_pro_xl",
-                    "name": "Google Pixel 10 Pro XL",
-                    "lump_sum_min": 223960,
-                    "default_phases_min": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 6293
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 79200
-                        }
-                    ],
-                    "program": "kaedoki_plus"
-                },
-                {
-                    "id": "pixel_10_pro_fold",
-                    "name": "Google Pixel 10 Pro Fold",
-                    "lump_sum_min": 302170,
-                    "default_phases_min": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 8489
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 106920
-                        }
-                    ],
-                    "program": "kaedoki_plus"
-                },
-                {
-                    "id": "pixel_9a",
-                    "name": "Google Pixel 9a",
-                    "lump_sum": 95513,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 2333
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 41833
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "pixel_8_pro",
-                    "name": "Google Pixel 8 Pro",
-                    "lump_sum": 218680
-                },
-                {
-                    "id": "arrows_alpha_f51f",
-                    "name": "arrows Alpha F-51F",
-                    "lump_sum": 89540,
-                    "default_phases": [
-                        {
-                            "start": 1,
-                            "end": 23,
-                            "price": 2573
-                        },
-                        {
-                            "start": 24,
-                            "end": 24,
-                            "price": 30360
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "arrows_we2_f52e",
-                    "name": "arrows We2 F-52E",
-                    "lump_sum": 22000
-                },
-                {
-                    "id": "rakuraku_phone_f41f",
-                    "name": "らくらくホン F-41F",
-                    "lump_sum": 41470,
-                    "release_date": "2025-08-07"
-                },
-                {
-                    "id": "rakuraku_smartphone_f53e",
-                    "name": "らくらくスマートフォン F-53E",
-                    "lump_sum": 51480,
-                    "customer_burden": 42240,
-                    "release_date": "2025-01-30",
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "rakuraku_smartphone_lite_mr01",
-                    "name": "らくらくスマートフォン Lite MR01",
-                    "lump_sum": 50600,
-                    "release_date": "2024-12-02",
-                    "sim_free": true
-                },
-                {
-                    "id": "digno_keitai_ky42c",
-                    "name": "DIGNO ケータイ KY-42C",
-                    "lump_sum": 19470,
-                    "release_date": "2023-03-10"
-                },
-                {
-                    "id": "digno_keitai_camera_less_ky43c",
-                    "name": "DIGNO ケータイ カメラレス KY-43C",
-                    "lump_sum": 18920,
-                    "release_date": "2023-04-17"
-                },
-                {
-                    "id": "kids_keitai_compact_sk41d",
-                    "name": "キッズケータイ コンパクト SK-41D",
-                    "lump_sum": 28930,
-                    "release_date": "2024-07-12"
-                },
-                {
-                    "id": "kids_keitai_ky41c",
-                    "name": "キッズケータイ KY-41C",
-                    "lump_sum": 22000,
-                    "release_date": "2023-01-16"
-                },
-                {
-                    "id": "dtab_d51f",
-                    "name": "dtab d-51F",
-                    "lump_sum": 65230,
-                    "customer_burden": 49390,
-                    "release_date": "2026-02-26",
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "digno_tab2_5g_kct306",
-                    "name": "DIGNO Tab2 5G KC-T306",
-                    "lump_sum": 62150,
-                    "release_date": "2025-03-24"
-                },
-                {
-                    "id": "ipad_air_13_m4_family",
-                    "name": "13インチiPad Air（M4）",
-                    "release_date": "2026-03-11",
-                    "customer_burden_min": 89320,
-                    "customer_burden_max": 150480,
-                    "storage_options": [
-                        "128GB",
-                        "256GB",
-                        "512GB",
-                        "1TB"
-                    ],
-                    "lump_sum_confirmed_variants": [
-                        {
-                            "storage": "128GB",
-                            "price": 185680
-                        },
-                        {
-                            "storage": "256GB",
-                            "price": 203830
-                        },
-                        {
-                            "storage": "512GB",
-                            "price": 246400
-                        },
-                        {
-                            "storage": "1TB",
-                            "price": 289080
-                        }
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "ipad_air_11_m4_family",
-                    "name": "11インチiPad Air（M4）",
-                    "release_date": "2026-03-11",
-                    "customer_burden_min": 68640,
-                    "customer_burden_max": 128590,
-                    "storage_options": [
-                        "128GB",
-                        "256GB",
-                        "512GB",
-                        "1TB"
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "ipad_pro_13_m5_family",
-                    "name": "13インチiPad Pro（M5）",
-                    "release_date": "2025-10-22",
-                    "customer_burden_min": 154990,
-                    "customer_burden_max": 273240,
-                    "storage_options": [
-                        "256GB",
-                        "512GB",
-                        "1TB",
-                        "2TB"
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "ipad_pro_11_m5_family",
-                    "name": "11インチiPad Pro（M5）",
-                    "release_date": "2025-10-22",
-                    "customer_burden_min": 119790,
-                    "customer_burden_max": 253110,
-                    "storage_options": [
-                        "256GB",
-                        "512GB",
-                        "1TB",
-                        "2TB"
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "ipad_a16_family",
-                    "name": "iPad（A16）",
-                    "release_date": "2025-03-12",
-                    "customer_burden_min": 49830,
-                    "customer_burden_max": 88220,
-                    "storage_options": [
-                        "128GB",
-                        "256GB",
-                        "512GB"
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "ipad_air_13_m3_family",
-                    "name": "13インチiPad Air（M3）",
-                    "release_date": "2025-03-12",
-                    "customer_burden_min": 89320,
-                    "customer_burden_max": 148280,
-                    "storage_options": [
-                        "128GB",
-                        "256GB",
-                        "512GB",
-                        "1TB"
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "ipad_air_11_m3_family",
-                    "name": "11インチiPad Air（M3）",
-                    "release_date": "2025-03-12",
-                    "customer_burden_min": 59290,
-                    "customer_burden_max": 126940,
-                    "storage_options": [
-                        "128GB",
-                        "256GB",
-                        "512GB",
-                        "1TB"
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "ipad_pro_13_m4_family",
-                    "name": "13インチiPad Pro（M4）",
-                    "release_date": "2024-05-15",
-                    "customer_burden_min": 154990,
-                    "customer_burden_max": 273240,
-                    "storage_options": [
-                        "256GB",
-                        "512GB",
-                        "1TB",
-                        "2TB"
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "ipad_pro_11_m4_family",
-                    "name": "11インチiPad Pro（M4）",
-                    "release_date": "2024-05-15",
-                    "customer_burden_min": 119790,
-                    "customer_burden_max": 253110,
-                    "storage_options": [
-                        "256GB",
-                        "512GB",
-                        "1TB",
-                        "2TB"
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "ipad_air_13_m2_family",
-                    "name": "13インチiPad Air（M2）",
-                    "storage_options": [
-                        "128GB",
-                        "256GB",
-                        "512GB",
-                        "1TB"
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "ipad_air_11_m2_family",
-                    "name": "11インチiPad Air（M2）",
-                    "release_date": "2024-05-15",
-                    "customer_burden_min": 59290,
-                    "customer_burden_max": 126940,
-                    "storage_options": [
-                        "128GB",
-                        "256GB",
-                        "512GB",
-                        "1TB"
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "ipad_mini_a17pro_family",
-                    "name": "iPad mini（A17 Pro）",
-                    "release_date": "2024-10-23",
-                    "customer_burden_min": 53130,
-                    "customer_burden_max": 96580,
-                    "storage_options": [
-                        "128GB",
-                        "256GB",
-                        "512GB"
-                    ],
-                    "program": "kaedoki"
-                },
-                {
-                    "id": "apple_watch_series_11_family",
-                    "name": "Apple Watch Series 11",
-                    "cellular_model": true
-                },
-                {
-                    "id": "apple_watch_se_3_family",
-                    "name": "Apple Watch SE 3",
-                    "cellular_model": true
-                },
-                {
-                    "id": "apple_watch_ultra_3_family",
-                    "name": "Apple Watch Ultra 3",
-                    "cellular_model": true
-                }
             ],
             "plans": [
                 {

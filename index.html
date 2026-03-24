@@ -368,7 +368,11 @@
                             </select>
                             <label class="active">機種選択</label>
                         </div>
-
+                        <div class="input-field mb-3" id="storageSelectArea" style="display: none;">
+                            <select id="storageSelect" onchange="updateCalc()">
+                            </select>
+                            <label class="active">容量選択</label>
+                        </div>
                         <div class="input-field mb-3">
                             <select id="planSelect" onchange="updateCalc()">
                                 <option value="" disabled selected>プランデータを読み込み中</option>
@@ -432,16 +436,12 @@
                             </div>
                         </div>
 
-                        <div id="devicePriceArea" class="input-field mb-3">
-                            <input type="number" id="devicePrice" placeholder=" " value="0" class="validate">
-                            <label for="devicePrice">端末本体代金</label>
-                        </div>
-
                         <div class="mb-3">
                             <label class="d-block fw-bold mb-2">適用する割引</label>
                             <div id="discountContainer"></div>
                         </div>
-                        <div class="col s12 l6 mb-4">
+
+                        <div class="mb-4">
                             <div id="bundleStatusArea" class="mb-3 d-none">
                                 <div class="card-panel"
                                     style="background-color: var(--nord14); color: var(--nord0); padding: 0.8rem !important;">
@@ -470,61 +470,90 @@
                         </div>
 
                         <div class="mb-3 pt-3" style="border-top: 1px solid var(--border-color);">
-                            <label class="d-block fw-bold mb-2">店舗独自特典</label>
-                            <div class="card" style="border: 1px solid var(--nord10); box-shadow: none;">
-                                <div class="card-header-result small"
+                            <label class="d-block fw-bold mb-2">端末価格と店舗独自特典</label>
+
+                            <div class="card"
+                                style="border: 1px solid var(--nord10); box-shadow: none; margin-bottom: 1rem;">
+                                <div id="paymentSettingHeader" class="card-header-result small"
                                     style="background-color: var(--nord4) !important;">
-                                    返却プログラムの設定
+                                    端末価格とプログラムの設定
                                 </div>
                                 <div class="card-content p-3">
-                                    <div class="row mb-2 align-items-center m-0">
-                                        <div class="col s4 small" style="color: var(--text-muted);">1〜23回目
-                                        </div>
+                                    <div class="row mb-3 align-items-center m-0 pb-2"
+                                        style="border-bottom: 1px dashed var(--nord4);">
+                                        <div class="col s4 small fw-bold" style="color: var(--text-main);">端末一括価格</div>
                                         <div class="col s8 d-flex align-items-center gap-2">
                                             <div class="input-field m-0 w-100">
-                                                <input type="number" id="manualPhase1" placeholder=" " value="1"
-                                                    oninput="applyManualSettings()" style="margin-bottom:0;">
-                                            </div>
-                                            <span class="small" style="color: var(--text-muted);">円/月</span>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-2 align-items-center m-0">
-                                        <div class="col s4 small" style="color: var(--text-muted);">24〜48回目
-                                        </div>
-                                        <div class="col s8 d-flex align-items-center gap-2">
-                                            <div class="input-field m-0 w-100">
-                                                <input type="number" id="manualPhase2" placeholder=" " value="3400"
-                                                    oninput="applyManualSettings()" style="margin-bottom:0;">
-                                            </div>
-                                            <span class="small" style="color: var(--text-muted);">円/月</span>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-2 align-items-center m-0">
-                                        <div class="col s4 small" style="color: var(--text-muted);">49回目〜
-                                        </div>
-                                        <div class="col s8 d-flex align-items-center gap-2">
-                                            <div class="input-field m-0 w-100">
-                                                <input type="number" id="manualPhase3" placeholder=" " value="0"
-                                                    oninput="applyManualSettings()" style="margin-bottom:0;">
-                                            </div>
-                                            <span class="small" style="color: var(--text-muted);">円/月</span>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-2 align-items-center m-0 pt-2"
-                                        style="border-top: 1px dashed var(--nord4);">
-                                        <div class="col s4 small fw-bold" style="color: var(--nord11);">
-                                            残クレ手数料</div>
-                                        <div class="col s8 d-flex align-items-center gap-2">
-                                            <div class="input-field m-0 w-100">
-                                                <input type="number" id="manualFee" placeholder=" " value="0"
-                                                    oninput="applyManualSettings()" style="margin-bottom:0;">
+                                                <input type="number" id="devicePrice" placeholder=" " value="0"
+                                                    oninput="autoCalculatePhases(); updateCalc()"
+                                                    style="margin-bottom:0; font-size: 1.1rem; color: var(--nord11) !important;">
                                             </div>
                                             <span class="small" style="color: var(--text-muted);">円</span>
                                         </div>
                                     </div>
+
+                                    <div id="residualValueArea" class="row mb-3 align-items-center m-0 pb-2"
+                                        style="border-bottom: 1px dashed var(--nord4);">
+                                        <div class="col s4 small fw-bold" style="color: var(--text-main);">残価（最終回設定額）
+                                        </div>
+                                        <div class="col s8 d-flex align-items-center gap-2">
+                                            <div class="input-field m-0 w-100">
+                                                <input type="number" id="residualValue" placeholder=" " value="0"
+                                                    oninput="autoCalculatePhases(); updateCalc()"
+                                                    style="margin-bottom:0; font-size: 1.1rem;">
+                                            </div>
+                                            <span class="small" style="color: var(--text-muted);">円</span>
+                                        </div>
+                                    </div>
+
+                                    <div id="programPhasesArea">
+                                        <div class="row mb-2 align-items-center m-0">
+                                            <div class="col s4 small" id="phase1Label"
+                                                style="color: var(--text-muted);">1〜23回目</div>
+                                            <div class="col s8 d-flex align-items-center gap-2">
+                                                <div class="input-field m-0 w-100">
+                                                    <input type="number" id="manualPhase1" placeholder=" " value="0"
+                                                        oninput="applyManualSettings()" style="margin-bottom:0;">
+                                                </div>
+                                                <span class="small" style="color: var(--text-muted);">円/月</span>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2 align-items-center m-0">
+                                            <div class="col s4 small" id="phase2Label"
+                                                style="color: var(--text-muted);">24〜48回目</div>
+                                            <div class="col s8 d-flex align-items-center gap-2">
+                                                <div class="input-field m-0 w-100">
+                                                    <input type="number" id="manualPhase2" placeholder=" " value="0"
+                                                        oninput="applyManualSettings()" style="margin-bottom:0;">
+                                                </div>
+                                                <span class="small" style="color: var(--text-muted);">円/月</span>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2 align-items-center m-0">
+                                            <div class="col s4 small" id="phase3Label"
+                                                style="color: var(--text-muted);">49回目〜</div>
+                                            <div class="col s8 d-flex align-items-center gap-2">
+                                                <div class="input-field m-0 w-100">
+                                                    <input type="number" id="manualPhase3" placeholder=" " value="0"
+                                                        oninput="applyManualSettings()" style="margin-bottom:0;">
+                                                </div>
+                                                <span class="small" style="color: var(--text-muted);">円/月</span>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2 align-items-center m-0 pt-2"
+                                            style="border-top: 1px dashed var(--nord4);">
+                                            <div class="col s4 small fw-bold" style="color: var(--nord11);">残クレ手数料</div>
+                                            <div class="col s8 d-flex align-items-center gap-2">
+                                                <div class="input-field m-0 w-100">
+                                                    <input type="number" id="manualFee" placeholder=" " value="0"
+                                                        oninput="applyManualSettings()" style="margin-bottom:0;">
+                                                </div>
+                                                <span class="small" style="color: var(--text-muted);">円</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
                             <div class="mb-3">
                                 <label class="small d-block mb-2">頭金</label>
                                 <div class="d-flex align-items-center gap-2 mb-2">
@@ -534,7 +563,7 @@
                                     </div>
                                     <span class="small" style="color: var(--text-muted);">円</span>
                                 </div>
-                                <div class="switch">
+                                <div class="switch mb-2">
                                     <label class="small">
                                         オフ
                                         <input type="checkbox" id="isPointApplied" onchange="updateCalc()">
@@ -542,21 +571,21 @@
                                         店舗のポイントを頭金に使用する
                                     </label>
                                 </div>
-                            </div>
-                            <div id="storePointsContainer"></div>
 
-                            <div class="mt-2">
-                                <button type="button" class="btn-small white"
-                                    style="border: 1px solid var(--nord11); color: var(--nord11); width: 100%; box-shadow: none;"
-                                    onclick="addPointRow()">
-                                    +特典項目を追加する
-                                </button>
+                                <div id="storePointsContainer"></div>
+                                <div class="mt-2">
+                                    <button type="button" class="btn-small white"
+                                        style="border: 1px solid var(--nord11); color: var(--nord11); width: 100%; box-shadow: none;"
+                                        onclick="addPointRow()">
+                                        +特典項目を追加する
+                                    </button>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
-
             <div class="col s12 l6">
                 <div class="card" style="border: 1px solid var(--nord10);">
                     <div class="card-header-result">
