@@ -893,8 +893,8 @@ async function showShareQRCode() {
 
     var qrcode = new QRCode(document.getElementById("qrcode"), {
         text: shareUrl,
-        width: 128,
-        height: 128,
+        width: 400,
+        height: 400,
         colorDark: "#000000",
         colorLight: "#ffffff",
         correctLevel: QRCode.CorrectLevel.H
