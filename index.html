@@ -7,6 +7,7 @@
     <title>スマホの料金シミュレーション</title>
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.2.2/dist/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         :root {
             --nord0: #2e3440;
@@ -305,6 +306,19 @@
         .toggle-notfreq-btn:hover {
             color: var(--nord3);
         }
+
+        .custom-popover-card {
+            border: none;
+            border-radius: 8px;
+            padding: 0;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .custom-popover-card::backdrop {
+            background: rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 
@@ -318,295 +332,355 @@
                 </span>
             </div>
         </div>
+        <div class="row mb-0"
+            style="display: flex; align-items: center; border-bottom: 2px solid var(--border-color); margin-bottom: 20px !important;">
+            <div class="col s11 m11 p-0">
+                <ul class="tabs tabs-fixed-width tabs-horizontal" id="planTabs" style="background-color: transparent;">
+                </ul>
+            </div>
+            <div class="col s1 m1 center-align">
+                <button type="button" class="btn-floating btn-small waves-effect waves-light"
+                    style="background-color: var(--primary-color);" onclick="openAddTabModal()">
+                    <i class="material-icons">add</i>
+                </button>
+            </div>
+        </div>
 
-        <div class="row">
-            <div class="col s12 l6 mb-4">
-                <div class="pt-2">
-                    <div class="radio-horizontal-group mb-3">
-                        <label>
-                            <input class="with-gap" name="carrierType" type="radio" value="docomo" checked
-                                onchange="switchCarrier('docomo')" />
-                            <span>docomo</span>
-                        </label>
-                        <label>
-                            <input class="with-gap" name="carrierType" type="radio" value="au"
-                                onchange="switchCarrier('au')" />
-                            <span>au</span>
-                        </label>
-                        <label>
-                            <input class="with-gap" name="carrierType" type="radio" value="uq"
-                                onchange="switchCarrier('uq')" />
-                            <span>UQ</span>
-                        </label>
-                        <label>
-                            <input class="with-gap" name="carrierType" type="radio" value="ymobile"
-                                onchange="switchCarrier('ymobile')" />
-                            <span>Y!mobile</span>
-                        </label>
-                        <label>
-                            <input class="with-gap" name="carrierType" type="radio" value="ahamo"
-                                onchange="switchCarrier('ahamo')" />
-                            <span>ahamo</span>
-                        </label>
-                        <label>
-                            <input class="with-gap" name="carrierType" type="radio" value="softbank"
-                                onchange="switchCarrier('softbank')" />
-                            <span>SoftBank</span>
-                        </label>
+        <div id="simulator-content" class="active">
+            <div class="row">
+                <div class="col s12 l6 mb-4">
+                    <div class="pt-2">
+                        <div class="radio-horizontal-group mb-3">
+                            <label>
+                                <input class="with-gap" name="carrierType" type="radio" value="docomo" checked
+                                    onchange="switchCarrier('docomo')" />
+                                <span>docomo</span>
+                            </label>
+                            <label>
+                                <input class="with-gap" name="carrierType" type="radio" value="au"
+                                    onchange="switchCarrier('au')" />
+                                <span>au</span>
+                            </label>
+                            <label>
+                                <input class="with-gap" name="carrierType" type="radio" value="uq"
+                                    onchange="switchCarrier('uq')" />
+                                <span>UQ</span>
+                            </label>
+                            <label>
+                                <input class="with-gap" name="carrierType" type="radio" value="ymobile"
+                                    onchange="switchCarrier('ymobile')" />
+                                <span>Y!mobile</span>
+                            </label>
+                            <label>
+                                <input class="with-gap" name="carrierType" type="radio" value="ahamo"
+                                    onchange="switchCarrier('ahamo')" />
+                                <span>ahamo</span>
+                            </label>
+                            <label>
+                                <input class="with-gap" name="carrierType" type="radio" value="softbank"
+                                    onchange="switchCarrier('softbank')" />
+                                <span>SoftBank</span>
+                            </label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="card">
-                    <div class="card-header-result">
-                        契約の情報
-                    </div>
-                    <div class="card-content">
-                        <div class="input-field mb-3">
-                            <select id="deviceSelect" onchange="onDeviceChange()">
-                                <option value="" disabled selected>機種を選択してください</option>
-                                <option value="none">端末購入なし（SIM・eSIMのみ契約）</option>
-                            </select>
-                            <label class="active">機種選択</label>
+                    <div class="card">
+                        <div class="card-header-result">
+                            契約の情報
                         </div>
-                        <div class="input-field mb-3" id="storageSelectArea" style="display: none;">
-                            <select id="storageSelect" onchange="updateCalc()">
-                            </select>
-                            <label class="active">容量選択</label>
-                        </div>
-                        <div class="input-field mb-3">
-                            <select id="planSelect" onchange="updateCalc()">
-                                <option value="" disabled selected>プランデータを読み込み中</option>
-                            </select>
-                            <label class="active">プラン選択</label>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="d-block fw-bold mb-2">契約種別</label>
-                            <div class="radio-horizontal-group">
-                                <label>
-                                    <input class="with-gap" name="contractType" type="radio" value="new" checked />
-                                    <span>新規</span>
-                                </label>
-                                <label>
-                                    <input class="with-gap" name="contractType" type="radio" value="change" />
-                                    <span>機種変</span>
-                                </label>
-                                <label>
-                                    <input class="with-gap" name="contractType" type="radio" value="mnp" />
-                                    <span>MNP</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div id="paymentArea" class="row m-0 mb-3">
-                            <div class="col s12 mb-1">
-                                <label class="input-label">支払い方法の形式</label>
-                                <select id="paymentType" class="browser-default" onchange="toggleInstallmentInput()">
+                        <div class="card-content">
+                            <div class="input-field mb-3">
+                                <select id="deviceSelect" onchange="onDeviceChange()">
+                                    <option value="" disabled selected>機種を選択してください</option>
+                                    <option value="none">端末購入なし（SIM・eSIMのみ契約）</option>
                                 </select>
+                                <label class="active">機種選択</label>
+                            </div>
+                            <div class="input-field mb-3" id="storageSelectArea" style="display: none;">
+                                <select id="storageSelect" onchange="updateCalc()">
+                                </select>
+                                <label class="active">容量選択</label>
+                            </div>
+                            <div class="input-field mb-3">
+                                <select id="planSelect" onchange="updateCalc()">
+                                    <option value="" disabled selected>プランデータを読み込み中</option>
+                                </select>
+                                <label class="active">プラン選択</label>
                             </div>
 
-                            <div id="customInstallmentArea" class="col s12 hide">
-                                <div class="input-field m-0">
-                                    <input type="number" id="customInstallmentCount" value="24" min="1" max="1000"
-                                        oninput="generateGrid(); updateCalc();">
-                                    <label for="customInstallmentCount" class="active">分割回数を指定</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-3 pt-2" style="border-top: 1px solid var(--border-color);">
-                            <label class="fw-bold d-block mb-2">早期利用特典の設定</label>
-                            <div class="switch mb-2">
-                                <label class="small">
-                                    適用しない
-                                    <input type="checkbox" id="applyEarlyBenefit" onchange="updateCalc()">
-                                    <span class="lever"></span>
-                                    適用する
-                                </label>
-                            </div>
-                            <div id="pgUpfrontArea" class="d-none">
-                                <div class="switch">
-                                    <label class="small">
-                                        分割で支払う
-                                        <input type="checkbox" id="isPgUpfront" onchange="updateCalc()">
-                                        <span class="lever"></span>
-                                        一括で支払う(PG早期利用料金)
+                            <div class="mb-3">
+                                <label class="d-block fw-bold mb-2">契約種別</label>
+                                <div class="radio-horizontal-group">
+                                    <label>
+                                        <input class="with-gap" name="contractType" type="radio" value="new" checked />
+                                        <span>新規</span>
+                                    </label>
+                                    <label>
+                                        <input class="with-gap" name="contractType" type="radio" value="change" />
+                                        <span>機種変</span>
+                                    </label>
+                                    <label>
+                                        <input class="with-gap" name="contractType" type="radio" value="mnp" />
+                                        <span>MNP</span>
                                     </label>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="mb-3">
-                            <label class="d-block fw-bold mb-2">適用する割引</label>
-                            <div id="discountContainer"></div>
-                        </div>
+                            <div id="paymentArea" class="row m-0 mb-3">
+                                <div class="col s12 mb-1">
+                                    <label class="input-label">支払い方法の形式</label>
+                                    <select id="paymentType" class="browser-default"
+                                        onchange="toggleInstallmentInput()">
+                                    </select>
+                                </div>
 
-                        <div class="mb-4">
-                            <div id="bundleStatusArea" class="mb-3 d-none">
-                                <div class="card-panel"
-                                    style="background-color: var(--nord14); color: var(--nord0); padding: 0.8rem !important;">
-                                    <small class="fw-bold"><i class="material-icons left tiny">選べる特典</i>プラン特典適用中</small>
-                                    <div id="bundleStatusText" class="small"></div>
+                                <div id="customInstallmentArea" class="col s12 hide">
+                                    <div class="input-field m-0">
+                                        <input type="number" id="customInstallmentCount" value="24" min="1" max="1000"
+                                            oninput="generateGrid(); updateCalc();">
+                                        <label for="customInstallmentCount" class="active">分割回数を指定</label>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div id="carrierOptionsArea" class="mb-3 pt-3"
-                                style="border-top: 1px solid var(--border-color);">
-                                <label class="d-block fw-bold mb-2">キャリア付帯オプション</label>
-                                <div id="carrierOptionsContainer"></div>
+                            <div class="mb-3 pt-2" style="border-top: 1px solid var(--border-color);">
+                                <label class="fw-bold d-block mb-2">早期利用特典の設定</label>
+                                <div class="switch mb-2">
+                                    <label class="small">
+                                        適用しない
+                                        <input type="checkbox" id="applyEarlyBenefit" onchange="updateCalc()">
+                                        <span class="lever"></span>
+                                        適用する
+                                    </label>
+                                </div>
+                                <div id="pgUpfrontArea" class="d-none">
+                                    <div class="switch">
+                                        <label class="small">
+                                            分割で支払う
+                                            <input type="checkbox" id="isPgUpfront" onchange="updateCalc()">
+                                            <span class="lever"></span>
+                                            一括で支払う(PG早期利用料金)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="d-block fw-bold mb-2">適用する割引</label>
+                                <div id="discountContainer"></div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div id="bundleStatusArea" class="mb-3 d-none">
+                                    <div class="card-panel"
+                                        style="background-color: var(--nord14); color: var(--nord0); padding: 0.8rem !important;">
+                                        <small class="fw-bold"><i
+                                                class="material-icons left tiny">選べる特典</i>プラン特典適用中</small>
+                                        <div id="bundleStatusText" class="small"></div>
+                                    </div>
+                                </div>
+
+                                <div id="carrierOptionsArea" class="mb-3 pt-3"
+                                    style="border-top: 1px solid var(--border-color);">
+                                    <label class="d-block fw-bold mb-2">キャリア付帯オプション</label>
+                                    <div id="carrierOptionsContainer"></div>
+                                </div>
+
+                                <div class="mb-3 pt-3" style="border-top: 1px solid var(--border-color);">
+                                    <label class="d-block fw-bold mb-2">任意追加オプション（自由入力）</label>
+                                    <div id="customOptionsContainer"></div>
+                                    <div class="mt-2">
+                                        <button type="button" class="btn-small white"
+                                            style="border: 1px solid var(--nord10); color: var(--nord10); width: 100%; box-shadow: none;"
+                                            onclick="addCustomOptionRow()">
+                                            + オプションを自由に追加する
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="mb-3 pt-3" style="border-top: 1px solid var(--border-color);">
-                                <label class="d-block fw-bold mb-2">任意追加オプション（自由入力）</label>
-                                <div id="customOptionsContainer"></div>
-                                <div class="mt-2">
-                                    <button type="button" class="btn-small white"
-                                        style="border: 1px solid var(--nord10); color: var(--nord10); width: 100%; box-shadow: none;"
-                                        onclick="addCustomOptionRow()">
-                                        + オプションを自由に追加する
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                                <label class="d-block fw-bold mb-2">端末価格と店舗独自特典</label>
 
-                        <div class="mb-3 pt-3" style="border-top: 1px solid var(--border-color);">
-                            <label class="d-block fw-bold mb-2">端末価格と店舗独自特典</label>
-
-                            <div class="card"
-                                style="border: 1px solid var(--nord10); box-shadow: none; margin-bottom: 1rem;">
-                                <div id="paymentSettingHeader" class="card-header-result small"
-                                    style="background-color: var(--nord4) !important;">
-                                    端末価格とプログラムの設定
-                                </div>
-                                <div class="card-content p-3">
-                                    <div class="row mb-3 align-items-center m-0 pb-2"
-                                        style="border-bottom: 1px dashed var(--nord4);">
-                                        <div class="col s4 small fw-bold" style="color: var(--text-main);">端末一括価格</div>
-                                        <div class="col s8 d-flex align-items-center gap-2">
-                                            <div class="input-field m-0 w-100">
-                                                <input type="number" id="devicePrice" placeholder=" " value="0"
-                                                    oninput="autoCalculatePhases(); updateCalc()"
-                                                    style="margin-bottom:0; font-size: 1.1rem; color: var(--nord11) !important;">
-                                            </div>
-                                            <span class="small" style="color: var(--text-muted);">円</span>
-                                        </div>
+                                <div class="card"
+                                    style="border: 1px solid var(--nord10); box-shadow: none; margin-bottom: 1rem;">
+                                    <div id="paymentSettingHeader" class="card-header-result small"
+                                        style="background-color: var(--nord4) !important;">
+                                        端末価格とプログラムの設定
                                     </div>
-
-                                    <div id="residualValueArea" class="row mb-3 align-items-center m-0 pb-2"
-                                        style="border-bottom: 1px dashed var(--nord4);">
-                                        <div class="col s4 small fw-bold" style="color: var(--text-main);">残価（最終回設定額）
-                                        </div>
-                                        <div class="col s8 d-flex align-items-center gap-2">
-                                            <div class="input-field m-0 w-100">
-                                                <input type="number" id="residualValue" placeholder=" " value="0"
-                                                    oninput="autoCalculatePhases(); updateCalc()"
-                                                    style="margin-bottom:0; font-size: 1.1rem;">
+                                    <div class="card-content p-3">
+                                        <div class="row mb-3 align-items-center m-0 pb-2"
+                                            style="border-bottom: 1px dashed var(--nord4);">
+                                            <div class="col s4 small fw-bold" style="color: var(--text-main);">端末一括価格
                                             </div>
-                                            <span class="small" style="color: var(--text-muted);">円</span>
-                                        </div>
-                                    </div>
-
-                                    <div id="programPhasesArea">
-                                        <div class="row mb-2 align-items-center m-0">
-                                            <div class="col s4 small" id="phase1Label"
-                                                style="color: var(--text-muted);">1〜23回目</div>
                                             <div class="col s8 d-flex align-items-center gap-2">
                                                 <div class="input-field m-0 w-100">
-                                                    <input type="number" id="manualPhase1" placeholder=" " value="0"
-                                                        oninput="applyManualSettings()" style="margin-bottom:0;">
-                                                </div>
-                                                <span class="small" style="color: var(--text-muted);">円/月</span>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-2 align-items-center m-0">
-                                            <div class="col s4 small" id="phase2Label"
-                                                style="color: var(--text-muted);">24〜48回目</div>
-                                            <div class="col s8 d-flex align-items-center gap-2">
-                                                <div class="input-field m-0 w-100">
-                                                    <input type="number" id="manualPhase2" placeholder=" " value="0"
-                                                        oninput="applyManualSettings()" style="margin-bottom:0;">
-                                                </div>
-                                                <span class="small" style="color: var(--text-muted);">円/月</span>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-2 align-items-center m-0">
-                                            <div class="col s4 small" id="phase3Label"
-                                                style="color: var(--text-muted);">49回目〜</div>
-                                            <div class="col s8 d-flex align-items-center gap-2">
-                                                <div class="input-field m-0 w-100">
-                                                    <input type="number" id="manualPhase3" placeholder=" " value="0"
-                                                        oninput="applyManualSettings()" style="margin-bottom:0;">
-                                                </div>
-                                                <span class="small" style="color: var(--text-muted);">円/月</span>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-2 align-items-center m-0 pt-2"
-                                            style="border-top: 1px dashed var(--nord4);">
-                                            <div class="col s4 small fw-bold" style="color: var(--nord11);">残クレ手数料</div>
-                                            <div class="col s8 d-flex align-items-center gap-2">
-                                                <div class="input-field m-0 w-100">
-                                                    <input type="number" id="manualFee" placeholder=" " value="0"
-                                                        oninput="applyManualSettings()" style="margin-bottom:0;">
+                                                    <input type="number" id="devicePrice" placeholder=" " value="0"
+                                                        oninput="autoCalculatePhases(); updateCalc()"
+                                                        style="margin-bottom:0; font-size: 1.1rem; color: var(--nord11) !important;">
                                                 </div>
                                                 <span class="small" style="color: var(--text-muted);">円</span>
                                             </div>
                                         </div>
+
+                                        <div id="residualValueArea" class="row mb-3 align-items-center m-0 pb-2"
+                                            style="border-bottom: 1px dashed var(--nord4);">
+                                            <div class="col s4 small fw-bold" style="color: var(--text-main);">
+                                                残価（最終回設定額）
+                                            </div>
+                                            <div class="col s8 d-flex align-items-center gap-2">
+                                                <div class="input-field m-0 w-100">
+                                                    <input type="number" id="residualValue" placeholder=" " value="0"
+                                                        oninput="autoCalculatePhases(); updateCalc()"
+                                                        style="margin-bottom:0; font-size: 1.1rem;">
+                                                </div>
+                                                <span class="small" style="color: var(--text-muted);">円</span>
+                                            </div>
+                                        </div>
+
+                                        <div id="programPhasesArea">
+                                            <div class="row mb-2 align-items-center m-0">
+                                                <div class="col s4 small" id="phase1Label"
+                                                    style="color: var(--text-muted);">1〜23回目</div>
+                                                <div class="col s8 d-flex align-items-center gap-2">
+                                                    <div class="input-field m-0 w-100">
+                                                        <input type="number" id="manualPhase1" placeholder=" " value="0"
+                                                            oninput="applyManualSettings()" style="margin-bottom:0;">
+                                                    </div>
+                                                    <span class="small" style="color: var(--text-muted);">円/月</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-2 align-items-center m-0">
+                                                <div class="col s4 small" id="phase2Label"
+                                                    style="color: var(--text-muted);">24〜48回目</div>
+                                                <div class="col s8 d-flex align-items-center gap-2">
+                                                    <div class="input-field m-0 w-100">
+                                                        <input type="number" id="manualPhase2" placeholder=" " value="0"
+                                                            oninput="applyManualSettings()" style="margin-bottom:0;">
+                                                    </div>
+                                                    <span class="small" style="color: var(--text-muted);">円/月</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-2 align-items-center m-0">
+                                                <div class="col s4 small" id="phase3Label"
+                                                    style="color: var(--text-muted);">49回目〜</div>
+                                                <div class="col s8 d-flex align-items-center gap-2">
+                                                    <div class="input-field m-0 w-100">
+                                                        <input type="number" id="manualPhase3" placeholder=" " value="0"
+                                                            oninput="applyManualSettings()" style="margin-bottom:0;">
+                                                    </div>
+                                                    <span class="small" style="color: var(--text-muted);">円/月</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-2 align-items-center m-0 pt-2"
+                                                style="border-top: 1px dashed var(--nord4);">
+                                                <div class="col s4 small fw-bold" style="color: var(--nord11);">残クレ手数料
+                                                </div>
+                                                <div class="col s8 d-flex align-items-center gap-2">
+                                                    <div class="input-field m-0 w-100">
+                                                        <input type="number" id="manualFee" placeholder=" " value="0"
+                                                            oninput="applyManualSettings()" style="margin-bottom:0;">
+                                                    </div>
+                                                    <span class="small" style="color: var(--text-muted);">円</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="small d-block mb-2">頭金</label>
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <div class="input-field m-0 w-100">
+                                            <input type="number" id="downPayment" placeholder=" " value="11000"
+                                                style="margin-bottom:0;">
+                                        </div>
+                                        <span class="small" style="color: var(--text-muted);">円</span>
+                                    </div>
+                                    <div class="switch mb-2">
+                                        <label class="small">
+                                            オフ
+                                            <input type="checkbox" id="isPointApplied" onchange="updateCalc()">
+                                            <span class="lever"></span>
+                                            店舗のポイントを頭金に使用する
+                                        </label>
+                                    </div>
+
+                                    <div id="storePointsContainer"></div>
+                                    <div class="mt-2">
+                                        <button type="button" class="btn-small white"
+                                            style="border: 1px solid var(--nord11); color: var(--nord11); width: 100%; box-shadow: none;"
+                                            onclick="addPointRow()">
+                                            +特典項目を追加する
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label class="small d-block mb-2">頭金</label>
-                                <div class="d-flex align-items-center gap-2 mb-2">
-                                    <div class="input-field m-0 w-100">
-                                        <input type="number" id="downPayment" placeholder=" " value="11000"
-                                            style="margin-bottom:0;">
-                                    </div>
-                                    <span class="small" style="color: var(--text-muted);">円</span>
-                                </div>
-                                <div class="switch mb-2">
-                                    <label class="small">
-                                        オフ
-                                        <input type="checkbox" id="isPointApplied" onchange="updateCalc()">
-                                        <span class="lever"></span>
-                                        店舗のポイントを頭金に使用する
-                                    </label>
-                                </div>
-
-                                <div id="storePointsContainer"></div>
-                                <div class="mt-2">
-                                    <button type="button" class="btn-small white"
-                                        style="border: 1px solid var(--nord11); color: var(--nord11); width: 100%; box-shadow: none;"
-                                        onclick="addPointRow()">
-                                        +特典項目を追加する
-                                    </button>
-                                </div>
+                            <div class="mt-4 mb-2 center-align"
+                                style="padding-top: 1rem; border-top: 1px dashed var(--border-color);">
+                                <button type="button" class="btn-small white"
+                                    style="border: 1px solid var(--nord11); color: var(--nord11); box-shadow: none;"
+                                    onclick="closeCurrentTab()">
+                                    <i class="material-icons left" style="font-size: 1.2rem;">delete</i>現在のパターンを削除する
+                                </button>
                             </div>
                         </div>
-
                     </div>
                 </div>
-            </div>
-            <div class="col s12 l6">
-                <div class="card" style="border: 1px solid var(--nord10);">
-                    <div class="card-header-result">
-                        計算の結果
-                    </div>
-                    <div class="card-content">
-                        <div id="evidenceArea" class="p-3 mb-3">
-                            ここに計算式が表示されます。
+                <div class="col s12 l6">
+                    <div class="card" style="border: 1px solid var(--nord10);">
+                        <div class="card-header-result">
+                            計算の結果
+                        </div>
+                        <div class="card-content">
+                            <div id="evidenceArea" class="p-3 mb-3">
+                                ここに計算式が表示されます。
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label class="d-block fw-bold mb-2">返却月シミュレーション（48マス）</label>
-                    <div id="paymentGrid" class="d-flex flex-wrap gap-1 p-2 border"
-                        style="background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: 4px;">
+                    <div class="mb-3">
+                        <label class="d-block fw-bold mb-2">返却月シミュレーション（48マス）</label>
+                        <div id="paymentGrid" class="d-flex flex-wrap gap-1 p-2 border"
+                            style="background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: 4px;">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div id="addTabModal" class="custom-popover-card" popover>
+        <div class="modal-header" style="background-color: var(--nord4); padding: 15px 24px;">
+            <h4 style="margin: 0; font-size: 1.2rem; font-weight: bold; color: var(--nord0);">パターンの追加</h4>
+        </div>
+        <div class="modal-content" style="padding: 24px;">
+            <p>現在のシミュレーション内容をコピーして追加しますか？<br>
+                <span style="color: var(--text-muted); font-size: 0.85rem;">（「新規作成」を選ぶと、ドコモの初期状態で追加されます）</span>
+            </p>
+        </div>
+        <div class="modal-footer" style="padding: 10px 24px; text-align: right; background-color: #fafafa;">
+            <button tabindex="0" class="waves-effect btn-flat" popovertarget="addTabModal"
+                onclick="executeAddNewTab(false)">新規作成</button>
+            <button tabindex="0" class="waves-effect btn" style="background-color: var(--primary-color); color: white;"
+                popovertarget="addTabModal" onclick="executeAddNewTab(true)">コピーして追加</button>
+        </div>
+    </div>
 
+    <div id="deleteTabModal" class="custom-popover-card" popover>
+        <div class="modal-header" style="background-color: var(--nord11); padding: 15px 24px;">
+            <h4 style="margin: 0; font-size: 1.2rem; font-weight: bold; color: white;">パターンの削除</h4>
+        </div>
+        <div class="modal-content" style="padding: 24px;">
+            <p>現在表示しているシミュレーションを削除して閉じてもよろしいですか？<br>
+                <span style="color: var(--text-muted); font-size: 0.85rem;">（この操作は取り消せません）</span>
+            </p>
+        </div>
+        <div class="modal-footer" style="padding: 10px 24px; text-align: right; background-color: #fafafa;">
+            <button tabindex="0" class="waves-effect btn-flat" popovertarget="deleteTabModal">キャンセル</button>
+            <button tabindex="0" class="waves-effect btn" style="background-color: var(--nord11); color: white;"
+                popovertarget="deleteTabModal" onclick="executeCloseCurrentTab()">削除する</button>
+        </div>
+    </div>
+
+    <div id="dummyTabTargets" style="display: none;"></div>
     <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.2.2/dist/js/materialize.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {

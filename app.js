@@ -6,6 +6,9 @@ let currentManualFee = 0;
 let currentSplitCount = 23;
 let currentTotalCount = 48;
 let previousPlanId = null;
+let simTabs = [];
+let currentTabId = null;
+let isRestoring = false;
 
 const fmt = (num) => Number(num).toLocaleString();
 
@@ -13,7 +16,7 @@ async function loadPlans() {
     try {
         const response = await fetch("plans.json");
         globalData = await response.json();
-        switchCarrier("docomo");
+        openAddTabModal();
     } catch (error) {
         console.error("データの読み込みに失敗", error);
     }
@@ -404,11 +407,11 @@ function renderDiscounts(discounts) {
         const html = `
             <div class="mb-2" style="display: flex; align-items: center; flex-wrap: wrap;">
                 <label style="margin-right: 8px;">
-                    <input class="discount-check" type="checkbox" value="${d.value}" id="${d.id}" data-name="${d.name}">
+                    <input class="discount-check" type="checkbox" value="${initialValue}" id="${d.id}" data-name="${d.name}">
                     <span>${d.name}</span>
                 </label>
                 <span class="small" style="color: var(--text-muted); display: inline-flex; align-items: center;">
-                    (-<input type="number" value="${d.value}" style="width: 60px; height: 1.5rem; margin: 0 4px; text-align: right; color: var(--nord11);" oninput="document.getElementById('${d.id}').value = this.value; updateCalc();">円)
+                    (-<input type="number" value="${initialValue}" style="width: 60px; height: 1.5rem; margin: 0 4px; text-align: right; color: var(--nord11);" oninput="document.getElementById('${d.id}').value = this.value; updateCalc();">円)
                 </span>
             </div>
         `;
@@ -618,3 +621,230 @@ ${paymentType === "program" ? '返却予定: ' + selectedReturnMonth + ' ヶ月�
 }
 
 document.addEventListener("DOMContentLoaded", loadPlans);
+function renderTabs() {
+    const ul = document.getElementById('planTabs');
+    const dummyContainer = document.getElementById("dummyTabTargets");
+    if (!ul || !dummyContainer) return;
+
+    const instance = M.Tabs.getInstance(ul);
+    if (instance) instance.destroy();
+    ul.innerHTML = "";
+    dummyContainer.innerHTML = "";
+    simTabs.forEach((tab, index) => {
+        const closeIcon = simTabs.length > 1
+            ? `<i class="material-icons" style="font-size: 1.2rem; margin-left: 8px; cursor: pointer; color: var(--nord11);" onclick="removeTab(event, '${tab.id}')">close</i>`
+            : '';
+        const isActive = tab.id === currentTabId ? "active" : "";
+        ul.innerHTML += `
+            <li class="tab">
+                <a class="${isActive}" href="#dummy_${tab.id}" onclick="switchTab('${tab.id}')" style="display:flex; align-items:center; justify-content:center;">
+                    <i class="material-icons" style="margin-right: 4px; font-size: 1.2rem;">smartphone</i>
+                    ${tab.name}
+                    ${closeIcon}
+                </a>
+            </li>
+        `;
+        dummyContainer.innerHTML += `<div id="dummy_${tab.id}"></div>`;
+    });
+    M.Tabs.init(ul);
+}
+
+function openAddTabModal() {
+    if (simTabs.length === 0) {
+        executeAddNewTab(false);
+        return;
+    }
+    if (currentTabId !== null) {
+        saveCurrentState();
+    }
+    document.getElementById("addTabModal").showPopover();
+}
+function executeAddNewTab(shouldCopy) {
+    const newId = "tab_" + Date.now();
+    let newState = {};
+    if (shouldCopy) {
+        const currentTab = simTabs.find(t => t.id === currentTabId);
+
+        if (currentTab) {
+            newState = JSON.parse(JSON.stringify(currentTab.state));
+        }
+    } else {
+        newState = {
+            carrierId: "docomo",
+            deviceId: "none",
+            storage: "",
+            planId: "",
+            options: [],
+            discounts: [],
+            paymentType: "program",
+            customInstallmentCount: 24,
+            selectedReturnMonth: 23,
+            devicePrice: 0,
+            residualValue: 0,
+            downPayment: 11000,
+            customOptions: [],
+            storePoints: []
+        };
+    }
+    simTabs.push({
+        id: newId,
+        name: `パターン ${simTabs.length + 1}`,
+        state: newState
+    });
+    currentTabId = newId;
+    renderTabs();
+    loadState(newState);
+}
+
+function removeTab(event, idToRemove) {
+    event.stopPropagation();
+    event.preventDefault();
+    if (simTabs.length <= 1) return;
+    simTabs = simTabs.filter(t => t.id !== idToRemove);
+    simTabs.forEach((t, i) => t.name = `パターン ${i + 1}`);
+    if (currentTabId === idToRemove) {
+        currentTabId = simTabs[0].id;
+        loadState(simTabs[0].state);
+    }
+    renderTabs();
+}
+
+function switchTab(targetId) {
+    if (currentTabId === targetId) return;
+    if (currentTabId !== null && !isRestoring) {
+        saveCurrentState();
+    }
+    currentTabId = targetId;
+    const targetTab = simTabs.find(t => t.id === targetId);
+    if (targetTab) {
+        loadState(targetTab.state);
+    }
+}
+function saveCurrentState() {
+    const tab = simTabs.find(t => t.id === currentTabId);
+    if (!tab) return;
+
+    const planSelect = document.getElementById("planSelect");
+    const planId = planSelect.selectedIndex >= 0 ? planSelect.options[planSelect.selectedIndex].dataset.planId : "";
+
+    const customOptions = Array.from(document.querySelectorAll("#customOptionsContainer .row")).map(row => ({
+        name: row.querySelector(".custom-opt-name")?.value || "",
+        price: Number(row.querySelector(".custom-opt-price")?.value) || 0
+    }));
+
+    const storePoints = Array.from(document.querySelectorAll("#storePointsContainer .row")).map(row => ({
+        name: row.querySelector(".store-point-name")?.value || "",
+        value: Number(row.querySelector(".store-point-value")?.value) || 0
+    }));
+
+    tab.state = {
+        carrierId: currentCarrierId,
+        paymentType: document.getElementById("paymentType")?.value || "program",
+        deviceId: document.getElementById("deviceSelect")?.value || "none",
+        storage: document.getElementById("storageSelect")?.value || "",
+        planId: planId,
+
+        options: Array.from(document.querySelectorAll(".carrier-opt-input:checked")).map(el => el.dataset.id),
+        discounts: Array.from(document.querySelectorAll(".discount-check:checked")).map(el => el.id),
+
+        customInstallmentCount: Number(document.getElementById("customInstallmentCount")?.value) || 24,
+        selectedReturnMonth: selectedReturnMonth,
+
+        devicePrice: Number(document.getElementById("devicePrice")?.value) || 0,
+        residualValue: Number(document.getElementById("residualValue")?.value) || 0,
+        downPayment: Number(document.getElementById("downPayment")?.value) || 11000,
+
+        customOptions: customOptions,
+        storePoints: storePoints
+    };
+}
+
+function loadState(state) {
+    isRestoring = true;
+    document.querySelectorAll(`input[name="carrierType"]`).forEach(radio => {
+        radio.checked = (radio.value === state.carrierId);
+    });
+    switchCarrier(state.carrierId);
+    const deviceSelect = document.getElementById("deviceSelect");
+    if (deviceSelect) {
+        deviceSelect.value = state.deviceId;
+        onDeviceChange();
+    }
+
+    const storageSelect = document.getElementById("storageSelect");
+    if (storageSelect && state.storage) {
+        storageSelect.value = state.storage;
+    }
+
+    const paymentSelect = document.getElementById("paymentType");
+    if (paymentSelect) {
+        paymentSelect.value = state.paymentType;
+        toggleInstallmentInput();
+    }
+
+    const planSelect = document.getElementById("planSelect");
+    if (planSelect && state.planId) {
+        Array.from(planSelect.options).forEach((opt, idx) => {
+            if (opt.dataset.planId === state.planId) {
+                planSelect.selectedIndex = idx;
+            }
+        });
+        previousPlanId = state.planId;
+    }
+
+    document.querySelectorAll(".carrier-opt-input").forEach(el => {
+        el.checked = state.options.includes(el.dataset.id);
+    });
+    document.querySelectorAll(".discount-check").forEach(el => {
+        el.checked = state.discounts.includes(el.id);
+    });
+
+    document.getElementById("customInstallmentCount").value = state.customInstallmentCount;
+    selectedReturnMonth = state.selectedReturnMonth;
+    document.getElementById("devicePrice").value = state.devicePrice;
+    document.getElementById("residualValue").value = state.residualValue;
+    document.getElementById("downPayment").value = state.downPayment;
+
+    const customOptContainer = document.getElementById("customOptionsContainer");
+    if (customOptContainer) {
+        customOptContainer.innerHTML = "";
+        state.customOptions.forEach(opt => {
+            addCustomOptionRow();
+            const rows = customOptContainer.querySelectorAll(".row");
+            const lastRow = rows[rows.length - 1];
+            lastRow.querySelector(".custom-opt-name").value = opt.name;
+            lastRow.querySelector(".custom-opt-price").value = opt.price;
+        });
+    }
+
+    const pointsContainer = document.getElementById("storePointsContainer");
+    if (pointsContainer) {
+        pointsContainer.innerHTML = "";
+        state.storePoints.forEach(pt => {
+            addPointRow();
+            const rows = pointsContainer.querySelectorAll(".row");
+            const lastRow = rows[rows.length - 1];
+            lastRow.querySelector(".store-point-name").value = pt.name;
+            lastRow.querySelector(".store-point-value").value = pt.value;
+        });
+    }
+
+    M.FormSelect.init(document.querySelectorAll('select'));
+
+    isRestoring = false;
+    autoCalculatePhases();
+    updateCalc();
+}
+
+function closeCurrentTab() {
+    if (simTabs.length <= 1) {
+        M.toast({ html: '最後の1つは削除できません！', classes: 'rounded red lighten-1' }); return;
+    }
+
+    document.getElementById('deleteTabModal').showPopover();
+}
+
+function executeCloseCurrentTab() {
+    const dummyEvent = { stopPropagation: () => { }, preventDefault: () => { } };
+    removeTab(dummyEvent, currentTabId);
+}
