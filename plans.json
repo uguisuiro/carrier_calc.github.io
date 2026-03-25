@@ -17,6 +17,54 @@
             "total_count": 48
         },
         {
+            "id": "kaedoki_ahamo",
+            "carrier": "ahamo",
+            "name": "いつでもカエドキプログラム",
+            "split_count": 23,
+            "residual_month": 24,
+            "total_count": 48
+        },
+        {
+            "id": "kaedoki_plus_ahamo",
+            "carrier": "ahamo",
+            "name": "いつでもカエドキプログラム＋",
+            "split_count": 23,
+            "residual_month": 24,
+            "total_count": 48
+        },
+        {
+            "id": "tokusuru_plus",
+            "carrier": "au",
+            "name": "スマホトクするプログラム＋",
+            "split_count": 24,
+            "residual_month": 25,
+            "total_count": 48
+        },
+        {
+            "id": "tokusuru",
+            "carrier": "uq",
+            "name": "スマホトクするプログラムuq",
+            "split_count": 24,
+            "residual_month": 25,
+            "total_count": 48
+        },
+        {
+            "id": "shin_tokusuru_plus",
+            "carrier": "softbank",
+            "name": "新トクするサポート+",
+            "split_count": 24,
+            "residual_month": 25,
+            "total_count": 48
+        },
+        {
+            "id": "shin_tokusuru",
+            "carrier": "ymobile",
+            "name": "新トクするサポート",
+            "split_count": 24,
+            "residual_month": 25,
+            "total_count": 48
+        },
+        {
             "id": "kaden",
             "carrier": "all",
             "name": "家電量販店独自の分割プログラム",
@@ -55,7 +103,8 @@
                 ],
                 "ymobile": [
                     "128GB",
-                    "256GB"
+                    "256GB",
+                    "512GB"
                 ]
             }
         },
@@ -126,6 +175,97 @@
             }
         },
         {
+            "id": "iphone17",
+            "name": "iPhone 17",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB"
+                ],
+                "softbank": [
+                    "256GB",
+                    "512GB"
+                ],
+                "ahamo": [
+                    "128GB",
+                    "256GB"
+                ]
+            }
+        },
+        {
+            "id": "iphone_air",
+            "name": "iPhone Air",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "softbank": [
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ]
+            }
+        },
+        {
+            "id": "iphone17_pro",
+            "name": "iPhone 17 Pro",
+            "storage_by_carrier": {
+                "docomo": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ],
+                "au": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ],
+                "softbank": [
+                    "256GB",
+                    "512GB",
+                    "1TB",
+                    "2TB"
+                ]
+            }
+        },
+        {
+            "id": "iphone17_pro_max",
+            "name": "iPhone 17 Pro Max",
+            "storage_by_carrier": {
+                "docomo": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "au": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ],
+                "softbank": [
+                    "128GB",
+                    "256GB",
+                    "512GB",
+                    "1TB"
+                ]
+            }
+        },
+        {
             "id": "iphone16e",
             "name": "iPhone 16e",
             "storage_by_carrier": {
@@ -154,7 +294,8 @@
                 ],
                 "ymobile": [
                     "128GB",
-                    "256GB"
+                    "256GB",
+                    "512GB"
                 ]
             }
         },
@@ -173,7 +314,6 @@
                     "512GB"
                 ],
                 "softbank": [
-                    "128GB",
                     "256GB",
                     "512GB"
                 ],
@@ -186,8 +326,104 @@
                     "256GB"
                 ],
                 "ymobile": [
-                    "128GB",
+                    "256GB",
+                    "512GB"
+                ]
+            }
+        },
+        {
+            "id": "nubia_flip_3",
+            "name": "Nubia Flip 3",
+            "storage_by_carrier": {
+                "softbank": [
+                    "128GB"
+                ],
+                "ymobile": [
+                    "128GB"
+                ]
+            }
+        },
+        {
+            "id": "rakurakua",
+            "name": "らくらくスマートフォンa",
+            "storage_by_carrier": {
+                "softbank": [
+                    "64GB"
+                ],
+                "ymobile": [
+                    "64GB"
+                ]
+            }
+        },
+        {
+            "id": "nubia_flip_2",
+            "name": "Nubia Flip 2",
+            "storage_by_carrier": {
+                "softbank": [
+                    "128GB"
+                ],
+                "ymobile": [
+                    "128GB"
+                ]
+            }
+        },
+        {
+            "id": "nubia_fold",
+            "name": "Nubia Fold",
+            "storage_by_carrier": {
+                "softbank": [
                     "256GB"
+                ],
+                "ymobile": [
+                    "256GB"
+                ]
+            }
+        },
+        {
+            "id": "nubia_s2",
+            "name": "Nubia S2",
+            "storage_by_carrier": {
+                "softbank": [
+                    "128GB"
+                ],
+                "ymobile": [
+                    "128GB"
+                ]
+            }
+        },
+        {
+            "id": "oppo_a5_5g",
+            "name": "OPPO A5 5G",
+            "storage_by_carrier": {
+                "softbank": [
+                    "128GB"
+                ],
+                "ymobile": [
+                    "128GB"
+                ]
+            }
+        },
+        {
+            "id": "oppo_reno_13a",
+            "name": "OPPO Reno 13A",
+            "storage_by_carrier": {
+                "softbank": [
+                    "128GB"
+                ],
+                "ymobile": [
+                    "128GB"
+                ]
+            }
+        },
+        {
+            "id": "moto_g66y",
+            "name": "Moto G66Y",
+            "storage_by_carrier": {
+                "softbank": [
+                    "128GB"
+                ],
+                "ymobile": [
+                    "128GB"
                 ]
             }
         },
@@ -204,7 +440,8 @@
                     "512GB"
                 ],
                 "softbank": [
-                    "256GB"
+                    "256GB",
+                    "512GB"
                 ]
             }
         },
@@ -218,6 +455,10 @@
                 ],
                 "au": [
                     "256GB"
+                ],
+                "softbank": [
+                    "256GB",
+                    "512GB"
                 ]
             }
         },
@@ -234,6 +475,10 @@
                     "256GB",
                     "512GB",
                     "1TB"
+                ],
+                "softbank": [
+                    "256GB",
+                    "512GB"
                 ]
             }
         },
@@ -248,6 +493,9 @@
                 "au": [
                     "256GB",
                     "512GB"
+                ],
+                "softbank": [
+                    "256GB"
                 ]
             }
         },
@@ -263,24 +511,9 @@
                 "au": [
                     "256GB",
                     "512GB"
-                ]
-            }
-        },
-        {
-            "id": "galaxy_a36_5g_sc54f",
-            "name": "Samsung Galaxy A36 5G",
-            "storage_by_carrier": {
-                "docomo": [
-                    "128GB"
                 ],
-                "au": [
-                    "128GB"
-                ],
-                "uq": [
-                    "128GB"
-                ],
-                "ahamo": [
-                    "128GB"
+                "softbank": [
+                    "256GB"
                 ]
             }
         },
@@ -296,67 +529,18 @@
                 ],
                 "uq": [
                     "128GB"
+                ],
+                "softbank": [
+                    "64GB"
                 ]
             }
         },
         {
-            "id": "galaxy_s25_sc51f",
-            "name": "Galaxy S25",
+            "id": "redmi_15_5g",
+            "name": "Redmi 15 5G",
             "storage_by_carrier": {
-                "docomo": [
-                    "256GB",
-                    "512GB"
-                ],
-                "au": [
-                    "256GB",
-                    "512GB"
-                ]
-            }
-        },
-        {
-            "id": "galaxy_s25_ultra_sc52f",
-            "name": "Galaxy S25 Ultra",
-            "storage_by_carrier": {
-                "docomo": [
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "au": [
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ]
-            }
-        },
-        {
-            "id": "galaxy_z_fold6_sc55e",
-            "name": "Galaxy Z Fold6",
-            "storage_by_carrier": {
-                "docomo": [
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "au": [
-                    "256GB",
-                    "512GB"
-                ]
-            }
-        },
-        {
-            "id": "galaxy_s24_ultra_sc52e",
-            "name": "Galaxy S24 Ultra",
-            "storage_by_carrier": {
-                "docomo": [
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "au": [
-                    "256GB",
-                    "512GB",
-                    "1TB"
+                "softbank": [
+                    "128GB"
                 ]
             }
         },
@@ -394,7 +578,7 @@
             }
         },
         {
-            "id": "aquos_wish5_sh52f",
+            "id": "aquos_wish5",
             "name": "AQUOS wish5",
             "storage_by_carrier": {
                 "docomo": [
@@ -403,44 +587,11 @@
                 "au": [
                     "64GB"
                 ],
-                "softbank": [
-                    "64GB"
-                ],
                 "uq": [
                     "64GB"
                 ],
                 "ymobile": [
-                    "64GB"
-                ]
-            }
-        },
-        {
-            "id": "aquos_sense9_sh53e",
-            "name": "AQUOS sense9",
-            "storage_by_carrier": {
-                "docomo": [
                     "128GB"
-                ],
-                "au": [
-                    "128GB"
-                ],
-                "softbank": [
-                    "128GB"
-                ],
-                "uq": [
-                    "128GB"
-                ],
-                "ymobile": [
-                    "128GB"
-                ]
-            }
-        },
-        {
-            "id": "aquos_r9_pro_sh54e",
-            "name": "AQUOS R9 pro",
-            "storage_by_carrier": {
-                "docomo": [
-                    "512GB"
                 ]
             }
         },
@@ -466,16 +617,14 @@
             }
         },
         {
-            "id": "xperia_1_vii_so51f",
+            "id": "xperia_1_vii",
             "name": "Xperia 1 VII",
             "storage_by_carrier": {
                 "docomo": [
-                    "256GB",
-                    "512GB"
+                    "128GB"
                 ],
                 "au": [
-                    "256GB",
-                    "512GB"
+                    "128GB"
                 ],
                 "softbank": [
                     "256GB"
@@ -483,28 +632,19 @@
             }
         },
         {
-            "id": "razr_60d_m51f",
-            "name": "motorola razr 60d",
+            "id": "razr_60s",
+            "name": "motorola razr 60s",
             "storage_by_carrier": {
-                "docomo": [
-                    "256GB"
-                ],
                 "softbank": [
                     "256GB"
                 ]
             }
         },
         {
-            "id": "razr_50d_m51e",
-            "name": "motorola razr 50d",
+            "id": "edge_60s_pro",
+            "name": "motorola edge 60s pro",
             "storage_by_carrier": {
-                "docomo": [
-                    "256GB"
-                ],
                 "softbank": [
-                    "256GB"
-                ],
-                "ymobile": [
                     "256GB"
                 ]
             }
@@ -532,17 +672,14 @@
             "name": "Google Pixel 10 Pro",
             "storage_by_carrier": {
                 "docomo": [
-                    "128GB",
                     "256GB",
                     "512GB"
                 ],
                 "au": [
-                    "128GB",
                     "256GB",
                     "512GB"
                 ],
                 "softbank": [
-                    "128GB",
                     "256GB",
                     "512GB"
                 ]
@@ -553,17 +690,14 @@
             "name": "Google Pixel 10 Pro XL",
             "storage_by_carrier": {
                 "docomo": [
-                    "128GB",
                     "256GB",
                     "512GB"
                 ],
                 "au": [
-                    "128GB",
                     "256GB",
                     "512GB"
                 ],
                 "softbank": [
-                    "128GB",
                     "256GB",
                     "512GB"
                 ]
@@ -598,34 +732,15 @@
                     "128GB"
                 ],
                 "softbank": [
-                    "128GB"
+                    "128GB",
+                    "256GB"
                 ],
                 "uq": [
                     "128GB"
                 ],
                 "ymobile": [
-                    "128GB"
-                ]
-            }
-        },
-        {
-            "id": "pixel_8_pro",
-            "name": "Google Pixel 8 Pro",
-            "storage_by_carrier": {
-                "docomo": [
                     "128GB",
-                    "256GB",
-                    "512GB"
-                ],
-                "au": [
-                    "128GB",
-                    "256GB",
-                    "512GB"
-                ],
-                "softbank": [
-                    "128GB",
-                    "256GB",
-                    "512GB"
+                    "256GB"
                 ]
             }
         },
@@ -753,333 +868,6 @@
             "id": "digno_tab2_5g_kct306",
             "name": "DIGNO Tab2 5G KC-T306",
             "storage_by_carrier": {
-                "au": [
-                    "64GB"
-                ],
-                "softbank": [
-                    "64GB"
-                ]
-            }
-        },
-        {
-            "id": "ipad_air_13_m4",
-            "name": "13インチiPad Air（M4）",
-            "storage_by_carrier": {
-                "docomo": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "au": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "softbank": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ]
-            }
-        },
-        {
-            "id": "ipad_air_11_m4",
-            "name": "11インチiPad Air（M4）",
-            "storage_by_carrier": {
-                "docomo": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "au": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "softbank": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ]
-            }
-        },
-        {
-            "id": "ipad_pro_13_m5",
-            "name": "13インチiPad Pro（M5）",
-            "storage_by_carrier": {
-                "docomo": [
-                    "256GB",
-                    "512GB",
-                    "1TB",
-                    "2TB"
-                ],
-                "au": [
-                    "256GB",
-                    "512GB",
-                    "1TB",
-                    "2TB"
-                ],
-                "softbank": [
-                    "256GB",
-                    "512GB",
-                    "1TB",
-                    "2TB"
-                ]
-            }
-        },
-        {
-            "id": "ipad_pro_11_m5",
-            "name": "11インチiPad Pro（M5）",
-            "storage_by_carrier": {
-                "docomo": [
-                    "256GB",
-                    "512GB",
-                    "1TB",
-                    "2TB"
-                ],
-                "au": [
-                    "256GB",
-                    "512GB",
-                    "1TB",
-                    "2TB"
-                ],
-                "softbank": [
-                    "256GB",
-                    "512GB",
-                    "1TB",
-                    "2TB"
-                ]
-            }
-        },
-        {
-            "id": "ipad_a16",
-            "name": "iPad（A16）",
-            "storage_by_carrier": {
-                "docomo": [
-                    "128GB",
-                    "256GB",
-                    "512GB"
-                ],
-                "au": [
-                    "128GB",
-                    "256GB",
-                    "512GB"
-                ],
-                "softbank": [
-                    "128GB",
-                    "256GB",
-                    "512GB"
-                ]
-            }
-        },
-        {
-            "id": "ipad_air_13_m3",
-            "name": "13インチiPad Air（M3）",
-            "storage_by_carrier": {
-                "docomo": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "au": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "softbank": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ]
-            }
-        },
-        {
-            "id": "ipad_air_11_m3",
-            "name": "11インチiPad Air（M3）",
-            "storage_by_carrier": {
-                "docomo": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "au": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "softbank": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ]
-            }
-        },
-        {
-            "id": "ipad_pro_13_m4",
-            "name": "13インチiPad Pro（M4）",
-            "storage_by_carrier": {
-                "docomo": [
-                    "256GB",
-                    "512GB",
-                    "1TB",
-                    "2TB"
-                ],
-                "au": [
-                    "256GB",
-                    "512GB",
-                    "1TB",
-                    "2TB"
-                ],
-                "softbank": [
-                    "256GB",
-                    "512GB",
-                    "1TB",
-                    "2TB"
-                ]
-            }
-        },
-        {
-            "id": "ipad_pro_11_m4",
-            "name": "11インチiPad Pro（M4）",
-            "storage_by_carrier": {
-                "docomo": [
-                    "256GB",
-                    "512GB",
-                    "1TB",
-                    "2TB"
-                ],
-                "au": [
-                    "256GB",
-                    "512GB",
-                    "1TB",
-                    "2TB"
-                ],
-                "softbank": [
-                    "256GB",
-                    "512GB",
-                    "1TB",
-                    "2TB"
-                ]
-            }
-        },
-        {
-            "id": "ipad_air_13_m2",
-            "name": "13インチiPad Air（M2）",
-            "storage_by_carrier": {
-                "docomo": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "au": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "softbank": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ]
-            }
-        },
-        {
-            "id": "ipad_air_11_m2",
-            "name": "11インチiPad Air（M2）",
-            "storage_by_carrier": {
-                "docomo": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "au": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ],
-                "softbank": [
-                    "128GB",
-                    "256GB",
-                    "512GB",
-                    "1TB"
-                ]
-            }
-        },
-        {
-            "id": "ipad_mini_a17pro",
-            "name": "iPad mini（A17 Pro）",
-            "storage_by_carrier": {
-                "docomo": [
-                    "128GB",
-                    "256GB",
-                    "512GB"
-                ],
-                "au": [
-                    "128GB",
-                    "256GB",
-                    "512GB"
-                ],
-                "softbank": [
-                    "128GB",
-                    "256GB",
-                    "512GB"
-                ]
-            }
-        },
-        {
-            "id": "apple_watch_series_11",
-            "name": "Apple Watch Series 11",
-            "storage_by_carrier": {
-                "docomo": [
-                    "64GB"
-                ],
-                "au": [
-                    "64GB"
-                ],
-                "softbank": [
-                    "64GB"
-                ]
-            }
-        },
-        {
-            "id": "apple_watch_se_3",
-            "name": "Apple Watch SE 3",
-            "storage_by_carrier": {
-                "docomo": [
-                    "64GB"
-                ],
-                "au": [
-                    "64GB"
-                ],
-                "softbank": [
-                    "64GB"
-                ]
-            }
-        },
-        {
-            "id": "apple_watch_ultra_3",
-            "name": "Apple Watch Ultra 3",
-            "storage_by_carrier": {
-                "docomo": [
-                    "64GB"
-                ],
                 "au": [
                     "64GB"
                 ],
@@ -1664,7 +1452,6 @@
                     "name": "ドコモ ポイ活 MAX",
                     "type": "flat",
                     "price": 11748,
-                    "point_benefit": 5000,
                     "bundle_perks": {
                         "limit": 2,
                         "eligible_ids": [
@@ -1680,7 +1467,6 @@
                     "id": "poikatsu_20",
                     "name": "ドコモ ポイ活 20",
                     "type": "tiered",
-                    "point_benefit": 2500,
                     "tiers": [
                         {
                             "label": "〜20GB",
@@ -1872,58 +1658,1591 @@
             ]
         },
         {
-            "id": "au",
-            "name": "au",
-            "plans": [
+            "id": "softbank",
+            "name": "ソフトバンク",
+            "options": [
                 {
-                    "id": "unlimited_5g",
-                    "name": "使い放題MAX 5G",
-                    "type": "flat",
-                    "price": 7238
+                    "category": "通話オプション",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "teigaku_plus",
+                            "name": "定額オプション＋",
+                            "price": 1980,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "junteigaku_plus",
+                            "name": "準定額オプション＋",
+                            "price": 880,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "answering_machine_plus",
+                            "name": "留守番電話プラス",
+                            "price": 330,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "call_waiting",
+                            "name": "割込通話",
+                            "price": 220,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "group_call",
+                            "name": "グループ通話",
+                            "price": 220,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "number_block",
+                            "name": "ナンバーブロック",
+                            "price": 110,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "call_forwarding",
+                            "name": "着信転送サービス",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "caller_id",
+                            "name": "発信者番号通知",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "補償・サポート",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "anshin_guarantee_apple",
+                            "name": "あんしん保証パック with AppleCare Services",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 715,
+                            "price_max": 1600,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "anshin_guarantee_plus",
+                            "name": "あんしん保証パックプラス",
+                            "price": 715,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "anshin_remote_support",
+                            "name": "あんしん遠隔サポート",
+                            "price": 440,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "smartphone_support",
+                            "name": "店頭スマホサポート定額",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 550,
+                            "price_max": 990,
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "セキュリティ・見守り",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "security_pack_plus",
+                            "name": "セキュリティパックプラス",
+                            "price": 660,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "anshin_filter",
+                            "name": "あんしんフィルター",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "position_navi",
+                            "name": "位置ナビ",
+                            "price": 220,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "mimamori_map",
+                            "name": "みまもりマップ",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "エンタメ・サブスク",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "netflix",
+                            "name": "Netflix",
+                            "price": 890,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "youtube_premium",
+                            "name": "YouTube Premium",
+                            "price": 1280,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "apple_one",
+                            "name": "Apple One",
+                            "price": 1200,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "hulu",
+                            "name": "Hulu",
+                            "price": 1026,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "dazn",
+                            "name": "DAZN",
+                            "price": 4200,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "geforce_now",
+                            "name": "GeForce NOW Powered by SoftBank",
+                            "price": 1980,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "通信・クラウド・メール",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "tethering",
+                            "name": "テザリングオプション",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "softbank_wifi",
+                            "name": "ソフトバンクWi-Fiスポット",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "mail_carry",
+                            "name": "メールアドレス持ち運び",
+                            "price": 330,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        }
+                    ]
                 }
             ],
-            "programs": [
+            "plan_services": [
                 {
-                    "id": "tokusuru",
-                    "name": "スマホトクするプログラム",
-                    "split_count": 24,
-                    "residual_month": 25
+                    "id": "kids_phone_plan",
+                    "name": "基本プラン（音声）",
+                    "contract_type": "4G/5G",
+                    "verified": true,
+                    "monthly_price": 1078,
+                    "eligible_devices": [
+                        "キッズフォン3",
+                        "キッズフォン2"
+                    ],
+                    "current_services": [
+                        "家族割引（家族間通話無料）",
+                        "1回5分以内の国内通話無料",
+                        "SMS送受信無料",
+                        "位置ナビ（保護者が加入）連携"
+                    ],
+                    "call_rate_outside": 22
+                }
+            ],
+            "benefits": [
+                {
+                    "id": "softbank_premium",
+                    "name": "ソフトバンクプレミアム"
+                },
+                {
+                    "id": "paypay_step",
+                    "name": "PayPayステップ"
+                }
+            ],
+            "plans": [
+                {
+                    "id": "paytoku_unlimited",
+                    "name": "ペイトク無制限",
+                    "type": "flat",
+                    "price": 9625
+                },
+                {
+                    "id": "paytoku_50",
+                    "name": "ペイトク50",
+                    "type": "flat",
+                    "price": 8525
+                },
+                {
+                    "id": "paytoku_30",
+                    "name": "ペイトク30",
+                    "type": "flat",
+                    "price": 7425
+                },
+                {
+                    "id": "merihari_unlimited_plus",
+                    "name": "メリハリ無制限＋",
+                    "type": "flat",
+                    "price": 7425
+                },
+                {
+                    "id": "minifit_plus",
+                    "name": "ミニフィットプラン＋",
+                    "type": "tiered",
+                    "tiers": [
+                        {
+                            "label": "〜1GB",
+                            "price": 3278
+                        },
+                        {
+                            "label": "1GB〜2GB",
+                            "price": 4378
+                        },
+                        {
+                            "label": "2GB〜3GB",
+                            "price": 5478
+                        }
+                    ]
+                },
+                {
+                    "id": "debut_plus_basic",
+                    "name": "スマホデビュープラン＋（ベーシック）",
+                    "type": "flat",
+                    "price": 2838,
+                    "data_amount": "20GB"
+                },
+                {
+                    "id": "debut_plus_light",
+                    "name": "スマホデビュープラン＋（ライト）",
+                    "type": "flat",
+                    "price": 2266,
+                    "data_amount": "4GB"
+                },
+                {
+                    "id": "kids_phone",
+                    "name": "キッズフォン向け基本プラン（音声）",
+                    "type": "flat",
+                    "price": 1078,
+                    "contract_type": "4G/5G",
+                    "eligible_devices": [
+                        "キッズフォン3",
+                        "キッズフォン2"
+                    ]
                 }
             ],
             "discounts": [
                 {
-                    "id": "kazoku_3",
-                    "group": "家族割プラス",
+                    "id": "new_minna_3",
+                    "group": "新みんな家族割",
                     "name": "3人以上",
-                    "value": 1100
+                    "rules": [
+                        {
+                            "plans": [
+                                "paytoku_unlimited",
+                                "paytoku_50",
+                                "paytoku_30",
+                                "merihari_unlimited_plus"
+                            ],
+                            "value": 1210
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "new_minna_2",
+                    "group": "新みんな家族割",
+                    "name": "2人",
+                    "rules": [
+                        {
+                            "plans": [
+                                "paytoku_unlimited",
+                                "paytoku_50",
+                                "paytoku_30",
+                                "merihari_unlimited_plus"
+                            ],
+                            "value": 660
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "ouchi_wari_hikari",
+                    "group": "おうち割 光セット",
+                    "name": "おうち割 光セット",
+                    "rules": [
+                        {
+                            "plans": [
+                                "paytoku_unlimited",
+                                "paytoku_50",
+                                "paytoku_30",
+                                "merihari_unlimited_plus",
+                                "minifit_plus"
+                            ],
+                            "value": 1100
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "paypay_card_wari",
+                    "group": "PayPayカード割",
+                    "name": "PayPayカード割",
+                    "rules": [
+                        {
+                            "plans": [
+                                "paytoku_unlimited",
+                                "paytoku_50",
+                                "paytoku_30",
+                                "merihari_unlimited_plus"
+                            ],
+                            "value": 187
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "data_under_2gb",
+                    "group": "利用データ量連動",
+                    "name": "月間データ利用量2GB以下割引",
+                    "rules": [
+                        {
+                            "plans": [
+                                "paytoku_unlimited",
+                                "paytoku_50",
+                                "paytoku_30",
+                                "merihari_unlimited_plus"
+                            ],
+                            "value": 1650
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "1year_otoku_plus",
+                    "group": "期間限定割引",
+                    "name": "1年おトク割＋",
+                    "rules": [
+                        {
+                            "plans": [
+                                "debut_plus_basic",
+                                "debut_plus_light"
+                            ],
+                            "value": 1188
+                        }
+                    ],
+                    "default_value": 0
                 }
             ]
         },
         {
-            "id": "softbank",
-            "name": "ソフトバンク",
-            "plans": [
+            "id": "au",
+            "name": "au",
+            "options": [
                 {
-                    "id": "merihari",
-                    "name": "メリハリ無制限+",
-                    "type": "flat",
-                    "price": 7425
+                    "category": "通話オプション",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "tsuwa_teigaku_2",
+                            "name": "通話定額2",
+                            "price": 1980,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "tsuwa_teigaku_light_2",
+                            "name": "通話定額ライト2",
+                            "price": 880,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "orusuban_ex",
+                            "name": "お留守番サービスEX",
+                            "price": 330,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "warikomi_tsuwa",
+                            "name": "割込通話",
+                            "price": 220,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "sansha_tsuwa",
+                            "name": "三者通話",
+                            "price": 220,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "meiwaku_block",
+                            "name": "迷惑電話撃退サービス",
+                            "price": 110,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "call_forwarding",
+                            "name": "着信転送サービス",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "caller_id",
+                            "name": "発信番号表示",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "補償・サポート",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "koshou_funshitsu_apple",
+                            "name": "故障紛失サポート ワイド with AppleCare Services & iCloud+",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 870,
+                            "price_max": 1740,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "koshou_funshitsu_cloud",
+                            "name": "故障紛失サポート ワイド with Cloud",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 720,
+                            "price_max": 1190,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "tsukaikata_support",
+                            "name": "使い方サポート",
+                            "price": 429,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "tento_support",
+                            "name": "店頭設定サポート",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 1100,
+                            "price_max": 3300,
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "セキュリティ・見守り",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "anshin_filter_au",
+                            "name": "あんしんフィルター for au",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "anshin_navi",
+                            "name": "安心ナビ",
+                            "price": 330,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "security_password",
+                            "name": "セキュリティパスワード",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "エンタメ・サブスク",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "ponta_pass",
+                            "name": "Pontaパス",
+                            "price": 548,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "netflix",
+                            "name": "Netflix",
+                            "price": 890,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "youtube_premium",
+                            "name": "YouTube Premium",
+                            "price": 1280,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "apple_music",
+                            "name": "Apple Music",
+                            "price": 1080,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "dazn",
+                            "name": "DAZN",
+                            "price": 4200,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "通信・クラウド・メール",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "tethering",
+                            "name": "テザリングオプション",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "au_wifi",
+                            "name": "au Wi-Fiアクセス",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "mail_carry_au",
+                            "name": "auメール持ち運び",
+                            "price": 330,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "data_oazukari",
+                            "name": "データお預かり",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        }
+                    ]
                 }
             ],
-            "programs": [
+            "plan_services": [
                 {
-                    "id": "shintoku_std",
-                    "name": "新トクするサポート",
-                    "split_count": 24,
-                    "residual_month": 25
+                    "id": "kids_keitai_plan",
+                    "name": "キッズケータイプラン",
+                    "contract_type": "4G/5G",
+                    "verified": true,
+                    "monthly_price": 660,
+                    "eligible_devices": [
+                        "mamorino6",
+                        "mamorino5"
+                    ],
+                    "current_services": [
+                        "家族間通話無料（家族割プラス加入時）",
+                        "SMS送受信無料",
+                        "安心ナビ連携",
+                        "防犯ブザー機能連携"
+                    ],
+                    "call_rate_outside": 22
+                }
+            ],
+            "benefits": [
+                {
+                    "id": "au_manekatsu_benefit",
+                    "name": "auマネ活プラン特典"
+                },
+                {
+                    "id": "au_star",
+                    "name": "au STAR"
+                }
+            ],
+            "plans": [
+                {
+                    "id": "au_manekatsu",
+                    "name": "auマネ活プラン 5G/4G",
+                    "type": "flat",
+                    "price": 7238
+                },
+                {
+                    "id": "tsukaihodai_max",
+                    "name": "使い放題MAX 5G/4G",
+                    "type": "flat",
+                    "price": 7238
+                },
+                {
+                    "id": "smartphone_mini",
+                    "name": "スマホミニプラン 5G/4G",
+                    "type": "tiered",
+                    "tiers": [
+                        {
+                            "label": "〜1GB",
+                            "price": 3465
+                        },
+                        {
+                            "label": "1GB〜2GB",
+                            "price": 4565
+                        },
+                        {
+                            "label": "2GB〜3GB",
+                            "price": 5665
+                        },
+                        {
+                            "label": "3GB〜4GB",
+                            "price": 6215
+                        }
+                    ]
+                },
+                {
+                    "id": "smartphone_start",
+                    "name": "スマホスタートプラン 5G/4G",
+                    "type": "flat",
+                    "price": 2860,
+                    "data_amount": "20GB"
+                },
+                {
+                    "id": "smartphone_start_light",
+                    "name": "スマホスタートプランライト 5G/4G",
+                    "type": "flat",
+                    "price": 2266,
+                    "data_amount": "4GB"
+                },
+                {
+                    "id": "kids_keitai",
+                    "name": "キッズケータイプラン",
+                    "type": "flat",
+                    "price": 660,
+                    "contract_type": "4G/5G",
+                    "eligible_devices": [
+                        "mamorino6",
+                        "mamorino5"
+                    ]
                 }
             ],
             "discounts": [
                 {
-                    "id": "shinkansen",
-                    "group": "新みんな家族割",
+                    "id": "kazoku_wari_plus_3",
+                    "group": "家族割プラス",
                     "name": "3人以上",
-                    "value": 1210
+                    "rules": [
+                        {
+                            "plans": [
+                                "tsukaihodai_max"
+                            ],
+                            "value": 1100
+                        },
+                        {
+                            "plans": [
+                                "smartphone_mini"
+                            ],
+                            "value": 550
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "kazoku_wari_plus_2",
+                    "group": "家族割プラス",
+                    "name": "2人",
+                    "rules": [
+                        {
+                            "plans": [
+                                "tsukaihodai_max"
+                            ],
+                            "value": 550
+                        },
+                        {
+                            "plans": [
+                                "smartphone_mini"
+                            ],
+                            "value": 220
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "au_smart_value",
+                    "group": "auスマートバリュー",
+                    "name": "auスマートバリュー",
+                    "rules": [
+                        {
+                            "plans": [
+                                "au_manekatsu",
+                                "tsukaihodai_max"
+                            ],
+                            "value": 1100
+                        },
+                        {
+                            "plans": [
+                                "smartphone_mini"
+                            ],
+                            "value": 550
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "au_pay_card_wari",
+                    "group": "au PAY カードお支払い割",
+                    "name": "au PAY カードお支払い割",
+                    "rules": [
+                        {
+                            "plans": [
+                                "tsukaihodai_max",
+                                "smartphone_mini"
+                            ],
+                            "value": 187
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "data_under_3gb",
+                    "group": "利用データ量連動",
+                    "name": "月間データ利用量3GB以下割引",
+                    "rules": [
+                        {
+                            "plans": [
+                                "au_manekatsu",
+                                "tsukaihodai_max"
+                            ],
+                            "value": 1650
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "start_1year_wari",
+                    "group": "期間限定割引",
+                    "name": "スマホスタート1年割",
+                    "rules": [
+                        {
+                            "plans": [
+                                "smartphone_start",
+                                "smartphone_start_light"
+                            ],
+                            "value": 1188
+                        }
+                    ],
+                    "default_value": 0
+                }
+            ]
+        },
+        {
+            "id": "uq",
+            "name": "UQ mobile",
+            "options": [
+                {
+                    "category": "通話オプション",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "tsuwa_hodai",
+                            "name": "通話放題",
+                            "price": 1980,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "tsuwa_hodai_light",
+                            "name": "通話放題ライト",
+                            "price": 880,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "tsuwa_pack",
+                            "name": "通話パック（60分/月）",
+                            "price": 550,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "denwa_kihon_pack",
+                            "name": "電話基本パック",
+                            "price": 440,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "orusuban_ex",
+                            "name": "お留守番サービスEX",
+                            "price": 330,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "warikomi_tsuwa",
+                            "name": "割込通話",
+                            "price": 220,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "sansha_tsuwa",
+                            "name": "三者通話",
+                            "price": 220,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "meiwaku_block",
+                            "name": "迷惑電話撃退サービス",
+                            "price": 110,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "call_forwarding",
+                            "name": "着信転送サービス",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "caller_id",
+                            "name": "発信番号表示",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "補償・サポート",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "koshou_funshitsu_apple",
+                            "name": "故障紛失サポート ワイド with AppleCare Services & iCloud+",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 870,
+                            "price_max": 1740,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "koshou_funshitsu_cloud",
+                            "name": "故障紛失サポート ワイド with Cloud",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 720,
+                            "price_max": 1190,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "tsukaikata_support",
+                            "name": "使い方サポート",
+                            "price": 429,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "tento_support",
+                            "name": "店頭設定サポート",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 1100,
+                            "price_max": 3300,
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "データ・エンタメ・通信",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "data_zoryo_2",
+                            "name": "増量オプションⅡ",
+                            "price": 550,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "youtube_premium",
+                            "name": "YouTube Premium",
+                            "price": 1280,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "apple_music",
+                            "name": "Apple Music",
+                            "price": 1080,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "tethering",
+                            "name": "テザリングオプション",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "au_wifi",
+                            "name": "au Wi-Fiアクセス",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "uq_mail",
+                            "name": "UQ mobileメール",
+                            "price": 220,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "セキュリティ・見守り",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "anshin_filter_uq",
+                            "name": "あんしんフィルター for UQ mobile",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "miseinen_web_filter",
+                            "name": "未成年WEBフィルター",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "security_password",
+                            "name": "セキュリティパスワード",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        }
+                    ]
+                }
+            ],
+            "plan_services": [],
+            "benefits": [
+                {
+                    "id": "uq_oyako_ouen",
+                    "name": "UQ親子応援割"
+                },
+                {
+                    "id": "60_plus_tsuwa",
+                    "name": "60歳以上通話割"
+                }
+            ],
+            "plans": [
+                {
+                    "id": "comicomi_plus",
+                    "name": "コミコミプラン＋",
+                    "type": "flat",
+                    "price": 3278,
+                    "data_amount": "33GB"
+                },
+                {
+                    "id": "tokutoku",
+                    "name": "トクトクプラン",
+                    "type": "flat",
+                    "price": 3465,
+                    "data_amount": "15GB"
+                },
+                {
+                    "id": "minimini",
+                    "name": "ミニミニプラン",
+                    "type": "flat",
+                    "price": 2365,
+                    "data_amount": "4GB"
+                }
+            ],
+            "discounts": [
+                {
+                    "id": "jitaku_set",
+                    "group": "自宅セット割",
+                    "name": "自宅セット割（インターネットコース・でんきコース）",
+                    "rules": [
+                        {
+                            "plans": [
+                                "tokutoku",
+                                "minimini"
+                            ],
+                            "value": 1100
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "kazoku_set",
+                    "group": "家族セット割",
+                    "name": "家族セット割",
+                    "rules": [
+                        {
+                            "plans": [
+                                "tokutoku",
+                                "minimini"
+                            ],
+                            "value": 550
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "au_pay_card_wari",
+                    "group": "au PAY カードお支払い割",
+                    "name": "au PAY カードお支払い割",
+                    "rules": [
+                        {
+                            "plans": [
+                                "tokutoku",
+                                "minimini"
+                            ],
+                            "value": 187
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "data_under_1gb",
+                    "group": "利用データ量連動",
+                    "name": "データ利用量1GB以下割引",
+                    "rules": [
+                        {
+                            "plans": [
+                                "tokutoku"
+                            ],
+                            "value": 1188
+                        }
+                    ],
+                    "default_value": 0
+                }
+            ]
+        },
+        {
+            "id": "ahamo",
+            "name": "ahamo",
+            "options": [
+                {
+                    "category": "通話オプション",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "kakehodai",
+                            "name": "かけ放題オプション",
+                            "price": 1100,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "one_number",
+                            "name": "ワンナンバーサービス",
+                            "price": 550,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "補償・サポート",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "smart_anshin_hosho",
+                            "name": "smartあんしん補償",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 330,
+                            "price_max": 1100,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "applecare_plus",
+                            "name": "AppleCare+ for iPhone",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 580,
+                            "price_max": 1600,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "web_osapo",
+                            "name": "WEBおたすけサポート",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "データ・通信",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "data_charge_1gb",
+                            "name": "データ追加（1GB）",
+                            "price": 550,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "tethering",
+                            "name": "テザリング（申込不要）",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "roaming",
+                            "name": "海外データ通信（30GBまで無料）",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "freq"
+                        }
+                    ]
+                },
+                {
+                    "category": "エンタメ・サブスク",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "netflix",
+                            "name": "Netflix",
+                            "price": 890,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "youtube_premium",
+                            "name": "YouTube Premium",
+                            "price": 1280,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "disney_plus",
+                            "name": "ディズニープラス",
+                            "price": 990,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "dazn",
+                            "name": "DAZN",
+                            "price": 4200,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "spotify_premium",
+                            "name": "Spotify Premium",
+                            "price": 980,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        }
+                    ]
+                }
+            ],
+            "plan_services": [],
+            "benefits": [
+                {
+                    "id": "dcard_bonus_packet",
+                    "name": "dカードボーナスパケット特典（+1GB / +5GB）"
+                },
+                {
+                    "id": "bakuage_selection",
+                    "name": "爆アゲセレクション"
+                }
+            ],
+            "plans": [
+                {
+                    "id": "ahamo_basic",
+                    "name": "ahamo",
+                    "type": "flat",
+                    "price": 2970,
+                    "data_amount": "30GB",
+                    "current_services": [
+                        "国内通話5分無料内包"
+                    ]
+                },
+                {
+                    "id": "ahamo_oomori",
+                    "name": "ahamo 大盛り",
+                    "type": "flat",
+                    "price": 4950,
+                    "data_amount": "110GB",
+                    "current_services": [
+                        "国内通話5分無料内包"
+                    ]
+                },
+                {
+                    "id": "ahamo_poikatsu",
+                    "name": "ahamo ポイ活",
+                    "type": "flat",
+                    "price": 7150,
+                    "data_amount": "110GB",
+                    "current_services": [
+                        "国内通話5分無料内包"
+                    ]
+                }
+            ],
+            "discounts": []
+        },
+        {
+            "id": "ymobile",
+            "name": "ワイモバイル",
+            "options": [
+                {
+                    "category": "通話オプション",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "super_daretodemo_plus",
+                            "name": "スーパーだれとでも定額＋",
+                            "price": 1980,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "daretodemo_plus",
+                            "name": "だれとでも定額＋",
+                            "price": 880,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "answering_machine_plus",
+                            "name": "留守番電話プラス",
+                            "price": 330,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "call_waiting",
+                            "name": "割込通話",
+                            "price": 220,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "group_call",
+                            "name": "グループ通話",
+                            "price": 220,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "number_block",
+                            "name": "ナンバーブロック",
+                            "price": 110,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "call_forwarding",
+                            "name": "着信転送サービス",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "caller_id",
+                            "name": "発信者番号通知",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "補償・サポート",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "anshin_guarantee_apple",
+                            "name": "あんしん保証パック with AppleCare Services",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 715,
+                            "price_max": 1600,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "koshou_anshin_plus",
+                            "name": "故障安心パックプラス",
+                            "price": 715,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "mochikomi_hosho",
+                            "name": "持込端末保証",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 715,
+                            "price_max": 1180,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "smartphone_support",
+                            "name": "店頭スマホサポート定額",
+                            "price": null,
+                            "billing_type": "paid",
+                            "price_min": 550,
+                            "price_max": 990,
+                            "frequency": "notfreq"
+                        }
+                    ]
+                },
+                {
+                    "category": "データ・エンタメ・通信",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "data_zoryo",
+                            "name": "データ増量オプション",
+                            "price": 550,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "enjoy_pack",
+                            "name": "Enjoyパック",
+                            "price": 550,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "line_music",
+                            "name": "LINE MUSIC",
+                            "price": 980,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "tethering",
+                            "name": "テザリングオプション",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "softbank_wifi",
+                            "name": "ソフトバンクWi-Fiスポット",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "notfreq"
+                        },
+                        {
+                            "id": "mail_carry",
+                            "name": "メールアドレス持ち運び",
+                            "price": 330,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        }
+                    ]
+                },
+                {
+                    "category": "セキュリティ・見守り",
+                    "type": "checkbox",
+                    "items": [
+                        {
+                            "id": "security_pack_plus",
+                            "name": "セキュリティパックプラス",
+                            "price": 660,
+                            "billing_type": "paid",
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "anshin_filter",
+                            "name": "あんしんフィルター",
+                            "price": 0,
+                            "billing_type": null,
+                            "frequency": "freq"
+                        },
+                        {
+                            "id": "position_navi",
+                            "name": "位置ナビ",
+                            "price": 220,
+                            "billing_type": "paid",
+                            "frequency": "notfreq"
+                        }
+                    ]
+                }
+            ],
+            "plan_services": [],
+            "benefits": [
+                {
+                    "id": "lyp_premium",
+                    "name": "LYPプレミアム"
+                },
+                {
+                    "id": "yahoo_shopping_point",
+                    "name": "Yahoo!ショッピング ポイント還元"
+                }
+            ],
+            "plans": [
+                {
+                    "id": "simple2_l",
+                    "name": "シンプル2 L",
+                    "type": "flat",
+                    "price": 5115,
+                    "data_amount": "30GB"
+                },
+                {
+                    "id": "simple2_m",
+                    "name": "シンプル2 M",
+                    "type": "flat",
+                    "price": 4015,
+                    "data_amount": "20GB"
+                },
+                {
+                    "id": "simple2_s",
+                    "name": "シンプル2 S",
+                    "type": "flat",
+                    "price": 2365,
+                    "data_amount": "4GB"
+                }
+            ],
+            "discounts": [
+                {
+                    "id": "ouchi_wari_hikari_a",
+                    "group": "おうち割 光セット（A）",
+                    "name": "おうち割 光セット（A）",
+                    "rules": [
+                        {
+                            "plans": [
+                                "simple2_m",
+                                "simple2_l"
+                            ],
+                            "value": 1650
+                        },
+                        {
+                            "plans": [
+                                "simple2_s"
+                            ],
+                            "value": 1100
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "kazoku_wari",
+                    "group": "家族割引サービス",
+                    "name": "2回線目以降",
+                    "rules": [
+                        {
+                            "plans": [
+                                "simple2_s",
+                                "simple2_m",
+                                "simple2_l"
+                            ],
+                            "value": 1100
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "paypay_card_wari",
+                    "group": "PayPayカード割",
+                    "name": "PayPayカード割",
+                    "rules": [
+                        {
+                            "plans": [
+                                "simple2_s",
+                                "simple2_m",
+                                "simple2_l"
+                            ],
+                            "value": 187
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "data_under_1gb_m",
+                    "group": "利用データ量連動",
+                    "name": "月間データ利用量1GB以下割引（M）",
+                    "rules": [
+                        {
+                            "plans": [
+                                "simple2_m"
+                            ],
+                            "value": 1100
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "data_under_1gb_l",
+                    "group": "利用データ量連動",
+                    "name": "月間データ利用量1GB以下割引（L）",
+                    "rules": [
+                        {
+                            "plans": [
+                                "simple2_l"
+                            ],
+                            "value": 2200
+                        }
+                    ],
+                    "default_value": 0
                 }
             ]
         }
