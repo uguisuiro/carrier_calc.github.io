@@ -16,11 +16,14 @@ async function loadPlans() {
     try {
         const response = await fetch("plans.json");
         globalData = await response.json();
-        openAddTabModal();
+
+        await restoreFromUrl();
+
     } catch (error) {
         console.error("データの読み込みに失敗", error);
     }
 }
+
 function toggleInstallmentInput() {
     const paymentSelect = document.getElementById("paymentType");
     const selectedOption = paymentSelect.options[paymentSelect.selectedIndex];
@@ -72,7 +75,6 @@ function toggleInstallmentInput() {
     } else {
         applyManualSettings();
     }
-
 }
 
 function autoCalculatePhases() {
@@ -92,6 +94,7 @@ function autoCalculatePhases() {
         applyManualSettings();
     }
 }
+
 function switchCarrier(carrierId) {
     if (!globalData) return;
     currentCarrierId = carrierId;
@@ -130,7 +133,7 @@ function switchCarrier(carrierId) {
     onDeviceChange();
 
     const selects = document.querySelectorAll('select');
-    M.FormSelect.init(selects);
+    (M.Select || M.FormSelect).init(selects);
 }
 
 function renderCarrierOptions(options) {
@@ -138,7 +141,7 @@ function renderCarrierOptions(options) {
     if (!container || !options) return;
     container.innerHTML = "";
     options.forEach((group, groupIndex) => {
-        let html = `<label class="small d-block mb-1">${group.category}</label>`;
+        let html = `<div class="small d-block mb-1" style="color: var(--text-muted);">${group.category}</div>`;
 
         const freqItems = group.items.filter(item => item.frequency !== "notfreq");
         const notFreqItems = group.items.filter(item => item.frequency == "notfreq");
@@ -151,7 +154,7 @@ function renderCarrierOptions(options) {
                         <input class="with-gap carrier-opt-input" name="${group.category}" type="radio" value="${item.price || 0}" data-id="${item.id}" data-name="${item.name}" ${idx === 0 ? 'checked' : ''} onchange="updateCalc()">
                         <span>${item.name}</span>
                     </label>
-                    <span class="small" style="color: var(--text-muted);">(<input type="number" value="${item.price || 0}" style="width: 50px; height: 1.5rem; margin: 0 4px; padding: 0; text-align: right; border-bottom: 1px dashed var(--nord4) !important;" oninput="this.closest('div').querySelector('.carrier-opt-input').value = this.value; updateCalc();">円)</span>
+                    <span class="small" style="color: var(--text-muted);">(<input type="number" name="price_${item.id}" aria-label="${item.name}の金額" value="${item.price || 0}" style="width: 50px; height: 1.5rem; margin: 0 4px; padding: 0; text-align: right; border-bottom: 1px dashed var(--nord4) !important;" oninput="this.closest('div').querySelector('.carrier-opt-input').value = this.value; updateCalc();">円)</span>
                 </div>`;
             });
             html += `</div>`;
@@ -165,7 +168,7 @@ function renderCarrierOptions(options) {
                             <input class="with-gap carrier-opt-input" name="${group.category}" type="radio" value="${item.price || 0}" data-id="${item.id}" data-name="${item.name}" onchange="updateCalc()">
                             <span>${item.name}</span>
                         </label>
-                        <span class="small" style="color: var(--text-muted);">(<input type="number" value="${item.price || 0}" style="width: 50px; height: 1.5rem; margin: 0 4px; padding: 0; text-align: right; border-bottom: 1px dashed var(--nord4) !important;" oninput="this.closest('div').querySelector('.carrier-opt-input').value = this.value; updateCalc();">円)</span>
+                        <span class="small" style="color: var(--text-muted);">(<input type="number" name="price_${item.id}" aria-label="${item.name}の金額" value="${item.price || 0}" style="width: 50px; height: 1.5rem; margin: 0 4px; padding: 0; text-align: right; border-bottom: 1px dashed var(--nord4) !important;" oninput="this.closest('div').querySelector('.carrier-opt-input').value = this.value; updateCalc();">円)</span>
                     </div>`;
                 });
                 html += `</div>`;
@@ -176,10 +179,10 @@ function renderCarrierOptions(options) {
                 html += `<div class="col s6 mb-1">
                     <div style="display: flex; align-items: center; flex-wrap: wrap;">
                         <label style="margin-right: 4px;">
-                            <input type="checkbox" class="filled-in carrier-opt-input" value="${item.price || 0}" data-id="${item.id}" data-name="${item.name}" onchange="updateCalc()">
+                            <input type="checkbox" name="opt_${item.id}" aria-label="${item.name}" class="filled-in carrier-opt-input" value="${item.price || 0}" data-id="${item.id}" data-name="${item.name}" onchange="updateCalc()">
                             <span>${item.name}</span>
                         </label>
-                        <span class="small" style="color: var(--text-muted);">(<input type="number" value="${item.price || 0}" style="width: 50px; height: 1.5rem; margin: 0 2px; padding: 0; text-align: right; border-bottom: 1px dashed var(--nord4) !important;" oninput="this.closest('div').querySelector('.carrier-opt-input').value = this.value; updateCalc();">円)</span>
+                        <span class="small" style="color: var(--text-muted);">(<input type="number" name="price_${item.id}" aria-label="${item.name}の金額" value="${item.price || 0}" style="width: 50px; height: 1.5rem; margin: 0 2px; padding: 0; text-align: right; border-bottom: 1px dashed var(--nord4) !important;" oninput="this.closest('div').querySelector('.carrier-opt-input').value = this.value; updateCalc();">円)</span>
                     </div>
                 </div>`;
             });
@@ -192,10 +195,10 @@ function renderCarrierOptions(options) {
                     html += `<div class="col s6 mb-1">
                         <div style="display: flex; align-items: center; flex-wrap: wrap;">
                             <label style="margin-right: 4px;">
-                                <input type="checkbox" class="filled-in carrier-opt-input" value="${item.price || 0}" data-id="${item.id}" data-name="${item.name}" onchange="updateCalc()">
+                                <input type="checkbox" name="opt_${item.id}" aria-label="${item.name}" class="filled-in carrier-opt-input" value="${item.price || 0}" data-id="${item.id}" data-name="${item.name}" onchange="updateCalc()">
                                 <span>${item.name}</span>
                             </label>
-                            <span class="small" style="color: var(--text-muted);">(<input type="number" value="${item.price || 0}" style="width: 50px; height: 1.5rem; margin: 0 2px; padding: 0; text-align: right; border-bottom: 1px dashed var(--nord4) !important;" oninput="this.closest('div').querySelector('.carrier-opt-input').value = this.value; updateCalc();">円)</span>
+                            <span class="small" style="color: var(--text-muted);">(<input type="number" name="price_${item.id}" aria-label="${item.name}の金額" value="${item.price || 0}" style="width: 50px; height: 1.5rem; margin: 0 2px; padding: 0; text-align: right; border-bottom: 1px dashed var(--nord4) !important;" oninput="this.closest('div').querySelector('.carrier-opt-input').value = this.value; updateCalc();">円)</span>
                         </div>
                     </div>`;
                 });
@@ -210,22 +213,24 @@ function toggleNotFreq(targetId, btn) {
     const target = document.getElementById(targetId);
     if (target.style.display == "none") {
         target.style.display = "";
-        btn.innerHTML = "閉じる"
+        btn.innerHTML = "閉じる";
     } else {
         target.style.display = "none";
-        btn.innerHTML = "その他のオプションの表示"
+        btn.innerHTML = "その他のオプションの表示";
     }
 }
+
 function addCustomOptionRow() {
     const container = document.getElementById("customOptionsContainer");
     const rowId = Date.now();
     const html = `<div class="row m-0 align-items-center mb-1" id="custom-opt-${rowId}">
-        <div class="input-field col s7 m-0"><input type="text" class="custom-opt-name small" placeholder="サービス名"></div>
-        <div class="input-field col s4 m-0"><input type="number" class="custom-opt-price" value="0" oninput="updateCalc()"></div>
+        <div class="input-field col s7 m-0"><input type="text" name="custom_name_${rowId}" aria-label="サービス名" class="custom-opt-name small" placeholder="サービス名"></div>
+        <div class="input-field col s4 m-0"><input type="number" name="custom_price_${rowId}" aria-label="金額" class="custom-opt-price" value="0" oninput="updateCalc()"></div>
         <div class="col s1 m-0"><a href="javascript:void(0)" onclick="this.closest('.row').remove(); updateCalc();" style="color:var(--nord11);">×</a></div>
     </div>`;
     container.insertAdjacentHTML("beforeend", html);
 }
+
 function onDeviceChange() {
     const deviceId = document.getElementById("deviceSelect").value;
     const device = globalData.devices?.find(d => d.id === deviceId);
@@ -249,7 +254,8 @@ function onDeviceChange() {
         storageSelect.innerHTML = "";
     }
     const selects = document.querySelectorAll('select');
-    M.FormSelect.init(selects);
+    (M.Select || M.FormSelect).init(selects);
+
     document.getElementById("devicePrice").value = 0;
     autoCalculatePhases();
     applyManualSettings();
@@ -269,6 +275,7 @@ function applyManualSettings() {
     generateGrid();
     updateCalc();
 }
+
 function renderPaymentOptions(programs) {
     const paymentSelect = document.getElementById("paymentType");
     if (!paymentSelect) return;
@@ -298,6 +305,7 @@ function renderPaymentOptions(programs) {
     paymentSelect.selectedIndex = 0;
     toggleInstallmentInput();
 }
+
 function generateGrid() {
     const container = document.getElementById("paymentGrid");
     if (!container) return;
@@ -315,7 +323,7 @@ function generateGrid() {
     const principal = Math.max(0, Number(document.getElementById("devicePrice")?.value || 0) - (Number(document.getElementById("downPayment").value) || 11000));
     const normalMonthly = Math.floor(principal / customCount);
     for (let m = 1; m <= installmentLimit; m++) {
-        const price = (paymentType === "normal") ? normalMonthly : getMonthlyDevicePrice(m, device, applyBenefit, isUpfront);;
+        const price = (paymentType === "normal") ? normalMonthly : getMonthlyDevicePrice(m, device, applyBenefit, isUpfront);
         const block = document.createElement("div");
         const isInPeriod = (m <= installmentLimit);
 
@@ -377,10 +385,10 @@ function addPointRow() {
     const html = `
         <div class="row m-0 align-items-center mb-2" id="row-${rowId}">
             <div class="input-field col s5 m-0">
-                <input type="text" class="store-point-name" placeholder="特典名 (例: 下取り)">
+                <input type="text" name="point_name_${rowId}" aria-label="特典名" class="store-point-name" placeholder="特典名 (例: 下取り)">
             </div>
             <div class="input-field col s5 m-0">
-                <input type="number" class="store-point-value" placeholder="0" oninput="updateCalc()">
+                <input type="number" name="point_value_${rowId}" aria-label="特典額" class="store-point-value" placeholder="0" oninput="updateCalc()">
             </div>
             <div class="col s2 m-0 text-right">
                 <button class="btn-small white grey-text text-darken-2" style="border: 1px solid #9e9e9e;" type="button" onclick="removePointRow(${rowId})">×</button>
@@ -411,7 +419,7 @@ function renderDiscounts(discounts) {
                     <span>${d.name}</span>
                 </label>
                 <span class="small" style="color: var(--text-muted); display: inline-flex; align-items: center;">
-                    (-<input type="number" value="${initialValue}" style="width: 60px; height: 1.5rem; margin: 0 4px; text-align: right; color: var(--nord11);" oninput="document.getElementById('${d.id}').value = this.value; updateCalc();">円)
+                    (-<input type="number" name="discount_${d.id}" aria-label="${d.name}の割引額" value="${initialValue}" style="width: 60px; height: 1.5rem; margin: 0 4px; text-align: right; color: var(--nord11);" oninput="document.getElementById('${d.id}').value = this.value; updateCalc();">円)
                 </span>
             </div>
         `;
@@ -482,9 +490,17 @@ function updateCalc() {
         });
     });
     const planData = carrier.plans.find(p => p.id === selectedPlanId);
-    let pointBenefit = 0;
+    let pointBenefitNum = 0;
+    let pointBenefitText = "";
+
     if (planData && planData.point_benefit) {
-        pointBenefit = planData.point_benefit;
+        if (typeof planData.point_benefit === "number") {
+            pointBenefitNum = planData.point_benefit;
+            pointBenefitText = `\n[プラン特典(ポイ活等)]\n  -${fmt(pointBenefitNum)} 円\n`;
+        } else {
+            pointBenefitNum = 0;
+            pointBenefitText = `\n[プラン特典(ポイ活等)]\n  ${planData.point_benefit}\n`;
+        }
     }
     let bundlediscount = 0;
     let bundleAppliedNames = [];
@@ -561,7 +577,7 @@ function updateCalc() {
         cumulativeDevice = Number(document.getElementById("devicePrice")?.value || 0);
     }
 
-    const planNetPrice = Math.max(0, planPrice - totalDiscounts - pointBenefit);
+    const planNetPrice = Math.max(0, planPrice - totalDiscounts - pointBenefitNum);
     const optionNetPrice = baseOptionTotal + customOptionTotal - bundlediscount;
     const totalMonthly = currentDeviceMonthly + planNetPrice + optionNetPrice;
 
@@ -585,8 +601,7 @@ function updateCalc() {
 [加入オプション]
   ${optionText}
   (オプション小計: +${fmt(optionNetPrice)} 円)
-${pointBenefit > 0 ? `\n[プラン特典(ポイ活等)]\n  -${fmt(pointBenefit)} 円\n` : ''}
----------------------------
+${pointBenefitText}---------------------------
 月々支払合計: ${fmt(totalMonthly)} 円/月
 
 【店頭支払額】
@@ -621,6 +636,7 @@ ${paymentType === "program" ? '返却予定: ' + selectedReturnMonth + ' ヶ月�
 }
 
 document.addEventListener("DOMContentLoaded", loadPlans);
+
 function renderTabs() {
     const ul = document.getElementById('planTabs');
     const dummyContainer = document.getElementById("dummyTabTargets");
@@ -659,6 +675,7 @@ function openAddTabModal() {
     }
     document.getElementById("addTabModal").showPopover();
 }
+
 function executeAddNewTab(shouldCopy) {
     const newId = "tab_" + Date.now();
     let newState = {};
@@ -720,6 +737,7 @@ function switchTab(targetId) {
         loadState(targetTab.state);
     }
 }
+
 function saveCurrentState() {
     const tab = simTabs.find(t => t.id === currentTabId);
     if (!tab) return;
@@ -829,7 +847,7 @@ function loadState(state) {
         });
     }
 
-    M.FormSelect.init(document.querySelectorAll('select'));
+    (M.Select || M.FormSelect).init(document.querySelectorAll('select'));
 
     isRestoring = false;
     autoCalculatePhases();
@@ -847,4 +865,83 @@ function closeCurrentTab() {
 function executeCloseCurrentTab() {
     const dummyEvent = { stopPropagation: () => { }, preventDefault: () => { } };
     removeTab(dummyEvent, currentTabId);
+}
+
+async function generateHash(message) {
+    const msgBuffer = new TextEncoder().encode(message);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').substring(0, 16);
+}
+
+async function showShareQRCode() {
+    const qrContainer = document.getElementById("qrCodeContainer");
+
+    document.getElementById("qrcode").innerHTML = "";
+
+    saveCurrentState();
+
+    const jsonString = JSON.stringify(simTabs);
+    const encodedData = btoa(unescape(encodeURIComponent(jsonString)));
+
+    const secretKey = "my_shop_simulator_secret";
+    const hash = await generateHash(encodedData + secretKey);
+
+    const baseUrl = window.location.origin + window.location.pathname;
+    const shareUrl = `${baseUrl}?data=${encodedData}&hash=${hash}`;
+
+
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: shareUrl,
+        width: 128,
+        height: 128,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+
+    qrContainer.style.display = "flex";
+}
+
+async function restoreFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const encodedData = params.get('data');
+    const hashString = params.get('hash');
+
+    if (!encodedData || !hashString) {
+        openAddTabModal();
+        return;
+    }
+
+    try {
+        const secretKey = "my_shop_simulator_secret";
+        const expectedHash = await generateHash(encodedData + secretKey);
+
+        if (hashString !== expectedHash) {
+            M.toast({ html: 'URLが不正、または改ざんされています。初期状態で起動します。', classes: 'rounded red lighten-1' });
+            openAddTabModal();
+            return;
+        }
+
+        const jsonString = decodeURIComponent(escape(atob(encodedData)));
+
+        const restoredTabs = JSON.parse(jsonString);
+
+        if (Array.isArray(restoredTabs) && restoredTabs.length > 0) {
+            simTabs = restoredTabs;
+            currentTabId = simTabs[0].id;
+
+            renderTabs();
+            loadState(simTabs[0].state);
+
+            M.toast({ html: '共有データを復元しました！', classes: 'rounded green darken-1' });
+        } else {
+            throw new Error("復元されたデータが空です");
+        }
+
+    } catch (e) {
+        console.error("データの復元に失敗しました:", e);
+        M.toast({ html: 'データの復元に失敗しました。初期状態で起動します。', classes: 'rounded red lighten-1' });
+        openAddTabModal();
+    }
 }
