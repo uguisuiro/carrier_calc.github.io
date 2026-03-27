@@ -329,7 +329,8 @@
             <div class="valign-wrapper">
                 <i class="material-icons nord-red-text" style="margin-right: 15px;">警告</i>
                 <span class="fw-bold">
-                    【非公式ツール】本ツールは個人による開発物です。正確な料金は必ずお店の契約端末等でご確認ください。差異があった場合には必ずお店の情報を優先してください。このツールはあくまでシミュレーションの参考程度にご利用ください。
+                    【非公式ツール】<br>本ツールは個人による開発物です。正確な料金は必ずお店の契約端末等でご確認ください。差異があった場合には必ずお店の情報を優先してください。このツールはあくまでシミュレーションの参考程度にご利用ください。<br>
+                    端数によって実際に支払う金額と異なります。
                 </span>
             </div>
         </div>
@@ -395,13 +396,26 @@
                                 <select id="deviceSelect" onchange="onDeviceChange()">
                                     <option value="" disabled selected>機種を選択してください</option>
                                     <option value="none">端末購入なし（SIM・eSIMのみ契約）</option>
+                                    <option value="custom">＋ 自由に機種名を入力する</option>
                                 </select>
                                 <label for="deviceSelect" class="active">機種選択</label>
                             </div>
+
+                            <div class="input-field mb-3 d-none" id="customDeviceArea">
+                                <input type="text" id="customDeviceName" name="customDeviceName"
+                                    placeholder="例: iPhone 99 Pro" oninput="updateCalc()">
+                                <label for="customDeviceName" class="active">機種名（自由入力）</label>
+                            </div>
+
                             <div class="input-field mb-3" id="storageSelectArea" style="display: none;">
                                 <select id="storageSelect" onchange="updateCalc()">
                                 </select>
                                 <label for="storageSelect" class="active">容量選択</label>
+                            </div>
+                            <div class="input-field mb-3 d-none" id="customStorageArea">
+                                <input type="text" id="customStorageName" name="customStorageName" placeholder="例: 2TB"
+                                    oninput="updateCalc()">
+                                <label for="customStorageName" class="active">容量（自由入力）</label>
                             </div>
                             <div class="input-field mb-3">
                                 <select id="planSelect" onchange="updateCalc()">

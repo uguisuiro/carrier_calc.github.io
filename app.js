@@ -207,6 +207,7 @@ function switchCarrier(carrierId) {
         <option value="" disabled selected>機種を選択してください</option>
         <option value="none">端末購入なし（SIM・eSIMのみ契約）</option>
     `;
+    deviceSelect.innerHTML += `<option value="custom">＋ 自由に機種名を入力する</option>`;
     if (globalData.devices) {
         const availableDevices = globalData.devices.filter(d =>
             d.storage_by_carrier && d.storage_by_carrier[carrierId]
@@ -340,6 +341,27 @@ function onDeviceChange() {
     const storageSelectArea = document.getElementById("storageSelectArea");
     const storageSelect = document.getElementById("storageSelect");
 
+    const customDeviceArea = document.getElementById("customDeviceArea");
+    const customStorageArea = document.getElementById("customStorageArea");
+
+    if (customDeviceArea) customDeviceArea.classList.add("d-none");
+    if (customStorageArea) customStorageArea.classList.add("d-none");
+    storageSelectArea.style.display = "none";
+    storageSelect.innerHTML = "";
+
+    if (deviceId === "custom") {
+        if (customDeviceArea) customDeviceArea.classList.remove("d-none");
+        if (customStorageArea) customStorageArea.classList.remove("d-none");
+    } else if (device && deviceId !== "none" && device.storage_by_carrier && device.storage_by_carrier[currentCarrierId]) {
+        storageSelectArea.style.display = "block";
+        const storages = device.storage_by_carrier[currentCarrierId];
+        storages.forEach(storage => {
+            const option = document.createElement("option");
+            option.value = storage;
+            option.textContent = storage;
+            storageSelect.appendChild(option);
+        });
+    }
     if (device && deviceId !== "none" && device.storage_by_carrier && device.storage_by_carrier[currentCarrierId]) {
         storageSelectArea.style.display = "block";
         storageSelect.innerHTML = "";
@@ -570,7 +592,12 @@ function updateCalc() {
         planNameStr = planSelect.options[planSelect.selectedIndex].textContent;
     }
     let fullDeviceName = "端末購入なし";
-    if (device) {
+    if (deviceId === "custom") {
+        const customDev = document.getElementById("customDeviceName")?.value || "自由入力端末";
+        const customSto = document.getElementById("customStorageName")?.value || "";
+        const storageStr = customSto ? ` (${customSto})` : "";
+        fullDeviceName = customDev + storageStr;
+    } else if (device) {
         const storageSelect = document.getElementById("storageSelect");
         const storageSelectArea = document.getElementById("storageSelectArea");
         const storageStr = (storageSelect && storageSelectArea.style.display !== "none" && storageSelect.value) ? ` (${storageSelect.value})` : "";
@@ -754,13 +781,14 @@ function renderTabs() {
     dummyContainer.innerHTML = "";
     simTabs.forEach((tab, index) => {
         const closeIcon = simTabs.length > 1
-            ? `<i class="material-icons" style="font-size: 1.2rem; margin-left: 8px; cursor: pointer; color: var(--nord11);" onclick="removeTab(event, '${tab.id}')">close</i>`
+            ? `<i class="material-icons" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 1.2rem; margin: 0; cursor: pointer; color: var(--nord11);" onclick="removeTab(event, '${tab.id}')">close</i>`
             : '';
+
         const isActive = tab.id === currentTabId ? "active" : "";
+
         ul.innerHTML += `
             <li class="tab">
-                <a class="${isActive}" href="#dummy_${tab.id}" onclick="switchTab('${tab.id}')" style="display:flex; align-items:center; justify-content:center;">
-                    <i class="material-icons" style="margin-right: 4px; font-size: 1.2rem;">smartphone</i>
+                <a class="${isActive}" href="#dummy_${tab.id}" onclick="switchTab('${tab.id}')" style="position: relative; padding-right: 36px;">
                     ${tab.name}
                     ${closeIcon}
                 </a>
