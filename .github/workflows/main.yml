@@ -1,0 +1,23 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+
+      - name: Inject Commit ID and Date
+        run: |
+          COMMIT_HASH=$(echo ${{ github.sha }} | cut -c1-7)
+          
+          COMMIT_DATE=$(TZ='Asia/Tokyo' date +'%Y/%m/%d %H:%M:%S')
+          
+          sed -i "s/COMMIT_HASH_PLACEHOLDER/$COMMIT_HASH/g" index.html
+          sed -i "s/COMMIT_DATE_PLACEHOLDER/$COMMIT_DATE/g" index.html
