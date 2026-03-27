@@ -9,6 +9,7 @@
         href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.2.2/dist/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
             --nord0: #2e3440;
@@ -428,11 +429,10 @@
                             </div>
 
                             <div id="paymentArea" class="row m-0 mb-3">
-                                <div class="col s12 mb-1">
-                                    <div class="input-label small" style="color: var(--text-muted);">支払い方法の形式</div>
-                                    <select id="paymentType" class="browser-default"
-                                        onchange="toggleInstallmentInput()">
+                                <div class="input-field col s12 mb-1">
+                                    <select id="paymentType" onchange="toggleInstallmentInput()">
                                     </select>
+                                    <label class="active">支払い方法の形式</label>
                                 </div>
 
                                 <div id="customInstallmentArea" class="col s12 hide">
@@ -650,7 +650,13 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="mb-3 mt-4" style="border-top: 1px dashed var(--border-color); padding-top: 1rem;">
+                        <div class="d-block fw-bold mb-2">料金推移グラフ</div>
+                        <p class="small" style="color: var(--text-muted); margin-bottom: 10px;">
+                            ※グラフのグレーの部分は、端末を返却せずに使い続けた場合に発生する料金です。
+                        </p>
+                        <canvas id="priceChart"></canvas>
+                    </div>
                     <div class="mb-3">
                         <div class="d-block fw-bold mb-2">返却月シミュレーション（48マス）</div>
                         <div id="paymentGrid" class="d-flex flex-wrap gap-1 p-2 border"
