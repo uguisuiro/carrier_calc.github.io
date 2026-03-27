@@ -331,6 +331,7 @@
                 <span class="fw-bold">
                     【非公式ツール】<br>本ツールは個人による開発物です。正確な料金は必ずお店の契約端末等でご確認ください。差異があった場合には必ずお店の情報を優先してください。このツールはあくまでシミュレーションの参考程度にご利用ください。<br>
                     端数によって実際に支払う金額と異なります。
+                    ver:<span id="commit-id">COMMIT_HASH_PLACEHOLDER</span>
                 </span>
             </div>
         </div>
@@ -348,7 +349,132 @@
                 </button>
             </div>
         </div>
+        <div id="tab_diagnosis" style="display: block;">
+            <ul class="collapsible" id="diagnosisCollapsible"
+                style="border: 1px solid var(--primary-color); border-radius: 8px; box-shadow: none; margin-top: 0;">
+                <li class="active">
+                    <div class="collapsible-header"
+                        style="background-color: var(--primary-color) !important; color: white !important; border-radius: 8px 8px 0 0; border-bottom: none; font-weight: bold; display: flex; align-items: center;">
+                        <i class="material-icons">search</i>お客様にピッタリのプランを診断
+                        <i class="material-icons" style="margin-left: auto;">expand_more</i>
+                    </div>
 
+                    <div class="collapsible-body"
+                        style="background-color: white; border-top: 1px solid var(--border-color); border-radius: 0 0 8px 8px; padding: 24px;">
+                        <div class="row">
+                            <div class="col s12 m6 mb-3">
+                                <p class="fw-bold mb-2" style="color: var(--text-main);">1. 毎月のデータ利用量はどれくらいですか？</p>
+                                <div class="input-field m-0">
+                                    <input type="number" id="diagDataGb" placeholder="例: 20" value="20" min="0">
+                                    <span class="helper-text">GB（無制限の場合は 9999 と入力）</span>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 mb-3">
+                                <p class="fw-bold mb-2" style="color: var(--text-main);">2. 通話はどれくらい使いますか？</p>
+                                <div class="input-field m-0">
+                                    <select id="diagCallType">
+                                        <option value="none">ほとんどしない（家族やLINEメイン）</option>
+                                        <option value="5min">5分以内の短い通話が多い</option>
+                                        <option value="unlimited">時間を気にせずかけたい</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-0 align-items-center mb-3 pt-3"
+                            style="border-top: 1px dashed var(--border-color);">
+                            <div class="col s7 m8 fw-bold" style="color: var(--text-main);">
+                                3. 利用者の方にあてはまるものはありますか？（複数選択可）<br>
+
+                            </div>
+                            <div class="col s12 d-flex flex-wrap" style="gap: 10px 20px;">
+                                <label>
+                                    <input type="checkbox" id="diagIsStudent" class="filled-in" />
+                                    <span style="white-space: nowrap;">学生（学割）</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="diagIsKids" class="filled-in" />
+                                    <span style="white-space: nowrap;">12歳以下</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="diagIsSenior" class="filled-in" />
+                                    <span style="white-space: nowrap;">60歳以上</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="diagIsFirst" class="filled-in" />
+                                    <span style="white-space: nowrap;">初めてのスマホ</span>
+                                </label>
+
+                            </div>
+                        </div>
+                        <div class="row m-0 align-items-center mb-3 pt-3"
+                            style="border-top: 1px dashed var(--border-color);">
+                            <div class="col s7 m8 fw-bold" style="color: var(--text-main);">
+                                4. 割引・環境設定（当てはまるものを選んでください）<br>
+
+                            </div>
+
+
+                            <div class="input-field col s12 m6">
+                                <select id="diagInternet">
+                                    <option value="none" selected>設定なし（または検討中）</option>
+                                    <option value="docomo">ドコモ光 / home 5G</option>
+                                    <option value="au">auひかり / @Nifty auひかり / Biglobeひかり/等 auスマートバリュー対応光</option>
+                                    <option value="softbank">ソフトバンク光 / Air</option>
+                                </select>
+                                <label>自宅のネット環境</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <select id="diagUsageYears">
+                                    <option value="0" selected>1年未満（新規・MNP含む）</option>
+                                    <option value="1">1年以上〜10年未満</option>
+                                    <option value="10">10年以上〜20年未満</option>
+                                    <option value="20">20年以上</option>
+                                </select>
+                                <label>現在のキャリアの利用期間</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <select id="diagFamilyCount">
+                                    <option value="1" selected>自分のみ（1回線）</option>
+                                    <option value="2">家族2人</option>
+                                    <option value="3">家族3人以上</option>
+                                </select>
+                                <label>同じキャリアを使う家族の人数</label>
+                            </div>
+
+                            <div class="input-field col s12 m6">
+                                <select id="diagCard">
+                                    <option value="none" selected>その他（カードなし）</option>
+                                    <option value="dcard">dカード</option>
+                                    <option value="aupay">au PAY カード</option>
+                                    <option value="paypay">PayPayカード</option>
+                                </select>
+                                <label>利用可能な支払い方法</label>
+                            </div>
+
+                            <div class="col s12 m6" style="padding-top: 20px;">
+                                <label>
+                                    <input type="checkbox" id="diagKeepEmail" class="filled-in" />
+                                    <span>今のキャリアメールを維持したい(+330円/月)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="center-align mt-2">
+                            <button class="btn waves-effect waves-light"
+                                style="background-color: var(--primary-color); font-weight: bold;"
+                                onclick="executeDiagnosis()">
+                                おすすめプランを検索
+                            </button>
+                        </div>
+                        <div id="diagnosisResultsArea" class="col s7 m8 fw-bold" style="color: var(--text-main);">
+                            おすすめのプランランキング<br>
+                            <span class="small"
+                                style="color: var(--text-muted); font-weight: normal;">※家族割や光割などの最大割引を適用した料金でランキングを作ります。</span>
+                            <div id="rankingContainer" </div>
+
+                </li>
+            </ul>
+        </div>
         <div id="simulator-content" class="active">
             <div class="row">
                 <div class="col s12 l6 mb-4">

@@ -118,7 +118,15 @@ async function loadPlans() {
     try {
         const response = await fetch("plans.json");
         globalData = await response.json();
+        const diagSelect = document.getElementById("diagCallType");
+        if (diagSelect && M.FormSelect) {
+            M.FormSelect.init(diagSelect);
+        }
 
+        const collapsibleElem = document.getElementById("diagnosisCollapsible");
+        if (collapsibleElem && M.Collapsible) {
+            M.Collapsible.init(collapsibleElem, { accordion: false });
+        }
         await restoreFromUrl();
 
     } catch (error) {
@@ -1078,4 +1086,184 @@ async function restoreFromUrl() {
         M.toast({ html: 'データの復元に失敗しました。初期状態で起動します。', classes: 'rounded red lighten-1' });
         openAddTabModal();
     }
+}
+function createTabFromResult(carrierId, planId) {
+    const newId = "tab_" + Date.now();
+
+    const diagGb = Number(document.getElementById("diagDataGb").value);
+
+    const newState = {
+        carrierId: carrierId,
+        deviceId: "none",
+        storage: "",
+        planId: planId,
+        options: [],
+        discounts: [],
+        paymentType: "program",
+        customInstallmentCount: 24,
+        selectedReturnMonth: 23,
+        devicePrice: 0,
+        residualValue: 0,
+        downPayment: 11000,
+        customOptions: [],
+        storePoints: []
+    };
+
+    simTabs.push({
+        id: newId,
+        name: `提案: ${carrierId}`,
+        state: newState
+    });
+
+    currentTabId = newId;
+    renderTabs();
+
+    loadState(newState);
+
+    M.toast({ html: `${carrierId}のプランで新しいタブを作成しました！`, classes: 'rounded green' });
+}
+function executeDiagnosis() {
+    const targetGb = Number(document.getElementById("diagDataGb").value);
+    const targetCall = document.getElementById("diagCallType").value;
+    const userIsStudent = document.getElementById("diagIsStudent").checked;
+    const userIsKids = document.getElementById("diagIsKids").checked;
+    const userIsSenior = document.getElementById("diagIsSenior").checked;
+    const userIsFirst = document.getElementById("diagIsFirst").checked;
+    const resultsArea = document.getElementById("diagnosisResultsArea");
+    const container = document.getElementById("rankingContainer");
+
+    resultsArea.classList.remove("d-none");
+    container.innerHTML = "";
+
+    let ranking = [];
+
+    const selectedNet = document.getElementById("diagInternet").value;
+    const familyCount = document.getElementById("diagFamilyCount").value;
+    const selectedCard = document.getElementById("diagCard").value;
+    const keepEmail = document.getElementById("diagKeepEmail").checked;
+    const usageYears = Number(document.getElementById("diagUsageYears").value);
+    globalData.carriers.forEach(carrier => {
+        carrier.plans.forEach(plan => {
+            let basePrice = 0;
+            let matchReason = "";
+            if (plan.is_kids && !userIsKids) return;
+            if (plan.is_first_smartphone && !userIsFirst) return;
+            if (plan.is_student && !userIsStudent) return;
+            if (plan.is_senior && !userIsSenior) return;
+
+            if (plan.type === "flat") {
+                if (targetGb <= plan.data_amount) {
+                    basePrice = plan.price;
+                    matchReason = `${plan.data_amount === 9999 ? "無制限" : plan.data_amount + "GB"}まで利用可能`;
+                } else {
+                    return;
+                }
+            } else if (plan.type === "tiered") {
+                const suitableTier = plan.tiers.find(t => targetGb <= t.max_data);
+                if (suitableTier) {
+                    basePrice = suitableTier.price;
+                    matchReason = `${suitableTier.label}が適用`;
+                } else {
+                    return;
+                }
+            }
+            let labelPrefix = "";
+            if (plan.is_student) labelPrefix = "【学割対象】";
+            if (plan.is_senior) labelPrefix = "【シニア限定】";
+            if (plan.is_kids) labelPrefix = "【キッズ専用】";
+            matchReason = labelPrefix + matchReason;
+
+            let callOptionPrice = 0;
+            const hasBundledCall = (plan.included_call_type === targetCall) || (plan.included_call_type === "unlimited");
+
+            if (targetCall !== "none" && !hasBundledCall) {
+                const callOptionsGroup = carrier.options.find(g => g.category === "通話オプション");
+                if (callOptionsGroup) {
+                    const opt = callOptionsGroup.items.find(i =>
+                        (targetCall === "5min" && (i.name.includes("5分") || i.name.includes("準定額") || i.name.includes("ライト"))) ||
+                        (targetCall === "unlimited" && (i.name.includes("かけ放題") || i.name.includes("定額オプション")))
+                    );
+                    if (opt) callOptionPrice = opt.price || 0;
+                }
+            }
+
+            let maxDiscount = 0;
+
+            let totalDiscount = 0;
+            if (selectedNet === carrier.id) {
+                const netDiscount = carrier.discounts?.find(d => d.group === "セット割");
+                const rule = netDiscount?.rules?.find(r => r.plans.includes(plan.id));
+                totalDiscount += rule ? rule.value : 0;
+            }
+            if (familyCount >= 2) {
+                const groupName = carrier.id === "docomo" ? "みんなドコモ割" :
+                    (carrier.id === "au" ? "家族割プラス" : "新みんな家族割");
+                const countLabel = familyCount === "2" ? "2人" : "3人以上";
+                const famDisc = carrier.discounts?.find(d => d.group === groupName && d.name.includes(countLabel));
+                const rule = famDisc?.rules?.find(r => r.plans.includes(plan.id));
+                totalDiscount += rule ? rule.value : 0;
+            }
+            if ((carrier.id === "docomo" && selectedCard === "dcard") ||
+                (carrier.id === "au" && selectedCard === "aupay") ||
+                (carrier.id === "softbank" && selectedCard === "paypay")) {
+
+                const cardDisc = carrier.discounts?.find(d => d.group.includes("カード"));
+                const rule = cardDisc?.rules?.find(r => r.plans.includes(plan.id));
+                totalDiscount += rule ? rule.value : (cardDisc?.default_value || 0);
+            }
+            let emailCost = 0;
+            if (keepEmail) {
+                if (["ahamo", "uq", "ymobile"].includes(carrier.id)) {
+                    emailCost = 330;
+                }
+            }
+
+            if (usageYears >= 10) {
+                const longTermDisc = carrier.discounts?.find(d => d.group === "長期利用割");
+
+                if (longTermDisc) {
+                    const yearLabel = usageYears >= 20 ? "20年以上" : "10年以上";
+
+                    const rule = carrier.discounts.find(d => d.group === "長期利用割" && d.name === yearLabel);
+
+                    if (rule) {
+                        const planRule = rule.rules?.find(r => r.plans.includes(plan.id));
+                        totalDiscount += planRule ? planRule.value : 0;
+                    }
+                }
+            }
+            const finalTotal = Math.max(0, basePrice + callOptionPrice - maxDiscount);
+
+            ranking.push({
+                carrierId: carrier.id,
+                carrierName: carrier.name,
+                planId: plan.id,
+                planName: plan.name,
+                totalCost: finalTotal,
+                matchReason: matchReason + (hasBundledCall ? "・無料通話内包" : "")
+            });
+        });
+    });
+
+    ranking.sort((a, b) => a.totalCost - b.totalCost);
+
+    ranking.slice(0, 5).forEach((result, index) => {
+        const cardHtml = `
+            <div class="card mb-2" style="border: 1px solid var(--border-color); box-shadow: none;">
+                <div class="card-content p-2" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <div>
+                        <span class="badge new left m-0" style="background-color: var(--primary-color);" data-badge-caption="第${index + 1}位"></span>
+                        <div class="fw-bold" style="font-size: 1.1rem; margin-left: 60px;">${result.planName} <span class="small" style="color:var(--nord10)">[${result.carrierName}]</span></div>
+                        <div class="small" style="color: var(--text-muted); margin-left: 60px;">月額目安: <span class="fw-bold nord-red-text" style="font-size:1.2rem;">${fmt(result.totalCost)}円</span> <span class="small">（${result.matchReason}）</span></div>
+                    </div>
+                    <div>
+                        <button class="btn-small white" style="border: 1px solid var(--primary-color); color: var(--primary-color); box-shadow: none; font-weight:bold;" onclick="createTabFromResult('${result.carrierId}', '${result.planId}')">
+                            <i class="material-icons left">add_to_photos</i>シミュレーションへ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.insertAdjacentHTML("beforeend", cardHtml);
+    });
 }
