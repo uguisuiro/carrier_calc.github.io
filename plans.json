@@ -977,34 +977,6 @@
                             "frequency": "notfreq"
                         },
                         {
-                            "id": "call_forwarding",
-                            "name": "転送でんわサービス",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "missed_call_notice",
-                            "name": "着信通知サービス",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "caller_id_notification",
-                            "name": "発信者番号通知サービス",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "caller_id_request",
-                            "name": "番号通知お願いサービス",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
                             "id": "melody_call",
                             "name": "メロディコール",
                             "price": 110,
@@ -1022,41 +994,6 @@
                             "id": "multi_number",
                             "name": "マルチナンバー",
                             "price": 550,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "ohanashi_memo",
-                            "name": "おはなしメモ",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "nuisance_call_block",
-                            "name": "迷惑電話ストップサービス",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "freq"
-                        },
-                        {
-                            "id": "english_guidance",
-                            "name": "英語ガイダンス",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "world_call",
-                            "name": "海外へかける（WORLD CALL）",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "world_wing",
-                            "name": "海外でつかう（WORLD WING）",
-                            "price": 0,
                             "billing_type": null,
                             "frequency": "notfreq"
                         }
@@ -1182,20 +1119,6 @@
                             "frequency": "notfreq"
                         },
                         {
-                            "id": "anshin_filter",
-                            "name": "あんしんフィルター for docomo",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "freq"
-                        },
-                        {
-                            "id": "access_restriction",
-                            "name": "アクセス制限サービス",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
                             "id": "imadoko_search",
                             "name": "イマドコサーチ",
                             "price": 220,
@@ -1203,37 +1126,9 @@
                             "frequency": "notfreq"
                         },
                         {
-                            "id": "remote_lock",
-                            "name": "おまかせロック",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "remote_initialize",
-                            "name": "遠隔初期化",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "mobile_finder",
-                            "name": "ケータイお探しサービス",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
                             "id": "network_security",
                             "name": "ネットワークセキュリティ",
                             "price": 385,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "filtering_service",
-                            "name": "フィルタリングサービス",
-                            "price": 0,
                             "billing_type": null,
                             "frequency": "notfreq"
                         },
@@ -1251,37 +1146,9 @@
                     "type": "checkbox",
                     "items": [
                         {
-                            "id": "sp_mode",
-                            "name": "spモード",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "tethering",
-                            "name": "テザリング",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "freq"
-                        },
-                        {
                             "id": "cloud_capacity_option",
                             "name": "クラウド容量オプション",
                             "price": 110,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "data_hokan_box",
-                            "name": "データ保管BOX",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "d_wifi",
-                            "name": "d Wi-Fi",
-                            "price": 0,
                             "billing_type": null,
                             "frequency": "notfreq"
                         },
@@ -1872,20 +1739,6 @@
                             "price": 110,
                             "billing_type": "paid",
                             "frequency": "notfreq"
-                        },
-                        {
-                            "id": "call_forwarding",
-                            "name": "着信転送サービス",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "caller_id",
-                            "name": "発信者番号通知",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
                         }
                     ]
                 },
@@ -1939,24 +1792,10 @@
                             "frequency": "freq"
                         },
                         {
-                            "id": "anshin_filter",
-                            "name": "あんしんフィルター",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "freq"
-                        },
-                        {
                             "id": "position_navi",
                             "name": "位置ナビ",
                             "price": 220,
                             "billing_type": "paid",
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "mimamori_map",
-                            "name": "みまもりマップ",
-                            "price": 0,
-                            "billing_type": null,
                             "frequency": "notfreq"
                         }
                     ]
@@ -2013,20 +1852,6 @@
                     "category": "通信・クラウド・メール",
                     "type": "checkbox",
                     "items": [
-                        {
-                            "id": "tethering",
-                            "name": "テザリングオプション",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "freq"
-                        },
-                        {
-                            "id": "softbank_wifi",
-                            "name": "ソフトバンクWi-Fiスポット",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
                         {
                             "id": "mail_carry",
                             "name": "メールアドレス持ち運び",
@@ -2367,20 +2192,6 @@
                             "price": 110,
                             "billing_type": "paid",
                             "frequency": "notfreq"
-                        },
-                        {
-                            "id": "call_forwarding",
-                            "name": "着信転送サービス",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "caller_id",
-                            "name": "発信番号表示",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
                         }
                     ]
                 },
@@ -2429,24 +2240,10 @@
                     "type": "checkbox",
                     "items": [
                         {
-                            "id": "anshin_filter_au",
-                            "name": "あんしんフィルター for au",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "freq"
-                        },
-                        {
                             "id": "anshin_navi",
                             "name": "安心ナビ",
                             "price": 330,
                             "billing_type": "paid",
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "security_password",
-                            "name": "セキュリティパスワード",
-                            "price": 0,
-                            "billing_type": null,
                             "frequency": "notfreq"
                         }
                     ]
@@ -2501,20 +2298,6 @@
                             "name": "データ追加（1GB）",
                             "price": 550,
                             "billing_type": "paid",
-                            "frequency": "freq"
-                        },
-                        {
-                            "id": "tethering",
-                            "name": "テザリング（申込不要）",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "freq"
-                        },
-                        {
-                            "id": "roaming",
-                            "name": "海外データ通信（30GBまで無料）",
-                            "price": 0,
-                            "billing_type": null,
                             "frequency": "freq"
                         }
                     ]
@@ -2594,7 +2377,6 @@
                             "price": 4928,
                             "max_data": 1
                         },
-                        
                         {
                             "label": "1GB〜3GB",
                             "price": 6578,
@@ -2607,7 +2389,6 @@
                         }
                     ]
                 },
-                
                 {
                     "id": "value_link_u12",
                     "name": "U12バリューリンクプラン (速度制限あり300kbps)",
@@ -2653,7 +2434,6 @@
                     "price": 737,
                     "contract_type": "4G/5G",
                     "data_amount": 9999,
-                    
                     "eligible_devices": [
                         "mamorino6",
                         "mamorino5"
@@ -2885,20 +2665,6 @@
                             "price": 110,
                             "billing_type": "paid",
                             "frequency": "notfreq"
-                        },
-                        {
-                            "id": "call_forwarding",
-                            "name": "着信転送サービス",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "caller_id",
-                            "name": "発信番号表示",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
                         }
                     ]
                 },
@@ -2945,29 +2711,7 @@
                 {
                     "category": "セキュリティ・見守り",
                     "type": "checkbox",
-                    "items": [
-                        {
-                            "id": "anshin_filter_uq",
-                            "name": "あんしんフィルター for UQ mobile",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "freq"
-                        },
-                        {
-                            "id": "miseinen_web_filter",
-                            "name": "未成年WEBフィルター",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "freq"
-                        },
-                        {
-                            "id": "security_password",
-                            "name": "セキュリティパスワード",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        }
-                    ]
+                    "items": []
                 }
             ],
             "plan_services": [],
@@ -3132,13 +2876,6 @@
                             "price_min": 580,
                             "price_max": 1600,
                             "frequency": "freq"
-                        },
-                        {
-                            "id": "web_osapo",
-                            "name": "WEBおたすけサポート",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
                         }
                     ]
                 }
@@ -3240,20 +2977,6 @@
                             "price": 110,
                             "billing_type": "paid",
                             "frequency": "notfreq"
-                        },
-                        {
-                            "id": "call_forwarding",
-                            "name": "着信転送サービス",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
-                            "id": "caller_id",
-                            "name": "発信者番号通知",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
                         }
                     ]
                 },
@@ -3323,20 +3046,6 @@
                             "frequency": "notfreq"
                         },
                         {
-                            "id": "tethering",
-                            "name": "テザリングオプション",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "freq"
-                        },
-                        {
-                            "id": "softbank_wifi",
-                            "name": "ソフトバンクWi-Fiスポット",
-                            "price": 0,
-                            "billing_type": null,
-                            "frequency": "notfreq"
-                        },
-                        {
                             "id": "mail_carry",
                             "name": "メールアドレス持ち運び",
                             "price": 330,
@@ -3354,13 +3063,6 @@
                             "name": "セキュリティパックプラス",
                             "price": 660,
                             "billing_type": "paid",
-                            "frequency": "freq"
-                        },
-                        {
-                            "id": "anshin_filter",
-                            "name": "あんしんフィルター",
-                            "price": 0,
-                            "billing_type": null,
                             "frequency": "freq"
                         },
                         {
