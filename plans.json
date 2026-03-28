@@ -1495,6 +1495,94 @@
                     ]
                 },
                 {
+                    "id": "docomo_max_u22",
+                    "name": "ドコモ MAX U22 (7ヶ月適用)",
+                    "is_kids": false,
+                    "is_senior": false,
+                    "is_student": true,
+                    "is_first_smartphone": false,
+                    "type": "tiered",
+                    "included_call_type": "none",
+                    "bundle_perks": {
+                        "limit": 1,
+                        "eligible_ids": [
+                            "dazn"
+                        ],
+                        "discount_type": "free"
+                    },
+                    "tiers": [
+                        {
+                            "label": "〜1GB",
+                            "price": 2970,
+                            "max_data": 1
+                        },
+                        {
+                            "label": "1GB〜3GB",
+                            "price": 4070,
+                            "max_data": 3
+                        },
+                        {
+                            "label": "3GB〜28GB",
+                            "price": 5720,
+                            "max_data": 28
+                        },
+                        {
+                            "label": "28GB〜30GB",
+                            "price": 4620,
+                            "max_data": 30
+                        },
+                        {
+                            "label": "30GB〜無制限",
+                            "price": 7898,
+                            "max_data": 9999
+                        }
+                    ]
+                },
+                {
+                    "id": "docomo_max_u29",
+                    "name": "ドコモ MAX U29 (3ヶ月適用)",
+                    "is_kids": false,
+                    "is_senior": false,
+                    "is_student": true,
+                    "is_first_smartphone": false,
+                    "type": "tiered",
+                    "included_call_type": "none",
+                    "bundle_perks": {
+                        "limit": 1,
+                        "eligible_ids": [
+                            "dazn"
+                        ],
+                        "discount_type": "free"
+                    },
+                    "tiers": [
+                        {
+                            "label": "〜1GB",
+                            "price": 2970,
+                            "max_data": 1
+                        },
+                        {
+                            "label": "1GB〜3GB",
+                            "price": 4070,
+                            "max_data": 3
+                        },
+                        {
+                            "label": "3GB〜28GB",
+                            "price": 5720,
+                            "max_data": 28
+                        },
+                        {
+                            "label": "28GB〜30GB",
+                            "price": 4620,
+                            "max_data": 30
+                        },
+                        {
+                            "label": "30GB〜無制限",
+                            "price": 7898,
+                            "max_data": 9999
+                        }
+                    ]
+                },
+                {
                     "id": "poikatsu_max",
                     "name": "ドコモ ポイ活 MAX",
                     "is_kids": false,
@@ -2072,6 +2160,18 @@
                     "included_call_type": "5min"
                 },
                 {
+                    "id": "debut_plus_basic_u18",
+                    "name": "スマホデビュープラン＋(ベーシック) U18 (翌月から6ヶ月適用)",
+                    "is_kids": false,
+                    "is_senior": false,
+                    "is_student": true,
+                    "is_first_smartphone": true,
+                    "type": "flat",
+                    "price": 1078,
+                    "data_amount": 20,
+                    "included_call_type": "5min"
+                },
+                {
                     "id": "debut_plus_light",
                     "name": "スマホデビュープラン＋（ライト）",
                     "is_kids": false,
@@ -2228,6 +2328,19 @@
                             "frequency": "freq"
                         },
                         {
+                            "id": "denwa_kihon_pack_v",
+                            "name": "電話きほんパック（V）",
+                            "price": 440,
+                            "billing_type": "paid",
+                            "frequency": "freq",
+                            "included_items": [
+                                "orusuban_ex",
+                                "warikomi_tsuwa",
+                                "sansha_tsuwa",
+                                "meiwaku_block"
+                            ]
+                        },
+                        {
                             "id": "orusuban_ex",
                             "name": "お留守番サービスEX",
                             "price": 330,
@@ -2243,7 +2356,7 @@
                         },
                         {
                             "id": "sansha_tsuwa",
-                            "name": "三者通話",
+                            "name": "三者通話サービス",
                             "price": 220,
                             "billing_type": "paid",
                             "frequency": "notfreq"
@@ -2468,7 +2581,7 @@
                 },
                 {
                     "id": "smartphone_mini",
-                    "name": "スマホミニプラン 5G/4G",
+                    "name": "スマホミニプラン+ 5G/4G",
                     "is_kids": false,
                     "is_senior": false,
                     "is_student": false,
@@ -2478,65 +2591,111 @@
                     "tiers": [
                         {
                             "label": "〜1GB",
-                            "price": 3465,
+                            "price": 4928,
                             "max_data": 1
                         },
+                        
                         {
-                            "label": "1GB〜2GB",
-                            "price": 4565,
-                            "max_data": 2
-                        },
-                        {
-                            "label": "2GB〜3GB",
-                            "price": 5665,
+                            "label": "1GB〜3GB",
+                            "price": 6578,
                             "max_data": 3
                         },
                         {
-                            "label": "3GB〜4GB",
-                            "price": 6215,
-                            "max_data": 4
+                            "label": "3GB〜5GB",
+                            "price": 8228,
+                            "max_data": 5
+                        }
+                    ]
+                },
+                
+                {
+                    "id": "value_link_u12",
+                    "name": "U12バリューリンクプラン (速度制限あり300kbps)",
+                    "is_kids": true,
+                    "is_senior": false,
+                    "is_student": true,
+                    "is_first_smartphone": false,
+                    "type": "flat",
+                    "price": 1870,
+                    "data_amount": 9999,
+                    "included_call_type": "none"
+                },
+                {
+                    "id": "value_link_u18",
+                    "name": "バリューリンクプラン (18歳以下で契約すれば23歳まで使える)",
+                    "is_kids": false,
+                    "is_senior": false,
+                    "is_student": true,
+                    "is_first_smartphone": false,
+                    "type": "tiered",
+                    "included_call_type": "none",
+                    "tiers": [
+                        {
+                            "label": "〜10GB",
+                            "price": 2398,
+                            "max_data": 10
+                        },
+                        {
+                            "label": "10GB〜20GB",
+                            "price": 4048,
+                            "max_data": 20
                         }
                     ]
                 },
                 {
-                    "id": "smartphone_start",
-                    "name": "スマホスタートプラン 5G/4G",
-                    "is_kids": false,
-                    "is_senior": false,
-                    "is_student": false,
-                    "is_first_smartphone": true,
-                    "type": "flat",
-                    "price": 2860,
-                    "data_amount": 20,
-                    "included_call_type": "5min"
-                },
-                {
-                    "id": "smartphone_start_light",
-                    "name": "スマホスタートプランライト 5G/4G",
-                    "is_kids": false,
-                    "is_senior": false,
-                    "is_student": false,
-                    "is_first_smartphone": true,
-                    "type": "flat",
-                    "price": 2266,
-                    "data_amount": 4,
-                    "included_call_type": "5min"
-                },
-                {
                     "id": "kids_keitai",
-                    "name": "キッズケータイプラン",
+                    "name": "ジュニアケータイプランN",
                     "is_kids": true,
                     "is_senior": false,
                     "is_student": false,
                     "is_first_smartphone": false,
                     "type": "flat",
-                    "price": 660,
+                    "price": 737,
                     "contract_type": "4G/5G",
                     "data_amount": 9999,
-                    "included_call_type": "5min",
+                    
                     "eligible_devices": [
                         "mamorino6",
                         "mamorino5"
+                    ]
+                },
+                {
+                    "id": "value_link_senior",
+                    "name": "シニアバリューリンクプラン (60歳以上)",
+                    "type": "flat",
+                    "price": 4048,
+                    "data_amount": 5,
+                    "included_call_type": "5min",
+                    "bundle_perks": {
+                        "limit": 9,
+                        "eligible_ids": [
+                            "tsuwa_teigaku_light_2",
+                            "denwa_kihon_pack_v"
+                        ],
+                        "discount_type": "free"
+                    }
+                },
+                {
+                    "id": "value_link_standard",
+                    "name": "バリューリンクプラン",
+                    "is_kids": false,
+                    "is_senior": false,
+                    "is_student": false,
+                    "is_first_smartphone": false,
+                    "type": "tiered",
+                    "included_call_type": "none",
+                    "tiers": [
+                        {
+                            "label": "〜1GB",
+                            "price": 6358,
+                            "max_data": 1
+                        },
+                        {
+                            "label": "無制限（200GB超えると速度制限あり）",
+                            "price": 8008,
+                            "max_data": 9999,
+                            "soft_limit": 200
+                        }
                     ]
                 }
             ],
@@ -2643,6 +2802,20 @@
                                 "smartphone_start_light"
                             ],
                             "value": 1188
+                        }
+                    ],
+                    "default_value": 0
+                },
+                {
+                    "id": "uq_to_au_upgrade",
+                    "group": "期間限定割引",
+                    "name": "UQからauへアップグレード割引（UQを6か月利用、1年のみの割引）",
+                    "rules": [
+                        {
+                            "plans": [
+                                "value_link_standard"
+                            ],
+                            "value": 2640
                         }
                     ],
                     "default_value": 0
@@ -2810,39 +2983,59 @@
             ],
             "plans": [
                 {
-                    "id": "comicomi_plus",
-                    "name": "コミコミプラン＋",
+                    "id": "comicomi_value",
+                    "name": "コミコミプランバリュー",
                     "is_kids": false,
                     "is_senior": false,
                     "is_student": false,
                     "is_first_smartphone": false,
                     "type": "flat",
-                    "price": 3278,
-                    "data_amount": 33,
+                    "price": 3828,
+                    "data_amount": 35,
                     "included_call_type": "10min"
                 },
                 {
-                    "id": "tokutoku",
-                    "name": "トクトクプラン",
+                    "id": "tokutoku_2",
+                    "name": "トクトクプラン2",
                     "is_kids": false,
                     "is_senior": false,
                     "is_student": false,
                     "is_first_smartphone": false,
-                    "type": "flat",
-                    "price": 3465,
-                    "data_amount": 15,
+                    "type": "tiered",
+                    "tiers": [
+                        {
+                            "label": "5GB以下",
+                            "price": 2948,
+                            "data_amount": 5
+                        },
+                        {
+                            "label": "5GB超～30GB",
+                            "price": 4048,
+                            "data_amount": 30
+                        }
+                    ],
                     "included_call_type": "none"
                 },
                 {
-                    "id": "minimini",
-                    "name": "ミニミニプラン",
+                    "id": "tokutoku_2_student",
+                    "name": "トクトクプラン2(学生 1年間1650引き)",
                     "is_kids": false,
                     "is_senior": false,
-                    "is_student": false,
+                    "is_student": true,
                     "is_first_smartphone": false,
-                    "type": "flat",
-                    "price": 2365,
-                    "data_amount": 4,
+                    "type": "tiered",
+                    "tiers": [
+                        {
+                            "label": "5GB以下",
+                            "price": 1298,
+                            "data_amount": 5
+                        },
+                        {
+                            "label": "5GB超～30GB",
+                            "price": 2398,
+                            "data_amount": 30
+                        }
+                    ],
                     "included_call_type": "none"
                 }
             ],
@@ -2854,8 +3047,8 @@
                     "rules": [
                         {
                             "plans": [
-                                "tokutoku",
-                                "minimini"
+                                "tokutoku_2",
+                                "tokutoku_2_student"
                             ],
                             "value": 1100
                         }
@@ -2869,8 +3062,8 @@
                     "rules": [
                         {
                             "plans": [
-                                "tokutoku",
-                                "minimini"
+                                "tokutoku_2",
+                                "tokutoku_2_student"
                             ],
                             "value": 550
                         }
@@ -2884,24 +3077,10 @@
                     "rules": [
                         {
                             "plans": [
-                                "tokutoku",
-                                "minimini"
+                                "tokutoku_2",
+                                "tokutoku_2_student"
                             ],
-                            "value": 187
-                        }
-                    ],
-                    "default_value": 0
-                },
-                {
-                    "id": "data_under_1gb",
-                    "group": "利用データ量連動",
-                    "name": "データ利用量1GB以下割引",
-                    "rules": [
-                        {
-                            "plans": [
-                                "tokutoku"
-                            ],
-                            "value": 1188
+                            "value": 220
                         }
                     ],
                     "default_value": 0
@@ -3213,9 +3392,41 @@
                     "is_senior": false,
                     "is_student": false,
                     "is_first_smartphone": false,
-                    "type": "flat",
-                    "price": 5115,
-                    "data_amount": 30,
+                    "type": "tiered",
+                    "tiers": [
+                        {
+                            "label": "1GB以下",
+                            "price": 2915,
+                            "data_amount": 1
+                        },
+                        {
+                            "label": "1GB超～30GB",
+                            "price": 5115,
+                            "data_amount": 30
+                        }
+                    ],
+                    "included_call_type": "none"
+                },
+                {
+                    "id": "simple2_l_student",
+                    "name": "シンプル2 L(学生 1年間1100引き)",
+                    "is_kids": false,
+                    "is_senior": false,
+                    "is_student": true,
+                    "is_first_smartphone": false,
+                    "type": "tiered",
+                    "tiers": [
+                        {
+                            "label": "1GB以下",
+                            "price": 1815,
+                            "data_amount": 1
+                        },
+                        {
+                            "label": "1GB超～30GB",
+                            "price": 4015,
+                            "data_amount": 30
+                        }
+                    ],
                     "included_call_type": "none"
                 },
                 {
@@ -3225,9 +3436,41 @@
                     "is_senior": false,
                     "is_student": false,
                     "is_first_smartphone": false,
-                    "type": "flat",
-                    "price": 4015,
-                    "data_amount": 20,
+                    "type": "tiered",
+                    "tiers": [
+                        {
+                            "label": "1GB以下",
+                            "price": 2915,
+                            "data_amount": 1
+                        },
+                        {
+                            "label": "1GB超～20GB",
+                            "price": 4015,
+                            "data_amount": 20
+                        }
+                    ],
+                    "included_call_type": "none"
+                },
+                {
+                    "id": "simple2_m_student",
+                    "name": "シンプル2 M(学生 1年間1100引き)",
+                    "is_kids": false,
+                    "is_senior": false,
+                    "is_student": true,
+                    "is_first_smartphone": false,
+                    "type": "tiered",
+                    "tiers": [
+                        {
+                            "label": "1GB以下",
+                            "price": 1815,
+                            "data_amount": 1
+                        },
+                        {
+                            "label": "1GB超～20GB",
+                            "price": 2915,
+                            "data_amount": 20
+                        }
+                    ],
                     "included_call_type": "none"
                 },
                 {
@@ -3252,7 +3495,9 @@
                         {
                             "plans": [
                                 "simple2_m",
-                                "simple2_l"
+                                "simple2_l",
+                                "simple2_m_student",
+                                "simple2_l_student"
                             ],
                             "value": 1650
                         },
@@ -3274,7 +3519,9 @@
                             "plans": [
                                 "simple2_s",
                                 "simple2_m",
-                                "simple2_l"
+                                "simple2_l",
+                                "simple2_m_student",
+                                "simple2_l_student"
                             ],
                             "value": 1100
                         }
@@ -3290,37 +3537,11 @@
                             "plans": [
                                 "simple2_s",
                                 "simple2_m",
-                                "simple2_l"
+                                "simple2_l",
+                                "simple2_m_student",
+                                "simple2_l_student"
                             ],
                             "value": 187
-                        }
-                    ],
-                    "default_value": 0
-                },
-                {
-                    "id": "data_under_1gb_m",
-                    "group": "利用データ量連動",
-                    "name": "月間データ利用量1GB以下割引（M）",
-                    "rules": [
-                        {
-                            "plans": [
-                                "simple2_m"
-                            ],
-                            "value": 1100
-                        }
-                    ],
-                    "default_value": 0
-                },
-                {
-                    "id": "data_under_1gb_l",
-                    "group": "利用データ量連動",
-                    "name": "月間データ利用量1GB以下割引（L）",
-                    "rules": [
-                        {
-                            "plans": [
-                                "simple2_l"
-                            ],
-                            "value": 2200
                         }
                     ],
                     "default_value": 0
